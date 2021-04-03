@@ -30,7 +30,7 @@ master.menu.sign-out = Sign out
 
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
-
+master.menu.anonymous.shout = Shout!
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
