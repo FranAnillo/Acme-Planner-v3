@@ -45,6 +45,7 @@ master.menu.administrator.shutdown = Parar el sistema
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 master.menu.anonymous.shout = Gritar
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
