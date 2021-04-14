@@ -299,10 +299,11 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
-      <y>266</y>
+      <x>497</x>
+      <y>280</y>
       <w>259</w>
-      <h>126</h>
+      <h>84</h>
+
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Shout

@@ -14,71 +14,73 @@ import acme.framework.services.AbstractCreateService;
 
 @Service
 public class AnonymousShoutCreateService implements AbstractCreateService<Anonymous, Shout> {
-	
-	// Internal state --------------------------------------------
-	
+
+	// Internal state 
+
 	@Autowired
 	protected AnonymousShoutRepository repository;
-	
-	// AbstractListService<Administrator, Shout> interface -------
+
+	// AbstractCreateService<Administrator, Shout> interface 
 
 	@Override
 	public boolean authorise(final Request<Shout> request) {
 		assert request != null;
+
 		return true;
 	}
 
 	@Override
 	public void bind(final Request<Shout> request, final Shout entity, final Errors errors) {
-		assert request !=null;
-		assert entity !=null;
+		assert request != null;
+		assert entity != null;
 		assert errors != null;
-		
+
 		request.bind(entity, errors);
 	}
 
 	@Override
 	public void unbind(final Request<Shout> request, final Shout entity, final Model model) {
 		assert request != null;
-		assert entity !=null;
+		assert entity != null;
 		assert model != null;
-		
-		request.unbind(entity, model, "author", "text", "moment");
+
+		request.unbind(entity, model, "author", "text", "info");
 	}
 
 	@Override
 	public Shout instantiate(final Request<Shout> request) {
-		assert request !=null;
-		
+		assert request != null;
+
 		Shout result;
 		Date moment;
-		
-		moment = new Date(System.currentTimeMillis()-1);
-		
+
+		moment = new Date(System.currentTimeMillis() - 1);
+
 		result = new Shout();
-		result.setAuthor("Jhon Doe");
-		result.setText("Lorem upsum");
+		result.setAuthor("John Doe");
+		result.setText("Lorem ipsum!");
 		result.setMoment(moment);
 		result.setInfo("http://example.org");
-		
+
 		return result;
 	}
 
 	@Override
 	public void validate(final Request<Shout> request, final Shout entity, final Errors errors) {
 		assert request != null;
-		assert entity !=null;
+		assert entity != null;
 		assert errors != null;
+
 	}
 
 	@Override
 	public void create(final Request<Shout> request, final Shout entity) {
-		assert request !=null;
-		assert entity !=null;
-		
+		assert request != null;
+		assert entity != null;
+
 		Date moment;
-		
-		moment = new Date(System.currentTimeMillis()-1);
+
+		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
 		this.repository.save(entity);
 	}
