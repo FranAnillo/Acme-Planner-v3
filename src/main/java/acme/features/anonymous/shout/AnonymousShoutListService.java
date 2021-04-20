@@ -46,6 +46,7 @@ public class AnonymousShoutListService implements AbstractListService<Anonymous,
 	public List<Shout> findMany(final Request<Shout> request) {
 		assert request != null;
 
+		//Task 007
 		final List<Shout> lista = new ArrayList<Shout>();
 
 		for(final Shout shout : this.repository.findMany()) {
@@ -58,15 +59,4 @@ public class AnonymousShoutListService implements AbstractListService<Anonymous,
 	
 	}
 	
-	//Task 007
-//	public List<Shout> findMenos1Mes(){
-//		final List<Shout> lista = new ArrayList<Shout>();
-//		for(final Shout shout : this.repository.findMany()) {
-//			if(shout.getMoment().after(Date.valueOf(LocalDate.now().minusMonths(1)))) {
-//				lista.add(shout);
-//			}
-//		}
-//		lista.sort(Comparator.comparing(Shout::getMoment));
-//		return lista;
-//	}
 }
