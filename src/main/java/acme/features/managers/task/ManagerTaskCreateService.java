@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.tasks.Task;
+import acme.filter.Filter;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -81,7 +82,10 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		public void create(final Request<Task> request, final Task entity) {
 			assert request != null;
 			assert entity != null;
-
+			if ((Filter.filterString(entity.getDescription())||Filter.filterString(entity.getTitle()))==false) {
+			
+			}
+			else {
 			LocalDateTime start;
 			LocalDateTime end;
 
@@ -91,7 +95,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			entity.setStart(start);
 			entity.setEnd(end);
 			this.repository.save(entity);
+			}
 		}
+			
 	
 	
 	
