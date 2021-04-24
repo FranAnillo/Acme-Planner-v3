@@ -78,7 +78,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public void create(final Request<Shout> request, final Shout entity) {
 		assert request != null;
 		assert entity != null;
-		if ((Filter.filterString(entity.getText())||Filter.filterString(entity.getAuthor()))==false) {
+		if ((Filter.filterString(entity.getText())&&Filter.filterString(entity.getAuthor()))==false) {
 			
 		}
 		else {
