@@ -49,6 +49,8 @@ public class Task extends DomainEntity {
 	@NotNull
 	protected Boolean finish;
 	
+	//HAY QUE CREAR UN ATRIBUTO PARA TAREA PUBLICA
+	
 	protected Integer workload() {
 		Integer diferencia=0;
 		if (this.start.isAfter(LocalDateTime.now())) {
