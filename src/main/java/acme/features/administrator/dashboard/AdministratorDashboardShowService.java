@@ -50,10 +50,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Integer minmumExecutionPeriod;
 		final Integer maximumExecutionPeriod;
 		
-		Double averegeWorkloads;
+		final Double averegeWorkloads;
 		final Double deviationWorkloads;
-		Integer minmumWorkloads;
-		Integer maximumWorkloads;
+		final Integer minmumWorkloads;
+		final Integer maximumWorkloads;
 		
 		numberPublicTask = this.repository.numberOfPublicTask();
 		numberPrivateTask = this.repository.numberNotPublicTask();
@@ -64,19 +64,19 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 //		minmumExecutionPeriod = this.repository.;
 //		maximumExecutionPeriod = this.repository.;
 		
-		averegeWorkloads = this.repository.averegeWorkload();
+//		averegeWorkloads = this.repository.averegeWorkload();
 //		deviationWorkloads = this.repository;
-		minmumWorkloads = this.repository.minWorkload();
-		maximumWorkloads = this.repository.maxWorkload();
+//		minmumWorkloads = this.repository.minWorkload();
+//		maximumWorkloads = this.repository.maxWorkload();
 		
 		result = new Dashboard();
 		result.setNumberPublicTask(numberPublicTask);
 		result.setNumberFinishTask(numberFinishTask);
 		result.setNumberNotFinishTask(numberNotFinishTask);
 		result.setNumberPrivateTask(numberPrivateTask);
-		result.setAveregeWorkloads(averegeWorkloads);
-		result.setMinmumWorkloads(minmumWorkloads);
-		result.setMaximumWorkloads(maximumWorkloads);
+//		result.setAveregeWorkloads(averegeWorkloads);
+//		result.setMinmumWorkloads(minmumWorkloads);
+//		result.setMaximumWorkloads(maximumWorkloads);
 		
 		return result;
 	}

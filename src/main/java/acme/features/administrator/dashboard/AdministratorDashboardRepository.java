@@ -20,15 +20,15 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count (j) from Task j where j.publica = false")
 	Integer numberNotPublicTask();
 	
-	@Query("select avg (select sum (t.workload) from Task t")
-	Double averegeWorkload();
+//	@Query("select avg (select sum (t.workload) from Task t")
+//	Double averegeWorkload();
 	
-	@Query("select max (j.workload) from Task j")
-	Integer maxWorkload();
-	
-	@Query("select min (j.workload) from Task j")
-	Integer minWorkload();
-	
+//	@Query("select max (j.workload) from Task j")
+//	Integer maxWorkload();
+//	
+//	@Query("select min (j.workload) from Task j")
+//	Integer minWorkload();
+//	
 	
 	
 	
