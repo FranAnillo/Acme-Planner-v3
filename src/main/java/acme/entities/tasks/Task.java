@@ -49,6 +49,10 @@ public class Task extends DomainEntity {
 	@NotNull
 	protected Boolean finish;
 	
+	@NotNull
+	protected Boolean publica;
+	
+	
 	protected Integer workload() {
 		Integer diferencia=0;
 		if (this.start.isAfter(LocalDateTime.now())) {
