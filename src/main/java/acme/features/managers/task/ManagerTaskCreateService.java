@@ -68,7 +68,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			result.setLink("http://example.org");
 			result.setPublica(true);
 			result.setFinish(false);
-
+			
 			return result;
 		}
 

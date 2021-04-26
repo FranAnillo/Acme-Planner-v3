@@ -1,5 +1,6 @@
 package acme.entities.tasks;
 
+
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -33,12 +34,10 @@ public class Task extends DomainEntity {
 	@Max(500)
 	protected String description;
 	
-//	@Temporal(TemporalType.TIMESTAMP)
 	@Future
 	@NotNull
 	protected LocalDateTime start;
 	
-//	@Temporal(TemporalType.TIMESTAMP)
 	@Future
 	@NotNull
 	protected LocalDateTime end;
@@ -47,23 +46,23 @@ public class Task extends DomainEntity {
 	protected String link;
 	
 	@NotNull
+	protected Boolean publica;
+	
+	@NotNull
 	protected Boolean finish;
 	
 	@NotNull
-	protected Boolean publica;
-	
-	
-	protected Integer workload() {
-		Integer diferencia=0;
-		if (this.start.isAfter(LocalDateTime.now())) {
-			diferencia=this.end.compareTo(this.start);
-		} else if (this.start.isBefore(LocalDateTime.now())) {
-			diferencia=this.end.compareTo(LocalDateTime.now());
-		} else if (this.end.isBefore(LocalDateTime.now())){
-			diferencia=0;
-		}
-		return diferencia;
-		
-		
-	}
+	protected Integer workload;//(){
+//		Integer diferencia=0;
+//		if (this.start.isAfter(LocalDateTime.now())) {
+//			diferencia=this.end.compareTo(this.start);
+//		} else if (this.start.isBefore(LocalDateTime.now())) {
+//			diferencia=this.end.compareTo(LocalDateTime.now());
+//		} else if (this.end.isBefore(LocalDateTime.now())){
+//			diferencia=0;
+//		}
+//		return diferencia;
+//		
+//		
+//	}
 }
