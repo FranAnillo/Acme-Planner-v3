@@ -65,7 +65,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			result.setStart(start);
 			result.setEnd(end);
 			result.setLink("http://example.org");
-
+			result.setPublica(true);
+			result.setFinish(false);
+			
 			return result;
 		}
 
@@ -81,7 +83,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		public void create(final Request<Task> request, final Task entity) {
 			assert request != null;
 			assert entity != null;
-			if ((Filter.filterString(entity.getDescription())||Filter.filterString(entity.getTitle()))==false) {
+			if ((Filter.filterString(entity.getDescription())&&Filter.filterString(entity.getTitle()))==false) {
 			
 			}
 			else {
@@ -93,6 +95,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			
 			entity.setStart(start);
 			entity.setEnd(end);
+			entity.setPublica(true);
+			entity.setFinish(false);
 			this.repository.save(entity);
 			}
 		}
