@@ -1,5 +1,4 @@
 package acme.entities.shouts;
-
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -18,27 +17,27 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+public class Shout extends DomainEntity {
 
-public class Shout extends DomainEntity{
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long	serialVersionUID = 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
-	protected Date moment;
+	protected Date				moment;
 
 	@NotBlank
-	protected String author;
+	protected String			author;
 
 	@NotBlank
-	protected String text;
+	protected String			text;
 	
 	@URL
-	protected String info;
+	protected String			info;
 
 	// Derived attributes -----------------------------------------------------
 

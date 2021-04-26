@@ -1,6 +1,10 @@
 package acme.features.anonymous.shout;
 
-import java.util.Collection;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,20 +16,20 @@ import acme.framework.entities.Anonymous;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousShoutListService implements AbstractListService<Anonymous, Shout>{
+public class AnonymousShoutListService implements AbstractListService<Anonymous, Shout> {
 
-	// Inernal state
-	
+	// Internal state
+
 	@Autowired
-	AnonymousShoutRepository repository;
-	
-	
-	//AbstractListService<Administrator, Shout> interface
-	
+	protected AnonymousShoutRepository repository;
+
+
+	// AbstractListService<Administrator, Shout> interface 
+
 	@Override
 	public boolean authorise(final Request<Shout> request) {
 		assert request != null;
-		
+
 		return true;
 	}
 
@@ -34,19 +38,25 @@ public class AnonymousShoutListService implements AbstractListService<Anonymous,
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
+
 		request.unbind(entity, model, "author", "text", "moment");
 	}
 
 	@Override
-	public Collection<Shout> findMany(final Request<Shout> request) {
+	public List<Shout> findMany(final Request<Shout> request) {
 		assert request != null;
-		
-		Collection<Shout> result;
-		
-		result = this.repository.findMany();
-			
-		return result;
-	}
 
+		//Task 007
+		final List<Shout> lista = new ArrayList<Shout>();
+
+		for(final Shout shout : this.repository.findMany()) {
+			if(shout.getMoment().after(Date.valueOf(LocalDate.now().minusMonths(1)))) {
+				lista.add(shout);
+			}
+		}
+		lista.sort(Comparator.comparing(Shout::getMoment));
+		return lista;
+	
+	}
+	
 }
