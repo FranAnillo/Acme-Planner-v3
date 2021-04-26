@@ -22,7 +22,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		@Autowired
 		protected ManagerTaskRepository repository;
 
-		// AbstractCreateService<Manager, Task> interface 
 
 		@Override
 		public boolean authorise(final Request<Task> request) {
