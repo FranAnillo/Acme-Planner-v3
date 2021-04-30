@@ -29,9 +29,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert model != null; 
 		
 		request.unbind(entity, model, "numberPublicTask" , "numberPrivateTask" , 
-			"numberFinishTask" , "numberNotFinishTask", "averageExecutionPeriods" , "deviationExecutionPeriods" ,
-			"minimumExecutionPeriod" , "maximumExecutionPeriod" , "averageWorkloads" , "deviationWorkloads" ,
-			"minimumWorkloads" , "maximumWorkloads");
+			"numberFinishTask" , "numberNotFinishTask" );
 		
 	}
 
@@ -45,16 +43,16 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Integer numberPrivateTask;
 		Integer numberFinishTask;
 		Integer numberNotFinishTask;
-		final Double averegeExcutionPeriods;
-		final Double deviationExcutionPeriods;
-		final Integer minmumExecutionPeriod;
-		final Integer maximumExecutionPeriod;
-		
-		final Double averegeWorkloads;
-		final Double deviationWorkloads;
-		final Integer minmumWorkloads;
-		final Integer maximumWorkloads;
-		
+//		final Double averegeExcutionPeriods;
+//		final Double deviationExcutionPeriods;
+//		final Integer minmumExecutionPeriod;
+//		final Integer maximumExecutionPeriod;
+//		
+//		final Double averegeWorkloads;
+//		final Double deviationWorkloads;
+//		final Integer minmumWorkloads;
+//		final Integer maximumWorkloads;
+//		
 		numberPublicTask = this.repository.numberOfPublicTask();
 		numberPrivateTask = this.repository.numberNotPublicTask();
 		numberFinishTask = this.repository.numberOfFinishTask();

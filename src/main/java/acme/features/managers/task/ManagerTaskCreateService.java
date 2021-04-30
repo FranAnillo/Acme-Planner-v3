@@ -62,8 +62,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			result = new Task();
 			result.setTitle("Task 1");
 			result.setDescription("Description of the taks 2");
-			result.setStart(start);
-			result.setEnd(end);
+//			result.setStart(start);
+//			result.setEnd(end);
 			result.setLink("http://example.org");
 			result.setPublica(true);
 			result.setFinish(false);
@@ -93,8 +93,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			start = LocalDateTime.of(2021, Month.MAY, 2, 10, 0);
 			end = LocalDateTime.of(2021, Month.MAY, 8, 14, 0);
 			
-			entity.setStart(start);
-			entity.setEnd(end);
+//			entity.setStart(start);
+//			entity.setEnd(end);
 			entity.setPublica(true);
 			entity.setFinish(false);
 			this.repository.save(entity);

@@ -8,7 +8,6 @@ import acme.entities.tasks.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Manager;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -36,14 +35,20 @@ public class ManagerTaskListService implements AbstractListService<Manager, Task
 
 	@Override
 	public Collection<Task> findMany(final Request<Task> request) {
-		assert request != null;
-		
-		Collection<Task> lista;
-		Principal principal;
-		
-		principal = request.getPrincipal();
-		lista = this.repository.findMany(principal.getActiveRoleId());
-		return lista;
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+//	@Override
+//	public Collection<Task> findMany(final Request<Task> request) {
+//		assert request != null;
+//		
+//		Collection<Task> lista;
+//		Principal principal;
+//		
+//		principal = request.getPrincipal();
+//		lista = this.repository.findMany(principal.getActiveRoleId());
+//		return lista;
+//	}
 }
 

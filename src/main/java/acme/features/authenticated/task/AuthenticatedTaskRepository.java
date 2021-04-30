@@ -14,7 +14,7 @@ public interface AuthenticatedTaskRepository extends AbstractRepository {
 	Task findOneById(int id);
 	
 	//PARA SELECCIONAR LAS TAREAS PÚBLICAS Y TERMINADAS
-	@Query("SELECT task FROM Task task WHERE (task.isPublic = true AND task.end < :date) ")
+	@Query("SELECT task FROM Task task WHERE (task.publica = true AND task.end < :date) ")
 	Collection<Task> findMany(Date date);
 
 
