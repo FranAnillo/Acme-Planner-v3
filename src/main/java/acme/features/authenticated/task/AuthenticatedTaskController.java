@@ -21,8 +21,8 @@ public class AuthenticatedTaskController extends AbstractController<Authenticate
 	@Autowired
 	private AuthenticatedTaskListService listService;
 		
-	@Autowired
-	private AuthenticatedTaskShowService showService;
+//	@Autowired
+//	private AuthenticatedTaskShowService showService;
 		
 	// Constructors
 		

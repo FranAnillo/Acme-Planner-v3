@@ -1,14 +1,16 @@
 package acme.entities.tasks;
 
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.framework.entities.DomainEntity;
@@ -27,20 +29,22 @@ public class Task extends DomainEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Max(80)
+	@Length(max=80)
 	protected String title;
 	
 	@NotBlank
-	@Max(500)
+	@Length(max=500)
 	protected String description;
 	
 	@Future
 	@NotNull
-	protected LocalDateTime start;
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date start;
 	
 	@Future
 	@NotNull
-	protected LocalDateTime end;
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date end;
 	
 	@URL
 	protected String link;

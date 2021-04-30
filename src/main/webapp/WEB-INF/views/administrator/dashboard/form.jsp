@@ -3,11 +3,11 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<h2>
+<%-- <h2>
 	<acme:message code="administrator.dashboard.form.title.general-indicators"/>
-</h2>
+</h2> --%>
 
-<table class="table table-sm">
+<%-- <table class="table table-sm">
 	<caption>
 		<acme:message code="administrator.dashboard.form.title.general-indicators"/>
 	</caption>	
@@ -75,7 +75,7 @@
 
 <div>
 	<canvas id="canvas"></canvas>
-</div>
+</div> --%>
 
 <!-- <script type="text/javascript">
 	$(document).ready(function() {
