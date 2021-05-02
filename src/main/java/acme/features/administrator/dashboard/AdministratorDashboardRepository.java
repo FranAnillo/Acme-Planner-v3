@@ -8,17 +8,20 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 	
-	@Query("select count (j) from Task j where j.finish = true")
-	Integer numberOfFinishTask();
+	@Query("select 1.0 * count(j) from Task j where j.finish = 1")
+	Double numberOfFinishTask();
+//	
+//	@Query("select count (j) from Task j where j.finish = 0")
+//	Integer numberNotFinishTask();
 	
-	@Query("select count (j) from Task j where j.finish = false")
-	Integer numberNotFinishTask();
+	@Query("select 1.0 * count(j) from Task j where j.publica = 1")
+	Double numberOfPublicTask(); 
 	
-	@Query("select count (j) from Task j where j.publica = true")
-	Integer numberOfPublicTask();
+	@Query("select 1.0 * count(j) from Task j where j.publica = 0")
+	Double numberOfPrivateTask();
 	
-	@Query("select count (j) from Task j where j.publica = false")
-	Integer numberNotPublicTask();
+
+
 	
 //	@Query("select avg (select sum (t.workload) from Task t")
 //	Double averegeWorkload();
@@ -30,6 +33,10 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 //	Integer minWorkload();
 //	
 	
+	
+	
+	
+		
 	
 	
 	
