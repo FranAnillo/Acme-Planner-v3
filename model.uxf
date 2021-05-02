@@ -299,11 +299,10 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>497</x>
-      <y>280</y>
+      <x>623</x>
+      <y>308</y>
       <w>259</w>
       <h>84</h>
-
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Shout
@@ -313,5 +312,48 @@ Shout
 + text: String {NotBlank}
 + info: String {URL}</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>882</x>
+      <y>161</y>
+      <w>259</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Task
+--
++ title: String {NotBlank, Length 1,80}
++ description: String {NotBlank, Length 1,500}
++ start: Date {Future, NotNull}
++ end: Date {Future, NotNull}
++ link: String {URL}
++ publica: Boolean {NotNull}
++ finish: Boolean {NotNull}
++ workload: Integer {Notnull}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>826</x>
+      <y>203</y>
+      <w>63</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>826</x>
+      <y>133</y>
+      <w>63</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;100.0</additional_attributes>
   </element>
 </diagram>
