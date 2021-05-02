@@ -217,6 +217,7 @@
 	</bean>
 
 	<bean id="shout29" class="acme.entities.shouts.Shout">
+
 		<property name="moment" value="2021/04/30 00:00"/>
 		<property name="author" value="Patrick Foden"/>
 		<property name="text" value="Who seeks shall find"/>
@@ -225,6 +226,7 @@
 
 	<bean id="shout30" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2021/04/28 05:00"/>
+
 		<property name="author" value="Mark Kent"/>
 		<property name="text" value="We live with the scars we choose"/>
 		<property name="info" value="https://www.ebay.com"/>
