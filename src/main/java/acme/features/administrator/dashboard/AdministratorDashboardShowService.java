@@ -27,7 +27,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "numberOfPublicTask", "numberOfPrivateTask", "numberOfFinishTask");
+		request.unbind(entity, model, "numberOfPublicTask", "numberOfPrivateTask", "numberOfFinishTask",
+			"numberOfNotFinishTask", "minimumWorkload", "maximumWorkload", "averageWorkload", "deviationWorkload");
 		
 	}
 
@@ -39,15 +40,31 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double numberOfPublicTask;
 		final Double numberOfPrivateTask;
 		final Double numberOfFinishTask;
+		final Double numberOfNotFinishTask;
+		final Integer minimumWorkload;
+		final Integer maximumWorkload;
+		final Double averageWorkload;
+		final Double deviationWorkload;
 		
 		numberOfPublicTask = this.repository.numberOfPublicTask();
 		numberOfPrivateTask = this.repository.numberOfPrivateTask();
 		numberOfFinishTask = this.repository.numberOfFinishTask();
+		numberOfNotFinishTask = this.repository.numberOfNotFinishTask();
+		minimumWorkload = this.repository.minWorkload();
+		maximumWorkload = this.repository.maxWorkload();
+		averageWorkload = this.repository.averegeWorkload();
+		deviationWorkload = this.repository.deviationWorkload();
 		
 		result = new Dashboard();
 		result.setNumberOfPublicTask(numberOfPublicTask);
 		result.setNumberOfPrivateTask(numberOfPrivateTask);
 		result.setNumberOfFinishTask(numberOfFinishTask);
+		result.setNumberOfNotFinishTask(numberOfNotFinishTask);
+		result.setMinimumWorkload(minimumWorkload);
+		result.setMaximumWorkload(maximumWorkload);
+		result.setAverageWorkload(averageWorkload);
+		result.setDeviationWorkload(deviationWorkload);
+		
 		
 		return result;
 		

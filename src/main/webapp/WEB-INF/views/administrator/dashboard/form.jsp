@@ -35,20 +35,12 @@
 			<acme:print value="${numberOfFinishTask}"/>
 		</td>
 	</tr>
-	<%--<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.number-not-finish-task"/>
-		</th>
-		<td>
-			<acme:print value="${numberNotFinishTask}"/>
-		</td>
-	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.average-workload"/>
+			<acme:message code="administrator.dashboard.form.label.number-of-not-finish-task"/>
 		</th>
 		<td>
-			<acme:print value="${averageWorkload}"/>
+			<acme:print value="${numberOfNotFinishTask}"/>
 		</td>
 	</tr>
 	<tr>
@@ -66,8 +58,25 @@
 		<td>
 			<acme:print value="${maximumWorkload}"/>
 		</td>
-	</tr>					
- --%></table>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.average-workload"/>
+		</th>
+		<td>
+			<acme:print value="${averageWorkload}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviation-workload"/>
+		</th>
+		<td>
+			<acme:print value="${deviationWorkload}"/>
+		</td>
+	</tr>
+						
+ </table>
 
 <h2>
 	<acme:message code="administrator.dashboard.form.title.application-statuses"/>
