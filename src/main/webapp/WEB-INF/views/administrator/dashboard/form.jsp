@@ -3,39 +3,39 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<%-- <h2>
+<h2>
 	<acme:message code="administrator.dashboard.form.title.general-indicators"/>
-</h2> --%>
+</h2> 
 
-<%-- <table class="table table-sm">
+<table class="table table-sm">
 	<caption>
 		<acme:message code="administrator.dashboard.form.title.general-indicators"/>
 	</caption>	
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.number-public-task"/>
+			<acme:message code="administrator.dashboard.form.label.number-of-public-task"/>
 		</th>
 		<td>
-			<acme:print value="${numberPublicTask}"/>
+			<acme:print value="${numberOfPublicTask}"/>
+		</td>
+	</tr>
+	 <tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.number-of-private-task"/>
+		</th>
+		<td>
+			<acme:print value="${numberOfPrivateTask}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.number-private-task"/>
+			<acme:message code="administrator.dashboard.form.label.number-of-finish-task"/>
 		</th>
 		<td>
-			<acme:print value="${numberPrivateTask}"/>
+			<acme:print value="${numberOfFinishTask}"/>
 		</td>
 	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.number-finish-task"/>
-		</th>
-		<td>
-			<acme:print value="${numberFinishTask}"/>
-		</td>
-	</tr>
-	<tr>
+	<%--<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.number-not-finish-task"/>
 		</th>
@@ -67,7 +67,7 @@
 			<acme:print value="${maximumWorkload}"/>
 		</td>
 	</tr>					
-</table>
+ --%></table>
 
 <h2>
 	<acme:message code="administrator.dashboard.form.title.application-statuses"/>
@@ -75,24 +75,10 @@
 
 <div>
 	<canvas id="canvas"></canvas>
-</div> --%>
+</div> 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function() {
-		var data = {
-			labels : [
-					"PENDING", "ACCEPTED", "REJECTED"
-			],
-			datasets : [
-				{
-					data : [
-						<jstl:out value="${ratioOfPendingApplications}"/>, 
-						<jstl:out value="${ratioOfAcceptedApplications}"/>, 
-						<jstl:out value="${ratioOfRejectedApplications}"/>
-					]
-				}
-			]
-		};
 		var options = {
 			scales : {
 				yAxes : [
@@ -119,4 +105,4 @@
 			options : options
 		});
 	});
-</script> -->
+</script> 
