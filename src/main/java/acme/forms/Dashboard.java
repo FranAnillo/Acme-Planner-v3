@@ -12,10 +12,10 @@ public class Dashboard implements Serializable{
 	protected static final long	serialVersionUID	= 1L;
 	
 
-//	Double averegeExcutionPeriods;
-//	Double deviationExcutionPeriods;
-//	Integer minmumExecutionPeriod;
-//	Integer maximumExecutionPeriod;
+	Double averageExecutionPeriods;
+	Double deviationExcutionPeriods;
+	Double minimumExecutionPeriods;
+	Double maximumExecutionPeriods;
 
 
 

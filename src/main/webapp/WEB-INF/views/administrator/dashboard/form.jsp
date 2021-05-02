@@ -75,6 +75,38 @@
 			<acme:print value="${deviationWorkload}"/>
 		</td>
 	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.average-execution-periods"/>
+		</th>
+		<td>
+			<acme:print value="${averageExecutionPeriods}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.maximum-execution-periods"/>
+		</th>
+		<td>
+			<acme:print value="${maximumExecutionPeriods}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.minimum-execution-periods"/>
+		</th>
+		<td>
+			<acme:print value="${minimumExecutionPeriods}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviation-execution-periods"/>
+		</th>
+		<td>
+			<acme:print value="${deviationExcutionPeriods}"/>
+		</td>
+	</tr>
 						
  </table>
 
