@@ -20,6 +20,7 @@ bg=yellow</panel_attributes>
     <coordinates>
       <x>476</x>
       <y>168</y>
+
       <w>56</w>
       <h>42</h>
     </coordinates>
@@ -93,7 +94,6 @@ bg=blue</panel_attributes>
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Administrator
 --
-
 bg=yellow</panel_attributes>
     <additional_attributes/>
   </element>
@@ -355,5 +355,16 @@ Task
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>812</x>
+      <y>63</y>
+      <w>77</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;90.0;10.0</additional_attributes>
   </element>
 </diagram>
