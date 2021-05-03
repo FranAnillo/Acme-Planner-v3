@@ -28,7 +28,7 @@ public class Filter {
 		s.toLowerCase().trim();
 		final List<String> censoredWords= Filter.censoredWords();
 		for(int i = 0; censoredWords.size()>i; i++) {
-		if(s.contains(censoredWords.get(i))) {
+		if(s.contains(censoredWords.get(i).trim())) {
 			return false;
 		}
 			
