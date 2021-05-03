@@ -1,4 +1,4 @@
-package acme.feature.anonymous.task;
+package acme.features.authenticated.task;
 
 import java.util.Collection;
 
@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service;
 import acme.entities.tasks.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
+
 @Service
-public class AnonymousTaskListService implements AbstractListService<Anonymous, Task> {
+public class AuthenticatedTaskListService implements AbstractListService<Authenticated, Task>{
 
 	@Autowired
-	AnonymousTaskRepository repository;
-	
+	AuthenticatedTaskRepository repository;
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
@@ -30,13 +30,13 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "description", "start","end","workload", "public");
+		request.unbind(entity, model, "title", "description", "start","end","workload", "publica");
 		
 	}
 
 	@Override
 	public Collection<Task> findMany(final Request<Task> request) {
-		assert request != null;
+assert request != null;
 		
 		Collection <Task>  result;
 		

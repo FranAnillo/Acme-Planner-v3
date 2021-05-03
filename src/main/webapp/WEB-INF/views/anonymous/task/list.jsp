@@ -5,8 +5,8 @@
 
 <acme:list readonly="true">
 	<acme:list-column code="anonymous.task.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="anonymous.shout.list.label.description" path="description" width="20%"/>
-	<acme:list-column code="anonymous.shout.list.label.start" path="start" width="60%"/>
-	<acme:list-column code="anonymous.shout.list.label.end" path="end" width="20%"/>
-	<acme:list-column code="anonymous.shout.list.label.workload" path="workload" width="20%"/>
+	<acme:list-column code="anonymous.task.list.label.workload" path="workload" width="20%"/>
+	<acme:list-column code="anonymous.task.list.label.description" path="description" width="20%"/>
+	<acme:list-column code="anonymous.task.list.label.start" path="start" width="20%"/>
+	<acme:list-column code="anonymous.task.list.label.end" path="end" width="20%"/>
 </acme:list>

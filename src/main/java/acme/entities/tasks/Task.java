@@ -52,7 +52,10 @@ public class Task extends DomainEntity {
 	protected Boolean finish;
 	
 	@NotNull
-	protected Integer workload;//(){
+	protected Integer workload;
+	
+	
+	//(){
 //		Integer diferencia=0;
 //		if (this.start.isAfter(LocalDateTime.now())) {
 //			diferencia=this.end.compareTo(this.start);
