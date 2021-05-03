@@ -16,8 +16,7 @@ master.banner.background = #FFE97F
 
 master.welcome.title = ¡Bienvenidos!
 master.welcome.text = \
-	Bienvenidos a Acme Stater!  Nunca antes ha sido tan sencillo desarrollar un \
-	proyecto y hacerlo funcionar.
+	Bienvenidos a Acme Planner! Este es Acme Planner, que ayuda al usuario a asignar tareas y también a realizar gritos anónimos.
 
 # master.menu #################################################################
 
