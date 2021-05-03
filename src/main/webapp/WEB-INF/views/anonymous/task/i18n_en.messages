@@ -20,5 +20,3 @@ authenticated.announcement.list.label.description = Description
 authenticated.announcement.list.label.start = Start
 authenticated.announcement.list.label.end = End
 authenticated.announcement.list.label.workload = Workload
-
-
