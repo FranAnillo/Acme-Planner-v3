@@ -1,5 +1,4 @@
-package acme.features.anonymous.task;
-
+package acme.features.managers.task;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,19 +7,19 @@ import org.springframework.stereotype.Service;
 import acme.entities.tasks.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Anonymous;
+import acme.framework.entities.Manager;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AnonymousTaskListService implements AbstractListService<Anonymous, Task> {
-
-	@Autowired
-	AnonymousTaskRepository repository;
+public class ManagerTaskListService implements AbstractListService<Manager, Task> {
 	
+	@Autowired
+	private ManagerTaskRepository repository;
+
 	@Override
 	public boolean authorise(final Request<Task> request) {
 		assert request != null;
-
+		
 		return true;
 	}
 
@@ -29,20 +28,27 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
-		request.unbind(entity, model, "title", "description", "start","end","workload", "publica");
+		
+		request.unbind(entity, model, "title", "start", "end", "workload");
 		
 	}
 
 	@Override
 	public Collection<Task> findMany(final Request<Task> request) {
-		assert request != null;
-		
-		Collection <Task>  result;
-		
-		result = this.repository.findTask();
-
-		return result;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
+//	@Override
+//	public Collection<Task> findMany(final Request<Task> request) {
+//		assert request != null;
+//		
+//		Collection<Task> lista;
+//		Principal principal;
+//		
+//		principal = request.getPrincipal();
+//		lista = this.repository.findMany(principal.getActiveRoleId());
+//		return lista;
+//	}
 }
+
