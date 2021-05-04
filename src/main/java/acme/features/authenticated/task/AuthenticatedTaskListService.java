@@ -1,6 +1,8 @@
 package acme.features.authenticated.task;
 
 import java.util.Collection;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,7 +42,7 @@ assert request != null;
 		
 		Collection <Task>  result;
 		
-		result = this.repository.findTask();
+		result =  this.repository.findTask().stream().sorted(Comparator.comparingInt(Task::getWorkload)).collect(Collectors.toList());
 		
 		return result;
 	}
