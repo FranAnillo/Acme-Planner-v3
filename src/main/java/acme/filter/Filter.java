@@ -25,14 +25,20 @@ public class Filter {
 	return res;
 	}
 	public static boolean filterString(final String s) {
-		s.toLowerCase().trim();
+		int words=1;
+		if (s.contains(" ")) words= s.split(" ").length;
+		 s.toLowerCase().trim();
+		int k = 0;
 		final List<String> censoredWords= Filter.censoredWords();
-		for(int i = 0; censoredWords.size()>i; i++) {
-		if(s.contains(censoredWords.get(i))) {
-			return false;
-		}
+			for(int i = 0; censoredWords.size()>i; i++) {
+				if(s.contains(censoredWords.get(i))) {
+					//return false;
+					k++;
+				}
+			
 			
 		}
+			if (k>0.1*words) return false;
 		return true;
 	}
 }

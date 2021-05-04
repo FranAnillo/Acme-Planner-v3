@@ -16,3 +16,6 @@ anonymous.shout.form.button.return = Return
 anonymous.shout.list.label.moment = Moment
 anonymous.shout.list.label.author = Author
 anonymous.shout.list.label.info= Enlace
+
+anonymous.shout.form.error.text = You have introduced a banned word in the text
+anonymous.shout.form.error.author= You have introduced a banned word in the author

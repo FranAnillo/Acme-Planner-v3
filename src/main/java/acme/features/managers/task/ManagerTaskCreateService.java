@@ -1,7 +1,6 @@
 package acme.features.managers.task;
 
-import java.time.LocalDateTime;
-import java.time.Month;
+import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,11 +52,11 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			assert request != null;
 
 			Task result;
-			LocalDateTime start;
-			LocalDateTime end;
+			final Date start;
+			final Date end;
 
-			start = LocalDateTime.of(2021, Month.MAY, 2, 10, 0);
-			end = LocalDateTime.of(2021, Month.MAY, 8, 14, 0);
+//			start =Date.valueOf( LocalDateTime.of(2021, Month.MAY, 2, 10, 0));
+//			end = LocalDateTime.of(2021, Month.MAY, 8, 14, 0);
 
 			result = new Task();
 			result.setTitle("Task 1");
@@ -87,11 +86,11 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			
 			}
 			else {
-			LocalDateTime start;
-			LocalDateTime end;
+			final Date start;
+			final Date end;
 
-			start = LocalDateTime.of(2021, Month.MAY, 2, 10, 0);
-			end = LocalDateTime.of(2021, Month.MAY, 8, 14, 0);
+//			start = Date.UTC(2021, 5, 2, 10, 0);
+//			end = Date.UTC(2021, 5.MAY, 8, 14, 0);
 			
 //			entity.setStart(start);
 //			entity.setEnd(end);
