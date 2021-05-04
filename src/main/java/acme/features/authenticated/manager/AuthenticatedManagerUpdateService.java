@@ -2,6 +2,7 @@
 package acme.features.authenticated.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.framework.components.Errors;
@@ -14,6 +15,7 @@ import acme.framework.entities.Principal;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractUpdateService;
 
+@Service
 public class AuthenticatedManagerUpdateService implements AbstractUpdateService<Authenticated, Manager> {
 
 	// Internal state ---------------------------------------------------------

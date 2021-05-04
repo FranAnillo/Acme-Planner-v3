@@ -1,3 +1,4 @@
+
 package acme.features.authenticated.manager;
 
 import javax.annotation.PostConstruct;
@@ -13,19 +14,22 @@ import acme.framework.entities.Authenticated;
 
 @Controller
 @RequestMapping("/authenticated/manager/")
-public class AuthenticatedManagerController extends AbstractController<Authenticated, Manager>{
-	
+public class AuthenticatedManagerController extends AbstractController<Authenticated, Manager> {
+
 	// Internal state ---------------------------------------------------------
 
-		@Autowired
-		protected AuthenticatedManagerCreateService	createService;
-		
-		// Constructors -----------------------------------------------------------
+	@Autowired
+	protected AuthenticatedManagerCreateService	createService;
 
+	@Autowired
+	protected AuthenticatedManagerUpdateService	updateService;
 
-		@PostConstruct
-		protected void initialise() {
-			super.addBasicCommand(BasicCommand.CREATE, this.createService);
-		}
+	// Constructors -----------------------------------------------------------
+
+	@PostConstruct
+	protected void initialise() {
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+	}
 
 }
