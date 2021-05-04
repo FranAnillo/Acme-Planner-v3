@@ -132,7 +132,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		for(int i = 0; i<lista.size();i++) {
 			deviation = deviation + Math.pow(lista.get(i) - average, 2);
 		}
-		return Math.sqrt(deviation/lista.size());
+		return Math.sqrt(deviation/(lista.size()-1));
 		
 	}
 

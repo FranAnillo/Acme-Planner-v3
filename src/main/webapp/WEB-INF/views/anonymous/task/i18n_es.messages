@@ -8,13 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.announcement.form.label.author = Autor:
-authenticated.announcement.form.label.text = Texto:
-authenticated.announcement.form.label.info = Informacion:
-authenticated.announcement.form.label.create = Crear:
-authenticated.announcement.form.buton.return = Volver:
-
-
 anonymous.task.list.label.title = Titulo
 anonymous.task.list.label.description = Descripcion
 anonymous.task.list.label.start = Comienzo

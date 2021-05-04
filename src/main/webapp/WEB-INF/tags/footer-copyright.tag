@@ -22,4 +22,5 @@
 	<jsp:useBean id="date" class="java.util.Date"/>
 	Copyright &copy;
 	<acme:format value="${date}" format="{0,date,yyyy}"/>
+	<acme:message code="${code}"/>
 </div>
