@@ -16,6 +16,6 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-submit test="${command == 'create'}" code="authenticated.consumer.consumer.form.button.create" action="/authenticated/manager/create"/>
-	<acme:form-return code="authenticated.consumer.consumer.form.button.return"/>
+	<acme:form-submit test="${command == 'create'}" code="authenticated.manager.manager.form.button.create" action="/authenticated/manager/create"/>
+	<acme:form-return code="authenticated.manager.manager.form.button.return"/>
 </acme:form>
