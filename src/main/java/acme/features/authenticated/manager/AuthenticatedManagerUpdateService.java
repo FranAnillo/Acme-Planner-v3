@@ -67,7 +67,7 @@ public class AuthenticatedManagerUpdateService implements AbstractUpdateService<
 		principal = request.getPrincipal();
 		userAccountId = principal.getAccountId();
 
-		result = this.repository.findOneConsumerByUserAccountId(userAccountId);
+		result = this.repository.findOneManagerByUserAccountId(userAccountId);
 
 		return result;
 	}
