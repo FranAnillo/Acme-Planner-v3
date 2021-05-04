@@ -8,15 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.announcement.form.label.author = Author:
-anonymous.announcement.form.label.text = Text:
-anonymous.announcement.form.label.info = Info:
-anonymous.announcement.form.label.create = Create:
-anonymous.announcement.form.buton.return = Return:
-
-
 anonymous.task.list.label.title = Title
 anonymous.task.list.label.description = Description
 anonymous.task.list.label.start = Start
 anonymous.task.list.label.end = End
 anonymous.task.list.label.workload = Workload
+
+anonymous.task.label.title = Title
+anonymous.task.label.description = Description
+anonymous.task.start = Start
+anonymous.task.end = End
+anonymous.task.label.workload = Workload
+anonymous.task.label.link=Link
+
+anonymous.task.button.return=Return

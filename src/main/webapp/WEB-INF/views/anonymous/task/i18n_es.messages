@@ -14,5 +14,10 @@ anonymous.task.list.label.start = Comienzo
 anonymous.task.list.label.end = Finalizacion
 anonymous.task.list.label.workload = Carga de trabajo
 
+anonymous.task.label.title = Titulo
+anonymous.task.label.description = Descripcion
+anonymous.task.label.start = Comienzo
+anonymous.task.label.end = Finalizacion
+anonymous.task.label.workload = Carga de trabajo
 
-
+anonymous.task.button.return= Volver

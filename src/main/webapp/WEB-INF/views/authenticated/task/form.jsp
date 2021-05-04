@@ -6,14 +6,13 @@
 <acme:form>
 	<acme:form-hidden path="taskId"/>
 
-	<acme:form-textbox code="anonymous.task.label.reference" path="reference" readonly="true"/>
-		<acme:form-textbox code="anonymous.task.label.title" path="title"/>
-		<acme:form-textbox code="anonymous.task.label.description" path="description"/>
-	<acme:form-textarea code="anonymous.task.label.workload" path="workload" />
-	<acme:form-textarea code="anonymous.task.start" path="start"/>
-	<acme:form-textarea code="worker.application.label.end" path="end"/>	
-	<acme:form-textarea code="worker.application.label.link" path="link"/>			
-	<acme:form-textarea code="worker.application.label.period" path="period"/>		
+		<acme:form-textbox code="authenticated.task.label.title" path="title" readonly="true"/>
+		<acme:form-textbox code="authenticated.task.label.description" path="description" readonly="true"/>
+	<acme:form-textarea code="authenticated.task.label.workload" path="workload" readonly="true"/>
+	<acme:form-textarea code="authenticated.task.start" path="start" readonly="true"/>
+	<acme:form-textarea code="authenticated.task.label.end" path="end" readonly="true"/>	
+	<acme:form-textarea code="authenticated.task.label.link" path="link" readonly="true"/>			
 		
-	<acme:form-return code="worker.application.button.return"/>	
+	<acme:form-return code="authenticated.task.button.return"/>	
 </acme:form>
+
