@@ -973,7 +973,7 @@ INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousAnonymou
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorUserAccount = acme.framework.entities.UserAccount{id=3, version=0}
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAdministrator = acme.framework.entities.Administrator{id=4, version=0}
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAuthenticated = acme.framework.entities.Authenticated{id=5, version=0}
-INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down..
 INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on LAPTOP-N0RHD6ME with PID 488 (C:\Users\ninov\OneDrive\Escritorio\Workspace-21.1\Projects\Acme-Planner\target\classes started by ninov in C:\Users\ninov\OneDrive\Escritorio\Workspace-21.1\Projects\Acme-Planner)
 INFO [acme.Launcher] The following profiles are active: development,populator
 INFO [acme.Launcher] Started Launcher in 11.226 seconds (JVM running for 11.942)
@@ -1552,7 +1552,9 @@ INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorUser
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAdministrator = acme.framework.entities.Administrator{id=4, version=0}
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAuthenticated = acme.framework.entities.Authenticated{id=5, version=0}
 INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
-INFO [acme.Launcher] Started Launcher in 20.677 seconds (JVM running for 22.567)
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on LAPTOP-QLM6LFEK with PID 12564 (C:\Users\Francisco\Desktop\Workspace-21.1\Projects\Acme-Planner\target\classes started by Francisco in C:\Users\Francisco\Desktop\Workspace-21.1\Projects\Acme-Planner)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 17.241 seconds (JVM running for 18.472)
 INFO [acme.framework.utilities.DatabasePopulator] Populating sample data
 INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
 INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/initial-data.xml
@@ -1813,12 +1815,3 @@ INFO [acme.framework.utilities.DatabasePopulator] > Persisting task46 = acme.ent
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting task47 = acme.entities.tasks.Task{id=82, version=0}
 INFO [acme.framework.utilities.DatabasePopulator] > Persisting task48 = acme.entities.tasks.Task{id=83, version=0}
 INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
-ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
-ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
-ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: acme.framework.helpers.Assert.state(Assert.java:45): Acceso no autorizado
-ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
-ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
-ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
-ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404
-ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
-ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 404

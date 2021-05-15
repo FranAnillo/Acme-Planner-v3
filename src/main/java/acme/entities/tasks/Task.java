@@ -57,6 +57,5 @@ public class Task extends DomainEntity {
 	
 	@NotNull
 	protected Integer workload;
-	
 }
 

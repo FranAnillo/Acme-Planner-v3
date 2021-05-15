@@ -10,6 +10,9 @@
 
 This is Acme Planner, which help the user to assign tasks and also make anonymous shouts.
 
+Acme Planner evaluates tasks which can stablish a date for the start of a task and the end
+of a task.But you can end a task before the end of the task. 
+
 Github repository: https://github.com/FranAnillo/Acme-Planner.git
 
-Release: 
+Release: https://github.com/FranAnillo/Acme-Planner/releases/tag/V.1.1

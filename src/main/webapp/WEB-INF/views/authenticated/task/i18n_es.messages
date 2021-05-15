@@ -11,5 +11,14 @@
 authenticated.task.list.label.title = Título
 authenticated.task.list.label.description = Descripción
 authenticated.task.list.label.start =Inicio
-authenticated.task.list.label.end= Finak
+authenticated.task.list.label.end= Final
 authenticated.task.list.label.workload = Carga de trabajo
+
+authenticated.task.label.title = Título
+authenticated.task.label.description = Descripción
+authenticated.task.start =Inicio
+authenticated.task.label.end= Final
+authenticated.task.label.workload = Carga de trabajo
+authenticated.task.label.link=Enlace
+
+authenticated.task.button.return= Volver

@@ -13,3 +13,12 @@ authenticated.task.list.label.description = Description
 authenticated.task.list.label.start =Start
 authenticated.task.list.label.end= End
 authenticated.task.list.label.workload = Workload
+
+authenticated.task.label.title = Title
+authenticated.task.label.description = Description
+authenticated.task.start =Start
+authenticated.task.label.end= End
+authenticated.task.label.workload = Workload
+authenticated.task.label.link=Link
+
+authenticated.task.button.return= Return

@@ -16,7 +16,8 @@ master.banner.background = #FFE97F
 
 master.welcome.title = ¡Bienvenidos!
 master.welcome.text = \
-	Bienvenidos a Acme Planner! Este es Acme Planner, que ayuda al usuario a asignar tareas y también a realizar gritos anónimos.
+	Bienvenidos a Acme Stater!  Nunca antes ha sido tan sencillo desarrollar un \
+	proyecto y hacerlo funcionar.
 
 # master.menu #################################################################
 
@@ -86,12 +87,12 @@ master.footer.label.spanish = Español
 
 master.company.title = La compañía
 master.company.text = \
-	Starter Project, Inc. es una compañía fictícia que proporciona un proyecto \
-	plantilla para los estudiantes de la asignatura Diseño y Pruebas, en el Grado \
+	Acme Planner es un proyecto \
+	para la asignatura Diseño y Pruebas, en el Grado \
 	en Ingeniería del Software de la Universidad de Sevilla.
-master.company.name = Starter Project, Inc.
-master.company.address = Calle, número, Ciudad, Estado, País
-master.company.phone = +000 123 456
+master.company.name = Acme-Planner
+master.company.address = Reina Mercedes, Nº10, Sevilla, España
+master.company.phone = +34 123 456 789
 master.company.email = contact@acme.com
 
 # master.license ##############################################################
