@@ -63,9 +63,11 @@ public class Task extends DomainEntity {
 
 	// Relationships ----------------------------------------------------------
 
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	protected Manager manager;
+
 }
 
