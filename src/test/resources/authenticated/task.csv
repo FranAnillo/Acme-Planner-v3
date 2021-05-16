@@ -1,3 +1,2 @@
-title,description,start,end,workload
-Political,The free status relates,23/10/2021 6:00,24/10/2022 10:00,100
-Work,The free status relates,02/11/2021 2:00,03/11/2022 4:00,100
+recordIndex,title,description,start,end,link,publica,finish,workload
+0,Life,"Thus one can link two tasks, the spiritual and the physical",2021/10/15 02:00,2022/10/16 01:00,"",true,true,100
