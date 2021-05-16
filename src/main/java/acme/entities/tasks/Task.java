@@ -60,8 +60,10 @@ public class Task extends DomainEntity {
 	
 	@NotNull
 	protected Integer workload;
-	
+
 	// Relationships ----------------------------------------------------------
+
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)

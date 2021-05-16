@@ -35,20 +35,17 @@ public class ManagerTaskListService implements AbstractListService<Manager, Task
 
 	@Override
 	public Collection<Task> findMany(final Request<Task> request) {
-		// TODO Auto-generated method stub
-		return null;
+		assert request != null;		
+		
+		Collection<Task> result;
+		int workerId;
+
+		workerId = request.getPrincipal().getActiveRoleId();
+		result = this.repository.findManyTasksByManager(workerId);
+		
+		return result;
 	}
 
-//	@Override
-//	public Collection<Task> findMany(final Request<Task> request) {
-//		assert request != null;
-//		
-//		Collection<Task> lista;
-//		Principal principal;
-//		
-//		principal = request.getPrincipal();
-//		lista = this.repository.findMany(principal.getActiveRoleId());
-//		return lista;
-//	}
+
 }
 
