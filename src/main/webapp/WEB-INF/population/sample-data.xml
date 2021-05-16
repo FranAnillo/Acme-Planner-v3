@@ -712,5 +712,5 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
-	</bean>	
+	
 </beans>

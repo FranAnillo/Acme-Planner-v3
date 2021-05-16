@@ -8,17 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.task.list.label.title = Title
-anonymous.task.list.label.description = Description
-anonymous.task.list.label.start = Start
-anonymous.task.list.label.end = End
-anonymous.task.list.label.workload = Workload
+manager.task.list.label.title = Title
+manager.task.list.label.description = Description
+manager.task.list.label.start = Start
+manager.task.list.label.end = End
+manager.task.list.label.workload = Workload
 
-anonymous.task.label.title = Title
-anonymous.task.label.description = Description
-anonymous.task.start = Start
-anonymous.task.end = End
-anonymous.task.label.workload = Workload
-anonymous.task.label.link=Link
+manager.task.label.title = Title
+manager.task.label.description = Description
+manager.task.start = Start
+manager.task.end = End
+manager.task.label.workload = Workload
+manager.task.label.link=Link
 
-anonymous.task.button.return=Return
+manager.task.button.return=Return

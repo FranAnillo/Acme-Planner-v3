@@ -1,5 +1,5 @@
 <%--
-- footer-copyright.tag
+- form.jsp
 -
 - Copyright (C) 2012-2021 Rafael Corchuelo.
 -
@@ -10,17 +10,12 @@
 - they accept any liabilities with respect to them.
 --%>
 
-<%@tag language="java" body-content="empty" 
- 	import="java.util.Collection,java.util.ArrayList,java.util.Map,javax.servlet.jsp.tagext.JspFragment"%>
+<%@page language="java"%>
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<%@attribute name="code" required="true" type="java.lang.String"%>
-
-<div style="font-size: 80%">
-	<jsp:useBean id="date" class="java.util.Date"/>
-	Copyright &copy;
-	<acme:format value="${date}" format="{0,date,yyyy}"/>
-	<acme:message code="${code}"/>
-</div>
+<acme:form>
+	<acme:form-submit test="${command == 'create'}" code="authenticated.manager.manager.form.button.create" action="/authenticated/manager/create"/>
+	<acme:form-return code="authenticated.manager.manager.form.button.return"/>
+</acme:form>
