@@ -1889,3 +1889,155 @@ WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-
 WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
 WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] SQL Error: 0, SQLState: null
+ERROR [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] HikariPool-1 - Connection is not available, request timed out after 30003ms.
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[jsp]] at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:695): HikariPool-1 - Connection is not available, request timed out after 30003ms.
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:695): HikariPool-1 - Connection is not available, request timed out after 30003ms.
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/master/panic HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014): Request processing failed; nested exception is org.apache.tiles.request.render.CannotRenderException: ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.apache.tiles.impl.BasicTilesContainer.render(BasicTilesContainer.java:399): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.apache.tiles.request.servlet.ServletUtil.wrapServletException(ServletUtil.java:61): ServletException including path '/WEB-INF/views/framework/page.jsp'.
+org.apache.jasper.el.JspValueExpression.getValue(JspValueExpression.java:123): /WEB-INF/tags/debug-principal.tag(19,1) '${PrincipalHelper.get()}' org.springframework.dao.DataAccessResourceFailureException: Unable to acquire JDBC Connection; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:255): Unable to acquire JDBC Connection; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection
+org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:48): Unable to acquire JDBC Connection
+com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:695): HikariPool-1 - Connection is not available, request timed out after 30003ms.
+ERROR [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [administrator]
+WARN [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [administrator]
+ERROR [org.springframework.boot.SpringApplication] at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788): Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [administrator]
+at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421): [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing table [administrator]
+at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:121): Schema-validation: missing table [administrator]
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on LAPTOP-QLM6LFEK with PID 2448 (C:\Users\Francisco\Desktop\Workspace-21.1\Projects\Acme-Planner\target\classes started by Francisco in C:\Users\Francisco\Desktop\Workspace-21.1\Projects\Acme-Planner)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 13.832 seconds (JVM running for 15.004)
+INFO [acme.framework.utilities.DatabasePopulator] Populating initial data
+INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
+INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/initial-data.xml
+INFO [acme.framework.utilities.DatabasePopulator] Validating your entities.
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousAnonymous ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAdministrator ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Sorting your entities topologically.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 0 for anonymousUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 1 for anonymousAnonymous.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 2 for administratorUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 3 for administratorAdministrator.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 4 for administratorAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] Persiting your entities.
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousUserAccount = acme.framework.entities.UserAccount{id=1, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousAnonymous = acme.framework.entities.Anonymous{id=2, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorUserAccount = acme.framework.entities.UserAccount{id=3, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAdministrator = acme.framework.entities.Administrator{id=4, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAuthenticated = acme.framework.entities.Authenticated{id=5, version=0}
+INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO [acme.Launcher] Starting Launcher using Java 1.8.0_281 on LAPTOP-QLM6LFEK with PID 15448 (C:\Users\Francisco\Desktop\Workspace-21.1\Projects\Acme-Planner\target\classes started by Francisco in C:\Users\Francisco\Desktop\Workspace-21.1\Projects\Acme-Planner)
+INFO [acme.Launcher] The following profiles are active: development,populator
+INFO [acme.Launcher] Started Launcher in 12.864 seconds (JVM running for 14.123)
+INFO [acme.framework.utilities.DatabasePopulator] Populating initial data
+INFO [acme.framework.utilities.DatabasePopulator] Recreating schema
+INFO [acme.framework.utilities.DatabasePopulator] Populating entities from classpath:/WEB-INF/population/initial-data.xml
+INFO [acme.framework.utilities.DatabasePopulator] Validating your entities.
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating anonymousAnonymous ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorUserAccount ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAdministrator ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Validating administratorAuthenticated ... PASS
+INFO [acme.framework.utilities.DatabasePopulator] Sorting your entities topologically.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 0 for anonymousUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 1 for anonymousAnonymous.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 2 for administratorUserAccount.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 3 for administratorAdministrator.
+INFO [acme.framework.utilities.DatabasePopulator] > Setting index 4 for administratorAuthenticated.
+INFO [acme.framework.utilities.DatabasePopulator] Persiting your entities.
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousUserAccount = acme.framework.entities.UserAccount{id=1, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting anonymousAnonymous = acme.framework.entities.Anonymous{id=2, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorUserAccount = acme.framework.entities.UserAccount{id=3, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAdministrator = acme.framework.entities.Administrator{id=4, version=0}
+INFO [acme.framework.utilities.DatabasePopulator] > Persisting administratorAuthenticated = acme.framework.entities.Authenticated{id=5, version=0}
+INFO [acme.framework.configuration.ShutdownConfiguration] The system is shutting down...
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+ERROR [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/Acme-Planner].[dispatcherServlet]] at acme.framework.utilities.RememberMeLogoutHandler.logout(RememberMeLogoutHandler.java:31): java.lang.AssertionError
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] HTTP GET /Acme-Planner/WEB-INF/views/framework/page.jsp HTTP/1.1
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Status: 500
+ERROR [org.apache.jsp.WEB_002dINF.views.framework.panic_jsp] Exception: org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:200): Filter execution threw an exception
+java.lang.AssertionError
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+WARN [org.hibernate.orm.connections.pooling] HHH10001002: Using Hibernate built-in connection pool (not for production use!)
