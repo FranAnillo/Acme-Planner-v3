@@ -1,15 +1,3 @@
-/*
- * StarterProjectTest.java
- *
- * Copyright (C) 2012-2021 Rafael Corchuelo.
- *
- * In keeping with the traditional purpose of furthering education and research, it is
- * the policy of the copyright owner to permit non-commercial use and redistribution of
- * this software. It has been tested carefully, but it is not guaranteed for any particular
- * purposes. The copyright owner does not offer any warranties or representations, nor do
- * they accept any liabilities with respect to them.
- */
-
 package acme.testing;
 
 import org.hibernate.internal.util.StringHelper;
@@ -58,13 +46,12 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		super.checkSimplePath("/master/welcome");
 	}
 
-	protected void signUp(final String username, final String password, final String name, final String surname, final String email, final String phone) {
+	protected void signUp(final String username, final String password, final String name, final String surname, final String email) {
 		assert !StringHelper.isBlank(username);
 		assert !StringHelper.isBlank(password);
 		assert !StringHelper.isBlank(name);
 		assert !StringHelper.isBlank(surname);
 		assert !StringHelper.isBlank(email);
-		// phone is nullable
 
 		super.navigateHome();
 		super.clickOnMenu("Sign up", null);	
@@ -73,7 +60,7 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		super.fillInputBoxIn("confirmation", password);
 		super.fillInputBoxIn("identity.name", name);
 		super.fillInputBoxIn("identity.surname", surname);
-		super.fillInputBoxIn("identity.email", email);		
+		super.fillInputBoxIn("identity.email", email);
 		super.fillInputBoxIn("accept", "true");
 		super.clickOnSubmitButton("Sign up");
 		super.checkSimplePath("/master/welcome");

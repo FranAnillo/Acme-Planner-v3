@@ -26,6 +26,7 @@ master.menu.sign-up = Registrarse
 master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 master.menu.task = Tareas
+master.menu.authenticated= Registrado
 
 # master.menu.anonymous #######################################################
 

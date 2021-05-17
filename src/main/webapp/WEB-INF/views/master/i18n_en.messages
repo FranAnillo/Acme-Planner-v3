@@ -24,7 +24,8 @@ master.menu.home = Home
 master.menu.sign-up = Sign up
 master.menu.sign-in = Sign in
 master.menu.sign-out = Sign out
-master.menu.task= Tasks
+master.menu.task=Tasks
+master.menu.authenticated=Authenticated
 
 # master.menu.anonymous #######################################################
 

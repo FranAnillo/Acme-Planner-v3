@@ -1,6 +1,49 @@
 package acme.features.managers.task;
 
-//public class ManagerTaskDeleteService implements AbstractDeleteService<Manager,Task>{
+import acme.entities.roles.Manager;
+import acme.entities.tasks.Task;
+import acme.framework.components.Errors;
+import acme.framework.components.Model;
+import acme.framework.components.Request;
+import acme.framework.services.AbstractDeleteService;
+
+public class ManagerTaskDeleteService implements AbstractDeleteService<Manager,Task>{
+
+	@Override
+	public boolean authorise(final Request<Task> request) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void bind(final Request<Task> request, final Task entity, final Errors errors) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void unbind(final Request<Task> request, final Task entity, final Model model) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Task findOne(final Request<Task> request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void validate(final Request<Task> request, final Task entity, final Errors errors) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(final Request<Task> request, final Task entity) {
+		// TODO Auto-generated method stub
+		
+	}
 //	// Internal state ---------------------------------------------------------
 //
 //		@Autowired
@@ -18,11 +61,11 @@ package acme.features.managers.task;
 //		
 //		taskId = request.getModel().getInteger("id");
 //		task = this.repository.findOneTaskById(taskId);
-//		manager = task.getManager();
+////		manager = task.getManager();
 //		principal = request.getPrincipal();
-//		result= manager.getUserAccount().getId() == principal.getAccountId();
+////		result= manager.getUserAccount().getId() == principal.getAccountId();
 //		
-//		return result;
+////		return result;
 //	}
 //
 //	@Override
@@ -71,5 +114,5 @@ package acme.features.managers.task;
 //
 //		this.repository.delete(entity);
 //	}
-//
-//}
+
+}
