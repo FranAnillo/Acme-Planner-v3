@@ -22,3 +22,4 @@ manager.task.label.workload = Workload
 manager.task.label.link=Link
 
 manager.task.button.return=Return
+manager.task.form.button.create = create

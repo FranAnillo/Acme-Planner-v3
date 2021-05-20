@@ -21,3 +21,4 @@ manager.task.label.end = Finalizacion
 manager.task.label.workload = Carga de trabajo
 
 manager.task.button.return= Volver
+manager.task.button.create = Crear
