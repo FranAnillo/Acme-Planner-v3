@@ -9,8 +9,7 @@ public class AnonymousTaskTest extends AcmePlannerTest{
 	@CsvFileSource(resources = "/anonymous/task/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)	
 	public void AnonymousTaskListPositive(final int recordIndex, final String title, 
-		final String description, final String start,final String end, final String link,final String publica,final String finish,
-		final String workload) {		
+		final String workload,final String description,final String start,final String end) {		
 				
 		super.clickOnMenu("Anonymous", "Tasks");		
 		
@@ -26,10 +25,7 @@ public class AnonymousTaskTest extends AcmePlannerTest{
 		super.checkInputBoxHasValue("description",description);	
 		super.checkInputBoxHasValue("start",start);
 		super.checkInputBoxHasValue("end",end);
-	//	super.checkInputBoxHasValue("link", link);
-	//	super.checkInputBoxHasValue("publica", publica);
-	//	super.checkInputBoxHasValue("finish",finish);
-	//	super.checkInputBoxHasValue("workload",workload);
+		super.checkInputBoxHasValue("workload",workload);
 
 
 		
