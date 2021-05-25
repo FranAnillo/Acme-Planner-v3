@@ -15,4 +15,4 @@ of a task.But you can end a task before the end of the task.
 
 Github repository: https://github.com/FranAnillo/Acme-Planner.git
 
-Release: https://github.com/FranAnillo/Acme-Planner/releases/tag/V.1.1
+Release: https://github.com/FranAnillo/Acme-Planner/releases/tag/2.0.0
