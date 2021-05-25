@@ -1,6 +1,7 @@
 package acme.testing;
 
 import org.hibernate.internal.util.StringHelper;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
 public abstract class AcmePlannerTest extends AcmeTest {
@@ -79,6 +80,12 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		super.fillInputBoxIn("accept", "true");
 		super.clickOnSubmitButton("Sign up");
 		super.checkSimplePath("/anonymous/user-account/create");
+	}
+	@Override
+	@AfterAll
+	public void afterAll() {
+		this.signIn("administrator", "administrator");
+		super.clickOnMenu("Administrator", "Shut down");
 	}
 
 }
