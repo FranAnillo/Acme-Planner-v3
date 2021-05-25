@@ -12,8 +12,9 @@ public class ManagerCreateTask extends AcmePlannerTest {
 	public void create(final String title, final String description,final String workload,final String start, final String end, final String link) {		
 		
 		super.signIn("administrator", "administrator");
-		super.clickOnMenu("Account", "Become a Manager");
-		super.clickOnMenu("Manager", "Tasks");	
+		super.clickOnMenu("Account", "Become a manager");
+		super.clickOnSubmitButton("Register");
+		super.clickOnMenu("Manager", "Create Task");	
 		
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
@@ -23,7 +24,7 @@ public class ManagerCreateTask extends AcmePlannerTest {
 		super.fillInputBoxIn("workload",workload);
 		super.fillInputBoxIn("link",link);
 		super.clickOnSubmitButton("Create");
-		super.checkSimplePath("/manager/task");
+		super.checkSimplePath("/master/welcome");
 		super.signOut();
 	}
 	
@@ -33,8 +34,7 @@ public class ManagerCreateTask extends AcmePlannerTest {
 	public void createNegative(final String title, final String description,final String workload,final String start, final String end, final String link) {
 		
 		super.signIn("administrator", "administrator");
-		super.clickOnMenu("Account", "Become a Manager");
-		super.clickOnMenu("Manager", "Tasks");	
+		super.clickOnMenu("Manager", "Create Task");	
 		
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
@@ -44,9 +44,8 @@ public class ManagerCreateTask extends AcmePlannerTest {
 		super.fillInputBoxIn("workload",workload);
 		super.fillInputBoxIn("link",link);
 		super.clickOnSubmitButton("Create");
-		super.checkSimplePath("/manager/task");
+		super.checkSimplePath("/manager/task/create");
 		super.signOut();
 
 	}
-
 }
