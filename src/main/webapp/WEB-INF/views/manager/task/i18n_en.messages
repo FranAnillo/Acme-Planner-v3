@@ -13,6 +13,8 @@ manager.task.list.label.description = Description
 manager.task.list.label.start = Start
 manager.task.list.label.end = End
 manager.task.list.label.workload = Workload
+manager.task.error.workload =Workload is not correct
+manager.task.error.end =End is before start 
 
 manager.task.label.title = Title
 manager.task.label.description = Description

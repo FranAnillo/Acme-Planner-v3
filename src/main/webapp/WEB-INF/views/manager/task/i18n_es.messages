@@ -13,6 +13,8 @@ manager.task.list.label.description = Descripcion
 manager.task.list.label.start = Comienzo
 manager.task.list.label.end = Finalizacion
 manager.task.list.label.workload = Carga de trabajo
+manager.task.error.workload =La carga de trabajo no es correcta
+manager.task.error.end=La fecha final es anterior a la de comienzo
 
 manager.task.label.title = Titulo
 manager.task.label.description = Descripcion
