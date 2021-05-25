@@ -65,5 +65,20 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		super.clickOnSubmitButton("Sign up");
 		super.checkSimplePath("/master/welcome");
 	}
+	
+	protected void signUpNegative(final String username, final String password, final String name, final String surname, final String email) {
+		
+		super.navigateHome();
+		super.clickOnMenu("Sign up", null);	
+		super.fillInputBoxIn("username", username);
+		super.fillInputBoxIn("password", password);
+		super.fillInputBoxIn("confirmation", password);
+		super.fillInputBoxIn("identity.name", name);
+		super.fillInputBoxIn("identity.surname", surname);
+		super.fillInputBoxIn("identity.email", email);
+		super.fillInputBoxIn("accept", "true");
+		super.clickOnSubmitButton("Sign up");
+		super.checkSimplePath("/anonymous/user-account/create");
+	}
 
 }

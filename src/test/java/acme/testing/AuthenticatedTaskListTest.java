@@ -20,8 +20,6 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 		super.checkColumnHasValue(recordIndex, 1, description);
 		super.checkColumnHasValue(recordIndex, 2, start);
 		super.checkColumnHasValue(recordIndex, 3, end);
-
-
 		
 		super.clickOnListingRecord(recordIndex);
 		
@@ -29,7 +27,7 @@ public class AuthenticatedTaskListTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("start", start);
 		super.checkInputBoxHasValue("end", end);
-		//super.checkInputBoxHasValue("workload", workload);
+		super.checkInputBoxHasValue("workload", workload);
 		
 		super.signOut();
 	}
