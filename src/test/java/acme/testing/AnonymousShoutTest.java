@@ -6,6 +6,8 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 public class AnonymousShoutTest extends AcmePlannerTest {
 	
+	//Este metodo prueba que se muestre una lista de los Shout
+	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/shoutList.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)	
@@ -18,6 +20,8 @@ public class AnonymousShoutTest extends AcmePlannerTest {
 		super.checkColumnHasValue(recordIndex, 2, text);
 		
 	}
+	
+	//Este metodo prueba el caso positivo de la creacion de un Shout
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/createShout.csv", encoding = "utf-8", numLinesToSkip = 1)
@@ -33,6 +37,8 @@ public class AnonymousShoutTest extends AcmePlannerTest {
 		super.checkSimplePath("/master/welcome");
 		
 	}
+	
+	//Este metodo prueba el caso negativo de la creacion de un Shout
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/createShoutN.csv", encoding = "utf-8", numLinesToSkip = 1)
