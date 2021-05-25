@@ -1,6 +1,7 @@
 package acme.filter;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Filter {
@@ -37,6 +38,11 @@ public class Filter {
 		if(((float)numberBannedWords/number)*100>10) return false;
 		
 		return true;
+	}
+	
+	public static double calculate(final Date start, final Date end) {
+		return (end.getTime() / 3600000) - (start.getTime() / 3600000);
+		
 	}
 
 }

@@ -13,7 +13,7 @@
 	<acme:form-textarea code="manager.task.start" path="start" />
 	<acme:form-textarea code="manager.task.end" path="end" />
 	<acme:form-textarea code="manager.task.label.link" path="link" />
-
+	<acme:form-checkbox code="manager.task.label.publica" path="publica"/>
 	<acme:form-submit code="manager.task.form.button.create"
 		action="/manager/task/create" />
 	<acme:form-return code="manager.task.button.return" />

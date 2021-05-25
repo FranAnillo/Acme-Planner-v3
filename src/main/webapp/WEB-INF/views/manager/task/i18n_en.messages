@@ -21,5 +21,6 @@ manager.task.end = End
 manager.task.label.workload = Workload
 manager.task.label.link=Link
 
+manager.task.label.publica=public
 manager.task.button.return=Return
 manager.task.form.button.create = create
