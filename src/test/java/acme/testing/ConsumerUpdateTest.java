@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 public class ConsumerUpdateTest extends AcmePlannerTest {
+	//Este metodo prueba que se actualice un consumidor correctamente con los datos pertinentes 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/consumer/update.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)	
