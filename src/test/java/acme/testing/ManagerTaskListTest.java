@@ -10,10 +10,9 @@ public class ManagerTaskListTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/task.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
-	public void ManagerTaskListPositive(final int recordIndex, final String title, final String workload, final String description, final String start, final String end) {
+	public void ManagerTaskList(final int recordIndex, final String title, final String workload, final String description, final String start, final String end, final String link) {
 
-		super.signIn("administrator", "administrator");
-		super.clickOnMenu("Account", "Become a Manager");
+		super.signIn("manager1", "manager1");
 		super.clickOnMenu("Manager", "Tasks");
 
 		super.checkColumnHasValue(recordIndex, 0, title);
@@ -29,5 +28,7 @@ public class ManagerTaskListTest extends AcmePlannerTest {
 		super.checkInputBoxHasValue("start", start);
 		super.checkInputBoxHasValue("end", end);
 		super.checkInputBoxHasValue("workload", workload);
+		
+		super.signOut();
 	}
 }
