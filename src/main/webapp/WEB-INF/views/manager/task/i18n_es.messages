@@ -22,6 +22,7 @@ manager.task.label.start = Comienzo
 manager.task.label.end = Finalizacion
 manager.task.label.workload = Carga de trabajo
 
-manager.task.label.publica=publica
+manager.task.label.publica=Publica
 manager.task.button.return= Volver
 manager.task.form.button.create = Crear
+manager.task.button.delete=Borrar

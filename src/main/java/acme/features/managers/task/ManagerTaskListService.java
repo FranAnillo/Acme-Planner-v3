@@ -15,24 +15,6 @@ import acme.framework.services.AbstractListService;
 
 @Service
 public class ManagerTaskListService implements AbstractListService<Manager, Task> {
-
-//	@Override
-//	public boolean authorise(final Request<Task> request) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public void unbind(final Request<Task> request, final Task entity, final Model model) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public Collection<Task> findMany(final Request<Task> request) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 	
 	@Autowired
 	private ManagerTaskRepository repository;
@@ -51,7 +33,6 @@ public class ManagerTaskListService implements AbstractListService<Manager, Task
 		assert model != null;
 		
 		request.unbind(entity, model, "title", "start","description", "end", "workload");
-		
 	}
 
 	@Override
@@ -61,8 +42,6 @@ public class ManagerTaskListService implements AbstractListService<Manager, Task
 		final List<Task> result=new ArrayList<>();
 		final int workerId=request.getPrincipal().getActiveRoleId();
 
-		//result = this.repository.findManyTasksByManager(workerId);
-		
 		for (final Task task:this.repository.findMany()) {
 			if (task.getManager().equals(this.repository.findOneManagerbyUserAccountById(workerId))) {
 				result.add(task);

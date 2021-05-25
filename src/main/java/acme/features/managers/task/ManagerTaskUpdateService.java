@@ -46,7 +46,6 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert errors != null;
 
 		request.bind(entity, errors);
-		
 	}
 
 	@Override
@@ -56,7 +55,6 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert model != null;
 
 		request.unbind(entity, model, "title", "start","description", "end", "workload");
-		
 	}
 
 	@Override
@@ -80,7 +78,6 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
 	}
 
 	@Override
@@ -89,76 +86,6 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert entity != null;
 
 		this.repository.save(entity);
-		
 	}
-
-	
-
-
-//	@Override
-//	public boolean authorise(final Request<Manager> request) {
-//		assert request != null;
-//
-//		return true;
-//	}
-//
-//	@Override
-//	public void bind(final Request<Manager> request, final Manager entity, final Errors errors) {
-//		assert request != null;
-//		assert entity != null;
-//		assert errors != null;
-//
-//		request.bind(entity, errors);
-//	}
-//
-//	@Override
-//	public void unbind(final Request<Manager> request, final Manager entity, final Model model) {
-//		assert request != null;
-//		assert entity != null;
-//		assert model != null;
-//
-//		request.unbind(entity, model, "title", "start","description", "end", "workload");
-//	}
-//
-//	@Override
-//	public Manager findOne(final Request<Manager> request) {
-//		assert request != null;
-//
-//		Manager result;
-//		Principal principal;
-//		int userAccountId;
-//
-//		principal = request.getPrincipal();
-//		userAccountId = principal.getAccountId();
-//
-//		result = this.repository.findOneManagerbyUserAccountById(userAccountId);
-//
-//		return result;
-//	}
-//
-//	@Override
-//	public void validate(final Request<Manager> request, final Manager entity, final Errors errors) {
-//		assert request != null;
-//		assert entity != null;
-//		assert errors != null;
-//	}
-//
-//	@Override
-//	public void update(final Request<Manager> request, final Manager entity) {
-//		assert request != null;
-//		assert entity != null;
-//
-//		this.repository.save(entity);
-//	}
-//
-//	@Override
-//	public void onSuccess(final Request<Manager> request, final Response<Manager> response) {
-//		assert request != null;
-//		assert response != null;
-//
-//		if (request.isMethod(HttpMethod.POST)) {
-//			PrincipalHelper.handleUpdate();
-//		}
-//	}
 
 }

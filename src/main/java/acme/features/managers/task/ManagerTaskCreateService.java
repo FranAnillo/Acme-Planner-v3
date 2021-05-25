@@ -56,14 +56,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		Manager manager;
 		manager=this.repository.findOneManagerbyUserAccountById(request.getPrincipal().getActiveRoleId());
 
-		//			start =Date.valueOf( LocalDateTime.of(2021, Month.MAY, 2, 10, 0));
-		//			end = LocalDateTime.of(2021, Month.MAY, 8, 14, 0);
-
 		result = new Task();
 		result.setTitle("Task 1");
 		result.setDescription("Description of the taks 2");
-		//			result.setStart(start);
-		//			result.setEnd(end);
 		result.setLink("http://example.org");
 		result.setPublica(false);
 		result.setFinish(false);
@@ -97,12 +92,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			final Date start;
 			final Date end;
 
-			//			start = Date.UTC(2021, 5, 2, 10, 0);
-			//			end = Date.UTC(2021, 5.MAY, 8, 14, 0);
-
-			//			entity.setStart(start);
-			//			entity.setEnd(end);
-			//entity.setPublica(true);
 			entity.setFinish(false);
 			this.repository.save(entity);
 		}

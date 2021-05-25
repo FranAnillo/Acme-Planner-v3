@@ -18,6 +18,7 @@
 		action="/manager/task/create" />
 	<acme:form-return code="manager.task.button.return" />
 
+	<acme:form-submit code="manager.task.button.delete" action="/manager/task/delete"/>
 
 </acme:form>
 
