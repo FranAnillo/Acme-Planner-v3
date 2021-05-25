@@ -8,7 +8,11 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-This is the Starter Project, which is intended to be a core learning asset for the students
-who have enroled the Design and Testing subject of the Software Engineering curriculum of the 
-University of Sevilla.  This project helps them start working on their new information system 
-projects.
+This is Acme Planner, which help the user to assign tasks and also make anonymous shouts.
+
+Acme Planner evaluates tasks which can stablish a date for the start of a task and the end
+of a task.But you can end a task before the end of the task. 
+
+Github repository: https://github.com/FranAnillo/Acme-Planner.git
+
+Release: https://github.com/FranAnillo/Acme-Planner/releases/tag/V.1.1
