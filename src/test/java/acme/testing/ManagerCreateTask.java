@@ -22,7 +22,6 @@ public class ManagerCreateTask extends AcmePlannerTest {
 		super.fillInputBoxIn("link",link);
 		super.clickOnSubmitButton("Create");
 		super.checkSimplePath("/manager/task");
-
 		super.signOut();
 	}
 
