@@ -33,7 +33,7 @@ public class AnonymousShoutTest extends AcmePlannerTest {
 		super.clickOnMenu("Anonymous", "Shout!");
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("text", text);
-		//super.fillInputBoxIn("enlace", enlace);
+		super.fillInputBoxIn("enlace", enlace);
 		super.clickOnSubmitButton("Shout!");
 		super.checkSimplePath("/master/welcome");
 		
