@@ -17,7 +17,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 public class SignUpTest extends AcmePlannerTest {
-	
+
 	@ParameterizedTest
 	@CsvFileSource(resources = "/sign-up/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -25,6 +25,14 @@ public class SignUpTest extends AcmePlannerTest {
 		super.signUp(username, password, name, surname, email);
 		super.signIn(username, password);
 		super.signOut();
+
+	}
 	
-}
+	@ParameterizedTest
+	@CsvFileSource(resources = "/sign-up/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void negativeSignUp(final String username, final String password, final String name, final String surname, final String email) {
+		super.signUpNegative(username, password, name, surname, email);
+
+	}
 }
