@@ -17,7 +17,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 public class SignUpTest extends AcmePlannerTest {
-
+	//Este metodo prueba que un usuario se registra de forma correcta 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/sign-up/positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
@@ -27,7 +27,7 @@ public class SignUpTest extends AcmePlannerTest {
 		super.signOut();
 
 	}
-	
+	//Este metodo prueba que un usuario no se registra de forma correcta 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/sign-up/negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)

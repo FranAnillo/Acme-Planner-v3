@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 public class AuthenticatedTaskListTest extends AcmePlannerTest {
 	
+	//Este método prueba que se liste bien las tareas estando autenticado
 		
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/task.csv", encoding = "utf-8", numLinesToSkip = 1)
