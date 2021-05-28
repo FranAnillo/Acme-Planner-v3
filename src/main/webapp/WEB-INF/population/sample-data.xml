@@ -1,239 +1,392 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--
-- sample-data.xml
--
-- Copyright (C) 2012-2021 Rafael Corchuelo.
--
-- In keeping with the traditional purpose of furthering education and research, it is
-- the policy of the copyright owner to permit non-commercial use and redistribution of
-- this software. It has been tested carefully, but it is not guaranteed for any particular
-- purposes.  The copyright owner does not offer any warranties or representations, nor do
-- they accept any liabilities with respect to them.
--->
+<!-- - sample-data.xml - - Copyright (C) 2012-2021 Rafael Corchuelo. - - 
+	In keeping with the traditional purpose of furthering education and research, 
+	it is - the policy of the copyright owner to permit non-commercial use and 
+	redistribution of - this software. It has been tested carefully, but it is 
+	not guaranteed for any particular - purposes. The copyright owner does not 
+	offer any warranties or representations, nor do - they accept any liabilities 
+	with respect to them. -->
 
-<beans 
-	xmlns="http://www.springframework.org/schema/beans" 
+<beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<import resource="classpath:/WEB-INF/population/conversion-service.xml"/>	
-	
+	<import
+		resource="classpath:/WEB-INF/population/conversion-service.xml" />
+
 	<!-- Shouts -->
 	<bean id="shout01" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/02/13 08:30"/>
-		<property name="author" value="Jhon Doe"/>
-		<property name="text" value="I'm happy!"/>
-		<property name="info"><null/></property>
+		<property name="moment" value="2020/02/13 08:30" />
+		<property name="author" value="Jhon Doe" />
+		<property name="text" value="I'm happy!" />
+		<property name="info">
+			<null />
+		</property>
 	</bean>
 
 	<bean id="shout02" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/08/09 07:55"/>
-		<property name="author" value="Jane Doe"/>
-		<property name="text" value="I'm the master of my room!"/>
-		<property name="info" value="http://www.example.org"/>
+		<property name="moment" value="2020/08/09 07:55" />
+		<property name="author" value="Jane Doe" />
+		<property name="text" value="I'm the master of my room!" />
+		<property name="info" value="http://www.example.org" />
 	</bean>
 
 	<bean id="shout03" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/09/07 00:00"/>
-		<property name="author" value="Foo Bar"/>
-		<property name="text" value="Just turning 50!"/>
-		<property name="info" value="http://1happybirthday.com"/>
+		<property name="moment" value="2020/09/07 00:00" />
+		<property name="author" value="Foo Bar" />
+		<property name="text" value="Just turning 50!" />
+		<property name="info" value="http://1happybirthday.com" />
 	</bean>
 
 	<bean id="shout04" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/09/07 03:00"/>
-		<property name="author" value="James Carter"/>
-		<property name="text" value="Well done is better than well said!"/>
-		<property name="info" value="https://www.google.com"/>
+		<property name="moment" value="2020/09/07 03:00" />
+		<property name="author" value="James Carter" />
+		<property name="text"
+			value="Well done is better than well said!" />
+		<property name="info" value="https://www.google.com" />
 	</bean>
 
 	<bean id="shout05" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/10/07 02:00"/>
-		<property name="author" value="Mary Jane"/>
-		<property name="text" value="Where there is love there is life"/>
-		<property name="info" value="https://www.amazon.com"/>
+		<property name="moment" value="2020/10/07 02:00" />
+		<property name="author" value="Mary Jane" />
+		<property name="text"
+			value="Where there is love there is life" />
+		<property name="info" value="https://www.amazon.com" />
 	</bean>
 
 	<bean id="shout06" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/11/08 03:00"/>
-		<property name="author" value="Paul Pogba"/>
-		<property name="text" value="Once you choose hope, anything’s possible"/>
-		<property name="info" value="https://www.hbo.com"/>
+		<property name="moment" value="2020/11/08 03:00" />
+		<property name="author" value="Paul Pogba" />
+		<property name="text"
+			value="Once you choose hope, anything’s possible" />
+		<property name="info" value="https://www.hbo.com" />
 	</bean>
 
 	<bean id="shout07" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/02/05 02:00"/>
-		<property name="author" value="John Bar"/>
-		<property name="text" value="Try it again. Fail again. Fail better"/>
-		<property name="info" value="https://www.marca.com"/>
+		<property name="moment" value="2020/02/05 02:00" />
+		<property name="author" value="John Bar" />
+		<property name="text"
+			value="Try it again. Fail again. Fail better" />
+		<property name="info" value="https://www.marca.com" />
 	</bean>
 
 	<bean id="shout08" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/05/05 01:00"/>
-		<property name="author" value="Nick Davis"/>
-		<property name="text" value="You change your life by changing your heart"/>
-		<property name="info" value="https://www.as.com"/>
+		<property name="moment" value="2020/05/05 01:00" />
+		<property name="author" value="Nick Davis" />
+		<property name="text"
+			value="You change your life by changing your heart" />
+		<property name="info" value="https://www.as.com" />
 	</bean>
 
 	<bean id="shout09" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/07/03 07:00"/>
-		<property name="author" value="Jaime Vardy"/>
-		<property name="text" value="Dream as if you'll live forever. Live as if you´ll die today"/>
-		<property name="info" value="https://www.bing.com"/>
+		<property name="moment" value="2020/07/03 07:00" />
+		<property name="author" value="Jaime Vardy" />
+		<property name="text"
+			value="Dream as if you'll live forever. Live as if you´ll die today" />
+		<property name="info" value="https://www.bing.com" />
 	</bean>
 
 	<bean id="shout10" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/07/02 06:00"/>
-		<property name="author" value="Kylie Walker"/>
-		<property name="text" value="You only live once"/>
-		<property name="info" value="https://www.as.com"/>
+		<property name="moment" value="2020/07/02 06:00" />
+		<property name="author" value="Kylie Walker" />
+		<property name="text" value="You only live once" />
+		<property name="info" value="https://www.as.com" />
 	</bean>
 
 	<bean id="shout11" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/06/05 01:00"/>
-		<property name="author" value="Joe Hart"/>
-		<property name="text" value="Love as long as you live"/>
-		<property name="info" value="https://www.netflix.com"/>
+		<property name="moment" value="2020/06/05 01:00" />
+		<property name="author" value="Joe Hart" />
+		<property name="text" value="Love as long as you live" />
+		<property name="info" value="https://www.netflix.com" />
 	</bean>
-	
+
 	<bean id="shout12" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/03/06 02:00"/>
-		<property name="author" value="Joe Stones"/>
-		<property name="text" value="I will go anywhere as long as it is forward"/>
-		<property name="info"><null/></property>
+		<property name="moment" value="2020/03/06 02:00" />
+		<property name="author" value="Joe Stones" />
+		<property name="text"
+			value="I will go anywhere as long as it is forward" />
+		<property name="info">
+			<null />
+		</property>
 	</bean>
 
 	<bean id="shout13" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/02/07 03:00"/>
-		<property name="author" value="Scott Pippen"/>
-		<property name="text" value="Without hard work, nothing grows but weeds"/>
-		<property name="info" value="https://www.wikipedia.org"/>
+		<property name="moment" value="2020/02/07 03:00" />
+		<property name="author" value="Scott Pippen" />
+		<property name="text"
+			value="Without hard work, nothing grows but weeds" />
+		<property name="info" value="https://www.wikipedia.org" />
 	</bean>
 
 	<bean id="shout14" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2020/04/08 01:00"/>
-		<property name="author" value="Gary Cahill"/>
-		<property name="text" value="The secret of your success is determined by your daily agenda"/>
-		<property name="info"><null/></property>
+		<property name="moment" value="2020/04/08 01:00" />
+		<property name="author" value="Gary Cahill" />
+		<property name="text"
+			value="The secret of your success is determined by your daily agenda" />
+		<property name="info">
+			<null />
+		</property>
 	</bean>
 
 	<bean id="shout15" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/01/11 01:00"/>
-		<property name="author" value="Jadon Sancho"/>
-		<property name="text" value="If opportunity doesn’t knock, build a door"/>
-		<property name="info" value="https://www.paypal.com"/>
+		<property name="moment" value="2021/01/11 01:00" />
+		<property name="author" value="Jadon Sancho" />
+		<property name="text"
+			value="If opportunity doesn’t knock, build a door" />
+		<property name="info" value="https://www.paypal.com" />
 	</bean>
 
 	<bean id="shout16" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/01/17 03:00"/>
-		<property name="author" value="Dele Alli"/>
-		<property name="text" value="The dreamers are the saviors of the world"/>
-		<property name="info" value="https://www.youtube.com"/>
+		<property name="moment" value="2021/01/17 03:00" />
+		<property name="author" value="Dele Alli" />
+		<property name="text"
+			value="The dreamers are the saviors of the world" />
+		<property name="info" value="https://www.youtube.com" />
 	</bean>
 
 	<bean id="shout17" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/01/31 00:00"/>
-		<property name="author" value="Jules Odonkor"/>
-		<property name="text" value="Turn your wounds into wisdom"/>
-		<property name="info" value="https://www.twitch.tv"/>
+		<property name="moment" value="2021/01/31 00:00" />
+		<property name="author" value="Jules Odonkor" />
+		<property name="text" value="Turn your wounds into wisdom" />
+		<property name="info" value="https://www.twitch.tv" />
 	</bean>
 
 	<bean id="shout18" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/02/09 06:00"/>
-		<property name="author" value="Memphis Deway"/>
-		<property name="text" value="There are no shortcuts to any place worth going"/>
-		<property name="info" value="https://www.informatica.us.es"/>
+		<property name="moment" value="2021/02/09 06:00" />
+		<property name="author" value="Memphis Deway" />
+		<property name="text"
+			value="There are no shortcuts to any place worth going" />
+		<property name="info" value="https://www.informatica.us.es" />
 	</bean>
 
 	<bean id="shout19" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/02/20 09:00"/>
-		<property name="author" value="Paul Walker"/>
-		<property name="text" value="Enthusiasm moves the world"/>
-		<property name="info" value="https://www.twitter.com"/>
+		<property name="moment" value="2021/02/20 09:00" />
+		<property name="author" value="Paul Walker" />
+		<property name="text" value="Enthusiasm moves the world" />
+		<property name="info" value="https://www.twitter.com" />
 	</bean>
 
 	<bean id="shout20" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/02/28 00:00"/>
-		<property name="author" value="Max Smith"/>
-		<property name="text" value="Light tomorrow with today!"/>
-		<property name="info" value="https://www.telegram.com"/>
+		<property name="moment" value="2021/02/28 00:00" />
+		<property name="author" value="Max Smith" />
+		<property name="text" value="Light tomorrow with today!" />
+		<property name="info" value="https://www.telegram.com" />
 	</bean>
 
 	<bean id="shout21" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/03/05 06:00"/>
-		<property name="author" value="Ben Davies"/>
-		<property name="text" value="You cannot have a positive life and a negative mind"/>
-		<property name="info" value="https://www.abc.com"/>
+		<property name="moment" value="2021/03/05 06:00" />
+		<property name="author" value="Ben Davies" />
+		<property name="text"
+			value="You cannot have a positive life and a negative mind" />
+		<property name="info" value="https://www.abc.com" />
 	</bean>
 
 	<bean id="shout22" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/03/14 00:00"/>
-		<property name="author" value="Harry Kent"/>
-		<property name="text" value="Laugh as much as you breathe!"/>
-		<property name="info" value="https://www.facebook.com.com"/>
+		<property name="moment" value="2021/03/14 00:00" />
+		<property name="author" value="Harry Kent" />
+		<property name="text" value="Laugh as much as you breathe!" />
+		<property name="info" value="https://www.facebook.com.com" />
 	</bean>
 
 	<bean id="shout23" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/03/27 02:00"/>
-		<property name="author" value="Ken Davies"/>
-		<property name="text" value="Just turning!"/>
-		<property name="info" value="https://zoom.us"/>
+		<property name="moment" value="2021/03/27 02:00" />
+		<property name="author" value="Ken Davies" />
+		<property name="text" value="Just turning!" />
+		<property name="info" value="https://zoom.us" />
 	</bean>
 
 	<bean id="shout24" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/04/01 04:00"/>
-		<property name="author" value="Barry Foster"/>
-		<property name="text" value="With pain comes strength!"/>
-		<property name="info" value="https://www.reddit.com"/>
+		<property name="moment" value="2021/05/13 04:00" />
+		<property name="author" value="Barry Foster" />
+		<property name="text" value="With pain comes strength!" />
+		<property name="info" value="https://www.reddit.com" />
 	</bean>
 
 	<bean id="shout25" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/04/13 06:00"/>
-		<property name="author" value="Peter Bean"/>
-		<property name="text" value="With love and patience, nothing is impossible"/>
-		<property name="info" value="https://www.microsoft.com"/>
+		<property name="moment" value="2021/05/18 06:00" />
+		<property name="author" value="Peter Bean" />
+		<property name="text"
+			value="With love and patience, nothing is impossible" />
+		<property name="info" value="https://www.microsoft.com" />
 	</bean>
 
 	<bean id="shout26" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/04/24 07:00"/>
-		<property name="author" value="Jacket Max"/>
-		<property name="text" value="Be the change you want to see in the world"/>
-		<property name="info" value="https://www.apple.com"/>
+		<property name="moment" value="2021/05/16 07:00" />
+		<property name="author" value="Jacket Max" />
+		<property name="text"
+			value="Be the change you want to see in the world" />
+		<property name="info" value="https://www.apple.com" />
 	</bean>
 
 	<bean id="shout27" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/05/02 00:00"/>
-		<property name="author" value="Chris Welbeck"/>
-		<property name="text" value="Only do what your heart tells you!"/>
-		<property name="info" value="https://www.adobe.com"/>
+		<property name="moment" value="2021/05/19 00:00" />
+		<property name="author" value="Chris Welbeck" />
+		<property name="text"
+			value="Only do what your heart tells you!" />
+		<property name="info" value="https://www.adobe.com" />
 	</bean>
 
 	<bean id="shout28" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/05/01 00:00"/>
-		<property name="author" value="Sarah Bent"/>
-		<property name="text" value="A goal is a dream with a deadline"/>
-		<property name="info" value="https://www.telecinco.es"/>
+		<property name="moment" value="2021/05/21 00:00" />
+		<property name="author" value="Sarah Bent" />
+		<property name="text"
+			value="A goal is a dream with a deadline" />
+		<property name="info" value="https://www.telecinco.es" />
 	</bean>
 
 	<bean id="shout29" class="acme.entities.shouts.Shout">
 
-		<property name="moment" value="2021/04/30 00:00"/>
-		<property name="author" value="Patrick Foden"/>
-		<property name="text" value="Who seeks shall find"/>
-		<property name="info" value="https://es.aliexpress.com"/>
+		<property name="moment" value="2021/05/20 00:00" />
+		<property name="author" value="Patrick Foden" />
+		<property name="text" value="Who seeks shall find" />
+		<property name="info" value="https://es.aliexpress.com" />
 	</bean>
 
 	<bean id="shout30" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/04/28 05:00"/>
+		<property name="moment" value="2021/05/21 05:00" />
 
-		<property name="author" value="Mark Kent"/>
-		<property name="text" value="We live with the scars we choose"/>
-		<property name="info" value="https://www.ebay.com"/>
+		<property name="author" value="Mark Kent" />
+		<property name="text"
+			value="We live with the scars we choose" />
+		<property name="info" value="https://www.ebay.com" />
 	</bean>
 
-	<!-- Tasks -->
-
+	<!-- Manager -->
+	<bean name="manager1UserAccount"
+		class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager1" />
+		<property name="password" value="manager1" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager" />
+				<property name="surname" value="One" />
+				<property name="email" value="manager1@mail.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="manager1Employer" />
+				<ref bean="manager1Authenticated" />
+			</list>
+		</property>
+	</bean>
+	<bean name="manager1Employer" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="manager1UserAccount" />
+	</bean>
+	<bean name="manager1Authenticated"
+		class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager1UserAccount" />
+	</bean>
+	
+	<bean name="manager2UserAccount"
+		class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager2" />
+		<property name="password" value="manager2" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager" />
+				<property name="surname" value="Two" />
+				<property name="email" value="manager2@mail.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="manager2Employer" />
+				<ref bean="manager2Authenticated" />
+			</list>
+		</property>
+	</bean>
+	<bean name="manager2Employer" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="manager2UserAccount" />
+	</bean>
+	<bean name="manager2Authenticated"
+		class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager2UserAccount" />
+	</bean>
+	
+		<bean name="manager3UserAccount"
+		class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager3" />
+		<property name="password" value="manager3" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager" />
+				<property name="surname" value="Three" />
+				<property name="email" value="manager3@mail.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="manager3Employer" />
+				<ref bean="manager3Authenticated" />
+			</list>
+		</property>
+	</bean>
+	<bean name="manager3Employer" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="manager3UserAccount" />
+	</bean>
+	<bean name="manager3Authenticated"
+		class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager3UserAccount" />
+	</bean>
+	
+	<bean name="manager4UserAccount"
+		class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager4" />
+		<property name="password" value="manager4" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager" />
+				<property name="surname" value="Four" />
+				<property name="email" value="manager4@mail.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="manager4Employer" />
+				<ref bean="manager4Authenticated" />
+			</list>
+		</property>
+	</bean>
+	<bean name="manager4Employer" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="manager4UserAccount" />
+	</bean>
+	<bean name="manager4Authenticated"
+		class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager4UserAccount" />
+	</bean>
+	
+	<bean name="manager5UserAccount"
+		class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager5" />
+		<property name="password" value="manager5" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager" />
+				<property name="surname" value="Five" />
+				<property name="email" value="manager5@mail.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="manager5Employer" />
+				<ref bean="manager5Authenticated" />
+			</list>
+		</property>
+	</bean>
+	<bean name="manager5Employer" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="manager5UserAccount" />
+	</bean>
+	<bean name="manager5Authenticated"
+		class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager5UserAccount" />
+	</bean>
 	<bean id="task01" class="acme.entities.tasks.Task">
 		<property name="title" value= "Political"/>
 		<property name="description" value= "the implementation of these policies is not an easy task"/>
@@ -242,6 +395,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="40"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task02" class="acme.entities.tasks.Task">
@@ -252,6 +406,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="30"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task03" class="acme.entities.tasks.Task">
@@ -262,6 +417,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="50"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 
 	<bean id="task04" class="acme.entities.tasks.Task">
@@ -272,6 +428,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="60"/>
+		<property name="manager" ref="manager4Employer"/>
 	</bean>	
 
 	<bean id="task05" class="acme.entities.tasks.Task">
@@ -282,6 +439,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="40"/>
+		<property name="manager" ref="manager5Employer"/>
 	</bean>	
 
 	<bean id="task06" class="acme.entities.tasks.Task">
@@ -292,6 +450,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="40"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task07" class="acme.entities.tasks.Task">
@@ -302,6 +461,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="40"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task08" class="acme.entities.tasks.Task">
@@ -312,6 +472,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="25"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 
 	<bean id="task09" class="acme.entities.tasks.Task">
@@ -322,6 +483,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="35"/>
+		<property name="manager" ref="manager4Employer"/>
 	</bean>	
 
 	<bean id="task10" class="acme.entities.tasks.Task">
@@ -332,6 +494,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="40"/>
+		<property name="manager" ref="manager5Employer"/>
 	</bean>	
 
 	<bean id="task11" class="acme.entities.tasks.Task">
@@ -342,6 +505,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="45"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task12" class="acme.entities.tasks.Task">
@@ -352,6 +516,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="55"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task13" class="acme.entities.tasks.Task">
@@ -362,6 +527,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 
 	<bean id="task14" class="acme.entities.tasks.Task">
@@ -372,6 +538,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager4Employer"/>
 	</bean>	
 
 	<bean id="task15" class="acme.entities.tasks.Task">
@@ -382,6 +549,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager5Employer"/>
 	</bean>	
 
 	<bean id="task16" class="acme.entities.tasks.Task">
@@ -392,6 +560,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task17" class="acme.entities.tasks.Task">
@@ -402,6 +571,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task18" class="acme.entities.tasks.Task">
@@ -412,6 +582,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 
 	<bean id="task19" class="acme.entities.tasks.Task">
@@ -422,6 +593,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager4Employer"/>
 	</bean>	
 
 	<bean id="task20" class="acme.entities.tasks.Task">
@@ -432,6 +604,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager5Employer"/>
 	</bean>	
 
 	<bean id="task21" class="acme.entities.tasks.Task">
@@ -442,6 +615,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task22" class="acme.entities.tasks.Task">
@@ -452,6 +626,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task23" class="acme.entities.tasks.Task">
@@ -462,6 +637,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 
 	<bean id="task24" class="acme.entities.tasks.Task">
@@ -472,6 +648,7 @@
 		<property name="publica" value="true"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager4Employer"/>
 	</bean>	
 
 	<bean id="task25" class="acme.entities.tasks.Task">
@@ -482,6 +659,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="45"/>
+		<property name="manager" ref="manager5Employer"/>
 	</bean>	
 
 	<bean id="task26" class="acme.entities.tasks.Task">
@@ -492,6 +670,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="35"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task27" class="acme.entities.tasks.Task">
@@ -502,6 +681,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="55"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task28" class="acme.entities.tasks.Task">
@@ -512,6 +692,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="50"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 
 	<bean id="task29" class="acme.entities.tasks.Task">
@@ -522,6 +703,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="60"/>
+		<property name="manager" ref="manager4Employer"/>
 	</bean>	
 
 	<bean id="task30" class="acme.entities.tasks.Task">
@@ -532,6 +714,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="75"/>
+		<property name="manager" ref="manager5Employer"/>
 	</bean>	
 
 	<bean id="task31" class="acme.entities.tasks.Task">
@@ -542,6 +725,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="70"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task32" class="acme.entities.tasks.Task">
@@ -552,6 +736,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="80"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task33" class="acme.entities.tasks.Task">
@@ -562,6 +747,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="65"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 
 	<bean id="task34" class="acme.entities.tasks.Task">
@@ -572,6 +758,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="20"/>
+		<property name="manager" ref="manager4Employer"/>
 	</bean>	
 
 	<bean id="task35" class="acme.entities.tasks.Task">
@@ -582,6 +769,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="55"/>
+		<property name="manager" ref="manager5Employer"/>
 	</bean>	
 
 	<bean id="task36" class="acme.entities.tasks.Task">
@@ -592,6 +780,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="false"/>
 		<property name="workload" value="85"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task37" class="acme.entities.tasks.Task">
@@ -602,6 +791,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task38" class="acme.entities.tasks.Task">
@@ -612,6 +802,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 
 	<bean id="task39" class="acme.entities.tasks.Task">
@@ -622,6 +813,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager4Employer"/>
 	</bean>	
 
 	<bean id="task40" class="acme.entities.tasks.Task">
@@ -632,6 +824,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager5Employer"/>
 	</bean>	
 
 	<bean id="task41" class="acme.entities.tasks.Task">
@@ -642,6 +835,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task42" class="acme.entities.tasks.Task">
@@ -652,6 +846,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task43" class="acme.entities.tasks.Task">
@@ -662,6 +857,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 
 	<bean id="task44" class="acme.entities.tasks.Task">
@@ -672,6 +868,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager4Employer"/>
 	</bean>	
 
 	<bean id="task45" class="acme.entities.tasks.Task">
@@ -682,6 +879,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager5Employer"/>
 	</bean>	
 
 	<bean id="task46" class="acme.entities.tasks.Task">
@@ -692,6 +890,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager1Employer"/>
 	</bean>	
 
 	<bean id="task47" class="acme.entities.tasks.Task">
@@ -702,6 +901,7 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager2Employer"/>
 	</bean>	
 
 	<bean id="task48" class="acme.entities.tasks.Task">
@@ -712,5 +912,6 @@
 		<property name="publica" value="false"/>
 		<property name="finish" value="true"/>
 		<property name="workload" value="100"/>
+		<property name="manager" ref="manager3Employer"/>
 	</bean>	
 </beans>

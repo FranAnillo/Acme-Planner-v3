@@ -1,6 +1,7 @@
 package acme.filter;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Filter {
@@ -25,14 +26,23 @@ public class Filter {
 	return res;
 	}
 	public static boolean filterString(final String s) {
-		s.toLowerCase().trim();
+		final String j=s.replace(" ", ";");
+		final int number = j.split(";").length;
+		int numberBannedWords= 0;
 		final List<String> censoredWords= Filter.censoredWords();
 		for(int i = 0; censoredWords.size()>i; i++) {
-		if(s.contains(censoredWords.get(i))) {
-			return false;
+		if(s.toLowerCase().contains(censoredWords.get(i))) {
+			numberBannedWords= numberBannedWords+1;
+		}	
 		}
-			
-		}
+		if(((float)numberBannedWords/number)*100>10) return false;
+		
 		return true;
 	}
+	
+	public static double calculate(final Date start, final Date end) {
+		return (end.getTime() / 3600000) - (start.getTime() / 3600000);
+		
+	}
+
 }

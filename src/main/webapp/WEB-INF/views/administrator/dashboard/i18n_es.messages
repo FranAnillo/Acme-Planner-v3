@@ -11,3 +11,14 @@
 administrator.dashboard.form.title.general-indicators = Indicadores generales
 administrator.dashboard.form.label.number-of-public-task =  Numero de tareas publicas
 administrator.dashboard.form.title.application-statuses = Estado de la aplicacion
+administrator.dashboard.form.label.number-of-private-task=Numero de tareas privadas
+administrator.dashboard.form.label.number-of-finish-task = Numero de tareas acabadas
+administrator.dashboard.form.label.number-of-not-finish-task= Numero de tareas no acabadas
+administrator.dashboard.form.label.minimum-workload= Carga de trabajo mínima por tarea
+administrator.dashboard.form.label.maximum-workload= Carga de trabajo máxima por tarea
+administrator.dashboard.form.label.average-workload= Carga de trabajo media por tarea
+administrator.dashboard.form.label.deviation-workload= Desviación de la carga de trabajo por tarea
+administrator.dashboard.form.label.average-execution-periods= Periodo de ejecución medio por tarea
+administrator.dashboard.form.label.maximum-execution-periods= Máximo periodo de ejecucuón por tarea
+administrator.dashboard.form.label.minimum-execution-periods= Mínimo periodo de ejecucuón por tarea	
+administrator.dashboard.form.label.deviation-execution-periods= Desviación del periodo de ejecución por tarea	

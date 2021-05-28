@@ -23,7 +23,6 @@ public class AnonymousShoutListService implements AbstractListService<Anonymous,
 	@Autowired
 	protected AnonymousShoutRepository repository;
 
-
 	// AbstractListService<Administrator, Shout> interface 
 
 	@Override

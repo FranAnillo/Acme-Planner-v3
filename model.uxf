@@ -8,6 +8,7 @@
       <y>168</y>
       <w>168</w>
       <h>42</h>
+
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 UserRole
@@ -18,10 +19,12 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+
       <x>476</x>
       <y>168</y>
       <w>56</w>
       <h>42</h>
+
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>60.0;40.0;10.0;10.0</additional_attributes>
@@ -29,10 +32,12 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
+
       <x>168</x>
       <y>98</y>
       <w>154</w>
       <h>84</h>
+
     </coordinates>
     <panel_attributes>&lt;&lt;Datatype&gt;&gt;
 UserIdentity
@@ -49,10 +54,12 @@ bg=orange
   <element>
     <id>UMLNote</id>
     <coordinates>
+
       <x>168</x>
       <y>35</y>
       <w>168</w>
       <h>42</h>
+
     </coordinates>
     <panel_attributes>The full name catenates the 
 surname, a comma, and the name.
@@ -298,10 +305,27 @@ has v</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>882</x>
-      <y>161</y>
-      <w>259</w>
-      <h>126</h>
+      <x>710</x>
+      <y>105</y>
+      <w>185</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Shout
+--
++ moment: Date {NotNull, Temporal(TIMESTAMP), Past}
++ author: String {NotBlank, Length(5,25)}
++ text: String {NotBlank, Length(1,80)}
++ info: String {URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>715</x>
+      <y>205</y>
+      <w>185</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Task
@@ -319,51 +343,163 @@ Task
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>826</x>
-      <y>203</y>
-      <w>63</w>
-      <h>56</h>
+      <x>675</x>
+      <y>230</y>
+      <w>50</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;60.0;70.0;10.0</additional_attributes>
+    <additional_attributes>10.0;70.0;80.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>826</x>
-      <y>133</y>
-      <w>63</w>
-      <h>84</h>
+      <x>675</x>
+      <y>185</y>
+      <w>50</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;80.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>812</x>
-      <y>84</y>
-      <w>63</w>
-      <h>49</h>
+      <x>665</x>
+      <y>135</y>
+      <w>55</w>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;50.0;70.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;90.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>861</x>
-      <y>49</y>
-      <w>259</w>
-      <h>84</h>
+      <x>630</x>
+      <y>305</y>
+      <w>50</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Manager
+--
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>225</y>
+      <w>70</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>675</x>
+      <y>230</y>
+      <w>50</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>715</x>
+      <y>320</y>
+      <w>185</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Shout
+Banner
 --
-+ moment: Date {NotNull, Temporal(TIMESTAMP), Past}
-+ author: String {NotBlank,Length(5, 25)}
-+ text: String {NotBlank, Length(1, 100)}
-+ info: String {URL}</panel_attributes>
++ slogan: String {NotBlank}
++ picture: String {NotBlank, URL}
++ target: String{NotBlank, URL}
+</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>715</x>
+      <y>425</y>
+      <w>185</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+SpamWord
+--
++ spanishTranslation: String {NotBlank}
++ englishTranslation: String {NotBlank}
++ spamTreshHold: double{Range{0,1}}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>290</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+DomainEntity
+--
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>890</x>
+      <y>130</y>
+      <w>165</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>310.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>895</x>
+      <y>300</y>
+      <w>105</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>895</x>
+      <y>245</y>
+      <w>105</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>895</x>
+      <y>315</y>
+      <w>160</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>300.0;10.0;10.0;310.0</additional_attributes>
   </element>
 </diagram>

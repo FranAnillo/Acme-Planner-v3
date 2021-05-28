@@ -1,109 +1,100 @@
+
 package acme.features.managers.task;
 
-import java.time.LocalDateTime;
-import java.time.Month;
+import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.filter.Filter;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Manager;
 import acme.framework.services.AbstractCreateService;
 
 @Service
 public class ManagerTaskCreateService implements AbstractCreateService<Manager, Task> {
-	
+
 	// Internal state 
 
-		@Autowired
-		protected ManagerTaskRepository repository;
+	@Autowired
+	protected ManagerTaskRepository repository;
 
 
-		@Override
-		public boolean authorise(final Request<Task> request) {
-			assert request != null;
+	@Override
+	public boolean authorise(final Request<Task> request) {
+		assert request != null;
 
-			return true;
+		return true;
+	}
+
+	@Override
+	public void bind(final Request<Task> request, final Task entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors);
+	}
+
+	@Override
+	public void unbind(final Request<Task> request, final Task entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+
+		request.unbind(entity, model, "title", "description", "link","publica");
+	}
+
+	@Override
+	public Task instantiate(final Request<Task> request) {
+		assert request != null;
+
+		Task result;
+		Manager manager;
+		manager=this.repository.findOneManagerbyUserAccountById(request.getPrincipal().getActiveRoleId());
+
+		result = new Task();
+		result.setTitle("Task 1");
+		result.setDescription("Description of the taks 2");
+		result.setLink("http://example.org");
+		result.setPublica(false);
+		result.setFinish(false);
+		result.setManager(manager);
+		
+		return result;
+	}
+
+	@Override
+	public void validate(final Request<Task> request, final Task entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		if (!errors.hasErrors("end")) {
+			errors.state(request, entity.getEnd().after(entity.getStart()), "end", "manager.task.error.end");
 		}
 
-		@Override
-		public void bind(final Request<Task> request, final Task entity, final Errors errors) {
-			assert request != null;
-			assert entity != null;
-			assert errors != null;
-
-			request.bind(entity, errors);
+		if (!errors.hasErrors("workload")) {
+			errors.state(request, entity.getWorkload() < Filter.calculate(entity.getStart(), entity.getEnd()), "workload", "manager.task.error.workload");
 		}
+	}
 
-		@Override
-		public void unbind(final Request<Task> request, final Task entity, final Model model) {
-			assert request != null;
-			assert entity != null;
-			assert model != null;
+	@Override
+	public void create(final Request<Task> request, final Task entity) {
+		assert request != null;
+		assert entity != null;
+		if ((Filter.filterString(entity.getDescription()) && Filter.filterString(entity.getTitle())) == false) {
 
-			request.unbind(entity, model, "title", "description", "link");
-		}
+		} else {
+			final Date start;
+			final Date end;
 
-		@Override
-		public Task instantiate(final Request<Task> request) {
-			assert request != null;
-
-			Task result;
-			LocalDateTime start;
-			LocalDateTime end;
-
-			start = LocalDateTime.of(2021, Month.MAY, 2, 10, 0);
-			end = LocalDateTime.of(2021, Month.MAY, 8, 14, 0);
-
-			result = new Task();
-			result.setTitle("Task 1");
-			result.setDescription("Description of the taks 2");
-//			result.setStart(start);
-//			result.setEnd(end);
-			result.setLink("http://example.org");
-			result.setPublica(true);
-			result.setFinish(false);
-			
-			return result;
-		}
-
-		@Override
-		public void validate(final Request<Task> request, final Task entity, final Errors errors) {
-			assert request != null;
-			assert entity != null;
-			assert errors != null;
-
-		}
-
-		@Override
-		public void create(final Request<Task> request, final Task entity) {
-			assert request != null;
-			assert entity != null;
-			if ((Filter.filterString(entity.getDescription())&&Filter.filterString(entity.getTitle()))==false) {
-			
-			}
-			else {
-			LocalDateTime start;
-			LocalDateTime end;
-
-			start = LocalDateTime.of(2021, Month.MAY, 2, 10, 0);
-			end = LocalDateTime.of(2021, Month.MAY, 8, 14, 0);
-			
-//			entity.setStart(start);
-//			entity.setEnd(end);
-			entity.setPublica(true);
 			entity.setFinish(false);
 			this.repository.save(entity);
-			}
 		}
-			
-	
-	
-	
-	
+	}
 
 }

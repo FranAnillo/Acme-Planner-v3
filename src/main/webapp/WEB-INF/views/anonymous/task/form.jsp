@@ -6,17 +6,13 @@
 <acme:form>
 	<acme:form-hidden path="taskId"/>
 
-	<acme:form-textbox code="anonymous.task.label.reference" path="reference" readonly="true"/>
-	<jstl:if test="${command == 'show'}">
-		<acme:form-textbox code="anonymous.task.label.title" path="title"/>
-		<acme:form-textbox code="anonymous.task.label.description" path="description"/>
-	</jstl:if>	
-	<acme:form-textarea code="anonymous.task.label.workload" path="workload" />
-	<acme:form-textarea code="anonymous.task.start" path="start"/>
-	<acme:form-textarea code="worker.application.label.end" path="end"/>	
-	<acme:form-textarea code="worker.application.label.link" path="link"/>			
-	<acme:form-textarea code="worker.application.label.period" path="period"/>		
+		<acme:form-textbox code="anonymous.task.label.title" path="title" readonly="true"/>
+		<acme:form-textbox code="anonymous.task.label.description" path="description" readonly="true"/>
+	<acme:form-textarea code="anonymous.task.label.workload" path="workload" readonly="true"/>
+	<acme:form-textarea code="anonymous.task.start" path="start" readonly="true"/>
+	<acme:form-textarea code="anonymous.task.end" path="end" readonly="true"/>
+	<acme:form-textarea code="anonymous.task.label.link" path="link" readonly="true"/>			
 		
-	<acme:form-return code="worker.application.button.return"/>	
+	<acme:form-return code="anonymous.task.button.return"/>	
 </acme:form>
 
