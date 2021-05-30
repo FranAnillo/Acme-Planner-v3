@@ -10,15 +10,13 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.testing;
+package acme.framework.testing;
 
 import java.util.List;
 
 import org.hibernate.internal.util.StringHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
-import acme.framework.testing.AbstractTest;
 
 public abstract class AcmeTest extends AbstractTest {
 

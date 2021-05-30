@@ -16,7 +16,7 @@
 // HINT+ intuitive than the generic ".properties" extension. The ".xml" extension is not
 // HINT+ supported at all. The changes are marked with RC+ or RC- blocks in the source code.
 
-package acme.framework.patches;
+package acme.framework.testing;
 
 /*
  * Copyright 2002-2018 the original author or authors.
