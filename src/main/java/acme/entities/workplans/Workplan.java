@@ -2,6 +2,7 @@ package acme.entities.workplans;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Future;
@@ -10,7 +11,12 @@ import javax.validation.constraints.NotNull;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.framework.entities.DomainEntity;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class Workplan extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -20,7 +26,7 @@ public class Workplan extends DomainEntity {
 	// Attributes -------------------------------------------------------------
 	
 	@NotNull
-	protected String Title;
+	protected String title;
 	
 	@NotNull
 	protected Boolean finish;
