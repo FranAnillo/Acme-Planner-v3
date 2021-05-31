@@ -18,8 +18,12 @@ public class ManagerWorkplanController extends AbstractController<Manager, Workp
 	@Autowired
 	protected ManagerWorkplanShowService showService;
 	
+	@Autowired
+	protected ManagerWorkplanDeleteService deleteService;
+	
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 }
