@@ -84,12 +84,10 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
-		if ((Filter.filterString(entity.getDescription()) && Filter.filterString(entity.getTitle())) == false) {
-
-		} else {
+		
 			entity.setFinish(false);
 			this.repository.save(entity);
-		}
+		
 	}
 
 }
