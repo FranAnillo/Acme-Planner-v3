@@ -3,8 +3,8 @@ import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 
+import acme.entities.roles.Manager;
 import acme.entities.workplans.Workplan;
-import acme.framework.entities.Manager;
 import acme.framework.repositories.AbstractRepository;
 
 public interface ManagerWorkplanRepository extends AbstractRepository {
