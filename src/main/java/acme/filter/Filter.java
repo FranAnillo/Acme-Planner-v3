@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Filter {
+public class Filter{
 
 	public static List<String> censoredWords(){
 	final List<String> res = new ArrayList<>();
