@@ -1,8 +1,6 @@
 
 package acme.features.managers.task;
 
-import java.sql.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -89,9 +87,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		if ((Filter.filterString(entity.getDescription()) && Filter.filterString(entity.getTitle())) == false) {
 
 		} else {
-			final Date start;
-			final Date end;
-
 			entity.setFinish(false);
 			this.repository.save(entity);
 		}

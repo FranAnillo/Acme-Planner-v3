@@ -28,22 +28,22 @@ public class Workplan extends DomainEntity {
 	@NotNull
 	protected String title;
 	
+	@Future                       
+	@NotNull                      
+	protected LocalDateTime start;
+
+	@Future                     
+	@NotNull                    
+	protected LocalDateTime end;
+
+	@NotNull                   
+	protected Integer workload;
+	
 	@NotNull
 	protected Boolean finish;
 	
 	@NotNull
 	protected Boolean publica;
-	
-	@Future                       
-	@NotNull                      
-	protected LocalDateTime start;
-	
-	@Future                     
-	@NotNull                    
-	protected LocalDateTime end;
-	
-	@NotNull                   
-	protected Integer workload;
 	
 	// Relationships ----------------------------------------------------------
 	
