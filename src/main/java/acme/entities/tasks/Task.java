@@ -70,4 +70,3 @@ public class Task extends DomainEntity {
 		protected Manager manager;
 
 }
-
