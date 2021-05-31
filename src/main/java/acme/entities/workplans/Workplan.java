@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 
 import acme.entities.tasks.Task;
 import acme.framework.entities.DomainEntity;
+import acme.framework.entities.Manager;
 
 public class Workplan extends DomainEntity {
 
@@ -17,6 +18,9 @@ public class Workplan extends DomainEntity {
 	protected static final long	serialVersionUID	= 1L;
 	
 	// Attributes -------------------------------------------------------------
+	
+	@NotNull
+	protected String Title;
 	
 	@NotNull
 	protected Boolean finish;
@@ -36,6 +40,11 @@ public class Workplan extends DomainEntity {
 	protected Integer workload;
 	
 	// Relationships ----------------------------------------------------------
+	
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Manager manager;
 	
 	@NotNull
 	@Valid

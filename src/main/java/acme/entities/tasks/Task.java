@@ -52,18 +52,18 @@ public class Task extends DomainEntity {
 	@NotNull
 	protected Boolean publica;
 	
+	@NotNull
+	protected Integer workload;
+
+
+
+
+
+
+
+
+
+
+
 	
-	protected Integer workload() {
-		Integer diferencia=0;
-		if (this.start.isAfter(LocalDateTime.now())) {
-			diferencia=this.end.compareTo(this.start);
-		} else if (this.start.isBefore(LocalDateTime.now())) {
-			diferencia=this.end.compareTo(LocalDateTime.now());
-		} else if (this.end.isBefore(LocalDateTime.now())){
-			diferencia=0;
-		}
-		return diferencia;
-		
-		
-	}
 }
