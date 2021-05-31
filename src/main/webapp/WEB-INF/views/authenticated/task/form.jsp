@@ -4,11 +4,15 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="manager.task.form.label.author" path="author"/>
-	<acme:form-textarea code="anonymous.shout.form.label.text" path="text"/>
-	<acme:form-textbox code="anonymous.shout.form.label.info" path="info"/>
-	
-	<acme:form-submit code="anonymous.shout.form.button.create" action="/anonymous/shout/create"/>
-  	<acme:form-return code="anonymous.shout.form.button.return"/>
+	<acme:form-hidden path="taskId"/>
 
+		<acme:form-textbox code="authenticated.task.label.title" path="title" readonly="true"/>
+		<acme:form-textbox code="authenticated.task.label.description" path="description" readonly="true"/>
+	<acme:form-textarea code="authenticated.task.label.workload" path="workload" readonly="true"/>
+	<acme:form-textarea code="authenticated.task.start" path="start" readonly="true"/>
+	<acme:form-textarea code="authenticated.task.label.end" path="end" readonly="true"/>	
+	<acme:form-textarea code="authenticated.task.label.link" path="link" readonly="true"/>			
+		
+	<acme:form-return code="authenticated.task.button.return"/>	
 </acme:form>
+

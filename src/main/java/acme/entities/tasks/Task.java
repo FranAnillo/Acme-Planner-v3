@@ -1,15 +1,21 @@
 package acme.entities.tasks;
 
-import java.time.LocalDateTime;
+
+import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Future;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.roles.Manager;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,44 +32,41 @@ public class Task extends DomainEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Max(80)
+	@Length(max=80)
 	protected String title;
 	
 	@NotBlank
-	@Max(500)
+	@Length(max=500)
 	protected String description;
 	
-//	@Temporal(TemporalType.TIMESTAMP)
 	@Future
 	@NotNull
-	protected LocalDateTime start;
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date start;
 	
-//	@Temporal(TemporalType.TIMESTAMP)
 	@Future
 	@NotNull
-	protected LocalDateTime end;
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date end;
 	
 	@URL
 	protected String link;
 	
 	@NotNull
-	protected Boolean finish;
+	protected Boolean publica;
 	
 	@NotNull
-	protected Boolean publica;
+	protected Boolean finish;
 	
 	@NotNull
 	protected Integer workload;
 
 
-
-
-
-
-
-
-
-
-
+		// Relationships ----------------------------------------------------------
 	
+		@NotNull
+		@Valid
+		@ManyToOne(optional = false)
+		protected Manager manager;
+
 }

@@ -71,23 +71,25 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
+if (!errors.hasErrors("text")) {
+			errors.state(request, Filter.filterString(entity.getText()), "text", "anonymous.shout.form.error.text");
+		}
+if (!errors.hasErrors("author")) {
+	errors.state(request, Filter.filterString(entity.getAuthor()), "author", "anonymous.shout.form.error.author");
+}
 	}
 
 	@Override
 	public void create(final Request<Shout> request, final Shout entity) {
 		assert request != null;
 		assert entity != null;
-		if ((Filter.filterString(entity.getText())&&Filter.filterString(entity.getAuthor()))==false) {
-			
-		}
-		else {
+
 		Date moment;
 
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
 		this.repository.save(entity);
-		}
+		
 	}
 
 }

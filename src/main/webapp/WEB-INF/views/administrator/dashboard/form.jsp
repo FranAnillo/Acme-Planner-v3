@@ -5,7 +5,7 @@
 
 <h2>
 	<acme:message code="administrator.dashboard.form.title.general-indicators"/>
-</h2>
+</h2> 
 
 <table class="table table-sm">
 	<caption>
@@ -13,42 +13,34 @@
 	</caption>	
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.number-public-task"/>
+			<acme:message code="administrator.dashboard.form.label.number-of-public-task"/>
 		</th>
 		<td>
-			<acme:print value="${numberPublicTask}"/>
+			<acme:print value="${numberOfPublicTask}"/>
+		</td>
+	</tr>
+	 <tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.number-of-private-task"/>
+		</th>
+		<td>
+			<acme:print value="${numberOfPrivateTask}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.number-private-task"/>
+			<acme:message code="administrator.dashboard.form.label.number-of-finish-task"/>
 		</th>
 		<td>
-			<acme:print value="${numberPrivateTask}"/>
+			<acme:print value="${numberOfFinishTask}"/>
 		</td>
 	</tr>
 	<tr>
 		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.number-finish-task"/>
+			<acme:message code="administrator.dashboard.form.label.number-of-not-finish-task"/>
 		</th>
 		<td>
-			<acme:print value="${numberFinishTask}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.number-not-finish-task"/>
-		</th>
-		<td>
-			<acme:print value="${numberNotFinishTask}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="administrator.dashboard.form.label.average-workload"/>
-		</th>
-		<td>
-			<acme:print value="${averageWorkload}"/>
+			<acme:print value="${numberOfNotFinishTask}"/>
 		</td>
 	</tr>
 	<tr>
@@ -66,33 +58,65 @@
 		<td>
 			<acme:print value="${maximumWorkload}"/>
 		</td>
-	</tr>					
-</table>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.average-workload"/>
+		</th>
+		<td>
+			<acme:print value="${averageWorkload}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviation-workload"/>
+		</th>
+		<td>
+			<acme:print value="${deviationWorkload}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.average-execution-periods"/>
+		</th>
+		<td>
+			<acme:print value="${averageExecutionPeriods}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.maximum-execution-periods"/>
+		</th>
+		<td>
+			<acme:print value="${maximumExecutionPeriods}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.minimum-execution-periods"/>
+		</th>
+		<td>
+			<acme:print value="${minimumExecutionPeriods}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.form.label.deviation-execution-periods"/>
+		</th>
+		<td>
+			<acme:print value="${deviationExcutionPeriods}"/>
+		</td>
+	</tr>
+						
+ </table>
 
-<h2>
-	<acme:message code="administrator.dashboard.form.title.application-statuses"/>
-</h2>
 
 <div>
 	<canvas id="canvas"></canvas>
-</div>
+</div> 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function() {
-		var data = {
-			labels : [
-					"PENDING", "ACCEPTED", "REJECTED"
-			],
-			datasets : [
-				{
-					data : [
-						<jstl:out value="${ratioOfPendingApplications}"/>, 
-						<jstl:out value="${ratioOfAcceptedApplications}"/>, 
-						<jstl:out value="${ratioOfRejectedApplications}"/>
-					]
-				}
-			]
-		};
 		var options = {
 			scales : {
 				yAxes : [
@@ -119,4 +143,4 @@
 			options : options
 		});
 	});
-</script> -->
+</script> 
