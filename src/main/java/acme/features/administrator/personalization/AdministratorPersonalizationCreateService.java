@@ -1,8 +1,5 @@
 package acme.features.administrator.personalization;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,9 +51,8 @@ public class AdministratorPersonalizationCreateService implements AbstractCreate
 		Personalization result;
 		
 		result = new Personalization();
-		final List<String> censoredWords= new ArrayList<>();
-		result.setCensoredWords(censoredWords);
-		return null;
+
+		return result;
 	}
 
 	@Override

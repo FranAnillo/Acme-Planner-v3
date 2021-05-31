@@ -1,7 +1,5 @@
 package acme.entities.personalization;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
@@ -14,11 +12,14 @@ import lombok.Setter;
 @Setter
 public class Personalization extends DomainEntity{
 
-	
+	// Serialisation identifier -----------------------------------------------
+
 	private static final long serialVersionUID = 1L;
 
+	// Attributes -------------------------------------------------------------
+
 	@NotNull
-	protected List<String> censoredWords;
+	protected String censoredWords;
 	
 	@NotNull
 	protected int umbral;
