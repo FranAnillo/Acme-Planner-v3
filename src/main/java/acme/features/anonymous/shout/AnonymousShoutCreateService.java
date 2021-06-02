@@ -1,3 +1,4 @@
+
 package acme.features.anonymous.shout;
 
 import java.util.Date;
@@ -22,6 +23,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	protected AnonymousShoutRepository repository;
 
 	// AbstractCreateService<Administrator, Shout> interface 
+
 
 	@Override
 	public boolean authorise(final Request<Shout> request) {
@@ -53,16 +55,8 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 
 		Shout result;
-		Date moment;
-
-		moment = new Date(System.currentTimeMillis() - 1);
 
 		result = new Shout();
-		result.setAuthor("John Doe");
-		result.setText("Lorem ipsum!");
-		result.setMoment(moment);
-		result.setInfo("http://example.org");
-
 		return result;
 	}
 
@@ -71,12 +65,12 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-if (!errors.hasErrors("text")) {
+		if (!errors.hasErrors("text")) {
 			errors.state(request, Filter.filterString(entity.getText()), "text", "anonymous.shout.form.error.text");
 		}
-if (!errors.hasErrors("author")) {
-	errors.state(request, Filter.filterString(entity.getAuthor()), "author", "anonymous.shout.form.error.author");
-}
+		if (!errors.hasErrors("author")) {
+			errors.state(request, Filter.filterString(entity.getAuthor()), "author", "anonymous.shout.form.error.author");
+		}
 	}
 
 	@Override
@@ -89,7 +83,7 @@ if (!errors.hasErrors("author")) {
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
 		this.repository.save(entity);
-		
+
 	}
 
 }
