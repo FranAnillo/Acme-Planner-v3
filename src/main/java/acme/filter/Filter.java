@@ -4,8 +4,38 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Filter{
+import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 
+import acme.framework.entities.DomainEntity;
+import lombok.Getter;
+import lombok.Setter;
+@Entity
+@Getter
+@Setter
+public class Filter extends DomainEntity{
+
+	// Serialisation identifier -----------------------------------------------
+
+		private static final long serialVersionUID = 1L;
+
+		// Attributes -------------------------------------------------------------
+
+		@NotNull
+		protected String censoredWord;
+		
+		@NotNull
+		protected static int umbral = 10;
+		
+		
+		
+		
+		
+		public static void addWord(final String censoredWord) {
+			final List<String> res = Filter.censoredWords();
+			res.add(censoredWord);
+		}
+		
 	public static List<String> censoredWords(){
 	final List<String> res = new ArrayList<>();
 	res.add("sex");
@@ -25,6 +55,7 @@ public class Filter{
 	res.add("millon de euros");
 	return res;
 	}
+	
 	public static boolean filterString(final String s) {
 		final String j=s.replace(" ", ";");
 		final int number = j.split(";").length;
@@ -35,7 +66,7 @@ public class Filter{
 			numberBannedWords= numberBannedWords+1;
 		}	
 		}
-		if(((float)numberBannedWords/number)*100>10) return false;
+		if(((float)numberBannedWords/number)*100> Filter.umbral) return false;
 		
 		return true;
 	}
