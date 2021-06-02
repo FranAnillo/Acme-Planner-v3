@@ -40,9 +40,6 @@ public class Workplan extends DomainEntity {
 	protected Integer workload;
 	
 	@NotNull
-	protected Boolean finish;
-	
-	@NotNull
 	protected Boolean publica;
 	
 	// Relationships ----------------------------------------------------------

@@ -51,7 +51,7 @@ public class AnonymousShoutTest extends AcmePlannerTest {
 		super.fillInputBoxIn("text", text);
 		super.fillInputBoxIn("info", info);
 		super.clickOnSubmitButton("Shout!");
-		super.checkSimplePath("/anonymous/shout/create");
+		super.checkErrorsExist();
 		
 	}
 	
