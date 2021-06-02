@@ -1,6 +1,5 @@
 package acme.entities.tasks;
 
-
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -11,6 +10,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -58,8 +58,9 @@ public class Task extends DomainEntity {
 	@NotNull
 	protected Boolean finish;
 	
+	@Positive
 	@NotNull
-	protected Integer workload;
+	protected Double workload;
 
 
 		// Relationships ----------------------------------------------------------
@@ -70,4 +71,3 @@ public class Task extends DomainEntity {
 		protected Manager manager;
 
 }
-

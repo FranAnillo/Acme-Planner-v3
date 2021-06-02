@@ -18,6 +18,8 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 public class UpdateAccountTest extends AcmePlannerTest {
 	
+	//Este metodo prueba un caso positivo de la actualizacion de un usuario
+	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/sign-up/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)

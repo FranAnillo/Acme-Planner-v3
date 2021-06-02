@@ -21,7 +21,6 @@ Manager findOneManagerbyUserAccountById(int id);
 @Query("select p from Task p where p.id= ?1")
 Task findOneTaskById(int taskId);
 
-
 @Query("select t from Task t")
 Collection<Task> findMany();
 }

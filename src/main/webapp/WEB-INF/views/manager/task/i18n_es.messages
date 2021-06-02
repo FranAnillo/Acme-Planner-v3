@@ -26,3 +26,6 @@ manager.task.label.publica=Publica
 manager.task.button.return= Volver
 manager.task.form.button.create = Crear
 manager.task.button.delete=Borrar
+
+manager.task.form.error.title= El título contiene demasiadas palabras de spam
+manager.task.form.error.description= La descripción contiene demasiadas palabras de spam

@@ -1,8 +1,6 @@
 
 package acme.features.managers.task;
 
-import java.sql.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,11 +55,6 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		manager=this.repository.findOneManagerbyUserAccountById(request.getPrincipal().getActiveRoleId());
 
 		result = new Task();
-		result.setTitle("Task 1");
-		result.setDescription("Description of the taks 2");
-		result.setLink("http://example.org");
-		result.setPublica(false);
-		result.setFinish(false);
 		result.setManager(manager);
 		
 		return result;
@@ -80,21 +73,22 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		if (!errors.hasErrors("workload")) {
 			errors.state(request, entity.getWorkload() < Filter.calculate(entity.getStart(), entity.getEnd()), "workload", "manager.task.error.workload");
 		}
+		if (!errors.hasErrors("description")) {
+			errors.state(request, Filter.filterString(entity.getDescription()), "description", "manager.task.form.error.description");
+		}
+		if (!errors.hasErrors("title")) {
+			errors.state(request, Filter.filterString(entity.getTitle()), "title", "manager.task.form.error.title");
+		}
 	}
 
 	@Override
 	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
-		if ((Filter.filterString(entity.getDescription()) && Filter.filterString(entity.getTitle())) == false) {
-
-		} else {
-			final Date start;
-			final Date end;
-
+		
 			entity.setFinish(false);
 			this.repository.save(entity);
-		}
+		
 	}
 
 }
