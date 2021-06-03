@@ -110,6 +110,8 @@
 						
  </table>
 
+<acme:form-submit code="administrator.personalization.form.button.create"
+		action="/administrator/personalization/create" />
 
 <div>
 	<canvas id="canvas"></canvas>

@@ -1,12 +1,13 @@
 package acme.features.anonymous.shout;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.shouts.Shout;
-import acme.filter.Filter;
+import acme.features.administrator.personalization.AdministratorPersonalizationRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -20,6 +21,9 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 	@Autowired
 	protected AnonymousShoutRepository repository;
+	
+	@Autowired
+	protected AdministratorPersonalizationRepository personalizationRepository;
 
 	// AbstractCreateService<Administrator, Shout> interface 
 
@@ -72,10 +76,10 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert errors != null;
 if (!errors.hasErrors("text")) {
-			errors.state(request, Filter.filterString(entity.getText()), "text", "anonymous.shout.form.error.text");
+			errors.state(request, this.filterString(entity.getText()), "text", "anonymous.shout.form.error.text");
 		}
 if (!errors.hasErrors("author")) {
-	errors.state(request, Filter.filterString(entity.getAuthor()), "author", "anonymous.shout.form.error.author");
+	errors.state(request, this.filterString(entity.getAuthor()), "author", "anonymous.shout.form.error.author");
 }
 	}
 
@@ -90,6 +94,21 @@ if (!errors.hasErrors("author")) {
 		entity.setMoment(moment);
 		this.repository.save(entity);
 		
+	}
+	
+	public boolean filterString(final String s) {
+		final String j=s.replace(" ", ";");
+		final int number = j.split(";").length;
+		int numberBannedWords= 0;
+		final List<String> censoredWords= this.personalizationRepository.findCensoredWords();
+		for(int i = 0; censoredWords.size()>i; i++) {
+		if(s.toLowerCase().contains(censoredWords.get(i))) {
+			numberBannedWords= numberBannedWords+1;
+		}	
+		}
+		if(((float)numberBannedWords/number)*100> 10) return false;
+		
+		return true;
 	}
 
 }
