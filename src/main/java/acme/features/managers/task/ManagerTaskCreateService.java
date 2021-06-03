@@ -95,7 +95,6 @@
 
 package acme.features.managers.task;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,6 +103,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.features.administrator.personalization.AdministratorPersonalizationRepository;
+import acme.features.administrator.threshold.AdministratorThresholdRepository;
 import acme.filter.Filter;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -117,6 +117,9 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 	@Autowired
 	protected ManagerTaskRepository repository;
+	
+	@Autowired
+	protected AdministratorThresholdRepository thresholdRepository;
 	
 	@Autowired
 	protected AdministratorPersonalizationRepository personalizationRepository;
@@ -189,24 +192,24 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 	public void create(final Request<Task> request, final Task entity) {
 		assert request != null;
 		assert entity != null;
-			final Date start;
-			final Date end;
 
 			entity.setFinish(false);
 			this.repository.save(entity);
 	}
-	
 	public boolean filterString(final String s) {
         final String j=s.replace(" ", ";");
         final int number = j.split(";").length;
-        int numberBannedWords= 0;
+        final String[] palabras=j.split(";");
+        float numberBannedWords= 0;
         final List<String> censoredWords= this.personalizationRepository.findCensoredWords();
         for(int i = 0; censoredWords.size()>i; i++) {
-        if(s.toLowerCase().contains(censoredWords.get(i))) {
-            numberBannedWords= numberBannedWords+1;
+        	for(int k=0; palabras.length>k;k++) {
+        		if(palabras[k].toLowerCase().equals(censoredWords.get(i))) {
+        			numberBannedWords= numberBannedWords+1;
         }
-        }
-        if(((float)numberBannedWords/number)*100> 10) return false;
+	}
+}
+        if((numberBannedWords*100/number)> this.thresholdRepository.findThresholdById(6)) return false;
 
         return true;
     }
