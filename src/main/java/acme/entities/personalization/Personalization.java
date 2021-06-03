@@ -21,6 +21,6 @@ public class Personalization extends DomainEntity{
 	@NotNull
 	protected String censoredWords;
 	
-	@NotNull
-	protected int umbral;
+//	@NotNull
+//	protected int umbral;
 }

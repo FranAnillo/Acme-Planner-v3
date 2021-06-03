@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.personalization.Personalization;
-import acme.features.manager.workplan.ManagerWorkplanRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -15,7 +14,7 @@ import acme.framework.services.AbstractCreateService;
 public class AdministratorPersonalizationCreateService implements AbstractCreateService<Administrator, Personalization>{
 
 	@Autowired
-	protected ManagerWorkplanRepository repository;
+	protected AdministratorPersonalizationRepository repository;
 	
 	@Override
 	public boolean authorise(final Request<Personalization> request) {
@@ -41,7 +40,7 @@ public class AdministratorPersonalizationCreateService implements AbstractCreate
 		assert model != null;
 
 		
-		request.unbind(entity, model, "word", "umbral");
+		request.unbind(entity, model, "censoredWords");
 		
 	}
 
@@ -61,6 +60,9 @@ public class AdministratorPersonalizationCreateService implements AbstractCreate
 		assert entity != null;
 		assert errors != null;
 		
+		if (!errors.hasErrors("censoredWords")) {
+            errors.state(request, !this.repository.findCensoredWords().contains(entity.getCensoredWords()), "censoredWords", "administrator.personalization.form.error.censoredWords");
+        }
 	}
 
 	@Override

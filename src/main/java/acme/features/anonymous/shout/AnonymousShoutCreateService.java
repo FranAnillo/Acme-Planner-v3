@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.shouts.Shout;
-import acme.filter.Filter;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -65,12 +64,12 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		if (!errors.hasErrors("text")) {
-			errors.state(request, Filter.filterString(entity.getText()), "text", "anonymous.shout.form.error.text");
-		}
-		if (!errors.hasErrors("author")) {
-			errors.state(request, Filter.filterString(entity.getAuthor()), "author", "anonymous.shout.form.error.author");
-		}
+//		if (!errors.hasErrors("text")) {
+//			errors.state(request, Filter.filterString(entity.getText()), "text", "anonymous.shout.form.error.text");
+//		}
+//		if (!errors.hasErrors("author")) {
+//			errors.state(request, Filter.filterString(entity.getAuthor()), "author", "anonymous.shout.form.error.author");
+//		}
 	}
 
 	@Override
