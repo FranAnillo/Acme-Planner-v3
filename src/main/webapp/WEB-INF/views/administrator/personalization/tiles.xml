@@ -13,13 +13,13 @@
 -->
 
 <!DOCTYPE tiles-definitions PUBLIC 
-	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
-	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+    "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	
-	<definition name="administrator/personalization/form" extends="master">
-		<put-attribute name="body" type="template" value="../administrator/personalization/form.jsp" />
-	</definition>
+
+    <definition name="administrator/personalization/form" extends="master">
+        <put-attribute name="body" type="template" value="../administrator/personalization/form.jsp" />
+    </definition>
 
 </tiles-definitions>

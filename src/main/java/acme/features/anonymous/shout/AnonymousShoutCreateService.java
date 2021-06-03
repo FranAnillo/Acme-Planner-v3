@@ -1,3 +1,4 @@
+
 package acme.features.anonymous.shout;
 
 import java.util.Date;
@@ -20,12 +21,13 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	// Internal state 
 
 	@Autowired
-	protected AnonymousShoutRepository repository;
-	
+	protected AnonymousShoutRepository					repository;
+
 	@Autowired
-	protected AdministratorPersonalizationRepository personalizationRepository;
+	protected AdministratorPersonalizationRepository	personalizationRepository;
 
 	// AbstractCreateService<Administrator, Shout> interface 
+
 
 	@Override
 	public boolean authorise(final Request<Shout> request) {
@@ -57,16 +59,8 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 
 		Shout result;
-		Date moment;
-
-		moment = new Date(System.currentTimeMillis() - 1);
 
 		result = new Shout();
-		result.setAuthor("John Doe");
-		result.setText("Lorem ipsum!");
-		result.setMoment(moment);
-		result.setInfo("http://example.org");
-
 		return result;
 	}
 
@@ -75,12 +69,12 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-if (!errors.hasErrors("text")) {
+		if (!errors.hasErrors("text")) {
 			errors.state(request, this.filterString(entity.getText()), "text", "anonymous.shout.form.error.text");
 		}
-if (!errors.hasErrors("author")) {
-	errors.state(request, this.filterString(entity.getAuthor()), "author", "anonymous.shout.form.error.author");
-}
+		if (!errors.hasErrors("author")) {
+			errors.state(request, this.filterString(entity.getAuthor()), "author", "anonymous.shout.form.error.author");
+		}
 	}
 
 	@Override
@@ -93,21 +87,22 @@ if (!errors.hasErrors("author")) {
 		moment = new Date(System.currentTimeMillis() - 1);
 		entity.setMoment(moment);
 		this.repository.save(entity);
-		
+
 	}
-	
+
 	public boolean filterString(final String s) {
-		final String j=s.replace(" ", ";");
+		final String j = s.replace(" ", ";");
 		final int number = j.split(";").length;
-		int numberBannedWords= 0;
-		final List<String> censoredWords= this.personalizationRepository.findCensoredWords();
-		for(int i = 0; censoredWords.size()>i; i++) {
-		if(s.toLowerCase().contains(censoredWords.get(i))) {
-			numberBannedWords= numberBannedWords+1;
-		}	
+		int numberBannedWords = 0;
+		final List<String> censoredWords = this.personalizationRepository.findCensoredWords();
+		for (int i = 0; censoredWords.size() > i; i++) {
+			if (s.toLowerCase().contains(censoredWords.get(i))) {
+				numberBannedWords = numberBannedWords + 1;
+			}
 		}
-		if(((float)numberBannedWords/number)*100> 10) return false;
-		
+		if (((float) numberBannedWords / number) * 100 > 10)
+			return false;
+
 		return true;
 	}
 

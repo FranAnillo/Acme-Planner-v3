@@ -112,6 +112,19 @@
 
 <acme:form-submit code="administrator.personalization.form.button.create"
 		action="/administrator/personalization/create" />
+<%-- =======
+<acme:form readonly="true">
+<acme:form-double code="administrator.dashboard.form.label.number-of-public-task" path="numberOfPublicTask" />  
+<acme:form-double code="administrator.dashboard.form.label.number-of-private-task" path="numberOfPrivateTask" /> 
+<acme:form-double code="administrator.dashboard.form.label.number-of-finish-task" path="numberOfFinishTask" /> 
+<acme:form-integer code="administrator.dashboard.form.label.number-of-not-finish-task" path="numberOfNotFinishTask" /> 
+<acme:form-integer code="administrator.dashboard.form.label.minimum-workload" path="minimumWorkload" /> 
+<acme:form-integer code="administrator.dashboard.form.label.maximum-workload" path="maximumWorkload" /> 
+<acme:form-double code="administrator.dashboard.form.label.average-workload" path="averageWorkload" /> 
+<acme:form-double code="administrator.dashboard.form.label.deviation-workload" path="deviationWorkload" />
+<acme:form-double code="administrator.dashboard.form.label.average-execution-periods" path="averageExecutionPeriods" />
+</acme:form>
+>>>>>>> branch 'master' of https://github.com/FranAnillo/Acme-Planner-v3.git --%>
 
 <div>
 	<canvas id="canvas"></canvas>

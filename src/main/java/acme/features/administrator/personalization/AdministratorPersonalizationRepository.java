@@ -9,8 +9,8 @@ import acme.framework.repositories.AbstractRepository;
 
 @Repository
 public interface AdministratorPersonalizationRepository extends AbstractRepository {
-	
-	@Query("select p.censoredWords from Personalization p")
-	List<String> findCensoredWords();
+
+    @Query("select p.censoredWords from Personalization p")
+    List<String> findCensoredWords();
 
 }

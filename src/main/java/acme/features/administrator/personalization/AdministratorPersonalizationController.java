@@ -14,14 +14,13 @@ import acme.framework.entities.Administrator;
 @Controller
 @RequestMapping("/administrator/personalization/")
 public class AdministratorPersonalizationController extends AbstractController<Administrator, Personalization>{
-
+	
 	@Autowired
-	protected AdministratorPersonalizationCreateService createService;
-
-	// Constructors -----------------------------------------------------------
+    protected AdministratorPersonalizationCreateService createService;
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
-	}	
+
+	}
 }

@@ -61,8 +61,8 @@ public class AdministratorPersonalizationCreateService implements AbstractCreate
 		assert errors != null;
 		
 		if (!errors.hasErrors("censoredWords")) {
-			errors.state(request, !this.repository.findCensoredWords().contains(entity.getCensoredWords()), "censoredWords", "administrator.personalization.form.error.censoredWords");
-		}
+            errors.state(request, !this.repository.findCensoredWords().contains(entity.getCensoredWords()), "censoredWords", "administrator.personalization.form.error.censoredWords");
+        }
 	}
 
 	@Override
