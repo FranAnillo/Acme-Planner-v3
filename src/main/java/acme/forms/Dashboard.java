@@ -29,6 +29,4 @@ public class Dashboard implements Serializable{
 	Double averageWorkload;
 	Double deviationWorkload;
 	
-	Integer threshold;
-//	List<String> spamWords;
 }

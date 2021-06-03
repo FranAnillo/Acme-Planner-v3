@@ -15,6 +15,10 @@
 	<import
 		resource="classpath:/WEB-INF/population/conversion-service.xml" />
 
+	<bean id="threshold" class="acme.entities.threshold.Threshold">
+		<property name="threshold" value="10" />
+	</bean>
+
 	<!-- Shouts -->
 	<bean id="shout01" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2020/02/13 08:30" />
