@@ -34,7 +34,7 @@
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
-			<acme:menu-suboption code="master.menu.administrator.personalization" action="/administrator/personalization/form"/>
+			<acme:menu-suboption code="master.menu.administrator.personalization" action="/administrator/personalization/create"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
