@@ -28,9 +28,9 @@ public class AnonymousShoutTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/createShout.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)	
-	public void create(final String author, final String text, final String info) {
+	public void create(final int recordIndex ,final String author, final String text, final String info) {
 		
-
+		
 		super.navigateHome();
 		super.clickOnMenu("Anonymous", "Shout!");
 		super.fillInputBoxIn("author", author);
