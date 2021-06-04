@@ -22,3 +22,6 @@ administrator.dashboard.form.label.average-execution-periods= Periodo de ejecuci
 administrator.dashboard.form.label.maximum-execution-periods= Máximo periodo de ejecucuón por tarea
 administrator.dashboard.form.label.minimum-execution-periods= Mínimo periodo de ejecucuón por tarea	
 administrator.dashboard.form.label.deviation-execution-periods= Desviación del periodo de ejecución por tarea	
+
+administrator.dashboard.form.graph.publicTask=Tareas públicas y privadas
+administrator.dashboard.form.graph.finishTask=Tareas finalizadas y no finalizadas

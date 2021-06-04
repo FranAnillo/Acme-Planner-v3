@@ -22,3 +22,6 @@ administrator.dashboard.form.label.average-execution-periods= Task average execu
 administrator.dashboard.form.label.maximum-execution-periods= Task maximum execution periods	
 administrator.dashboard.form.label.minimum-execution-periods= Task minimum execution periods	
 administrator.dashboard.form.label.deviation-execution-periods= Task deviation execution periods	
+
+administrator.dashboard.form.graph.publicTask=Public and private tasks
+administrator.dashboard.form.graph.finishTask=Finish and not finish tasks
