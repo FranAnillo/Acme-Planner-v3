@@ -25,3 +25,5 @@ administrator.dashboard.form.label.deviation-execution-periods= Desviación del 
 
 administrator.dashboard.form.graph.publicTask=Tareas públicas y privadas
 administrator.dashboard.form.graph.finishTask=Tareas finalizadas y no finalizadas
+administrator.dashboard.form.graph.minimumandmaximumWorkload=Carga mínima y máxima de trabajo
+administrator.dashboard.form.graph.averageanddeviationWorkload=Carga media de trabajo y desviación de carga de trabajo

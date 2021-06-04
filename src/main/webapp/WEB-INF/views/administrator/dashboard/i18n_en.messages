@@ -25,3 +25,5 @@ administrator.dashboard.form.label.deviation-execution-periods= Task deviation e
 
 administrator.dashboard.form.graph.publicTask=Public and private tasks
 administrator.dashboard.form.graph.finishTask=Finish and not finish tasks
+administrator.dashboard.form.graph.minimumandmaximumWorkload= Minimum and maximum Workload
+administrator.dashboard.form.graph.averageanddeviationWorkload= Average Workload and deviation Workload

@@ -144,4 +144,113 @@
 			options : options
 		});
 	});
+	
+	</script>
+
+
+
+	<h2>
+		<acme:message code="administrator.dashboard.form.graph.minimumandmaximumWorkload" />
+	</h2>
+	<div>
+		<canvas id="canvas3"></canvas>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var data = {
+				labels : [
+						"Minimum Workload", "Maximum Workload"
+				],
+				datasets : [
+					{
+						data : [
+								"${minimumWorkload}", "${maximumWorkload}"
+						],
+						backgroundColor : [
+								"#2ECC40", "#FF851B"
+						]
+					}
+				]
+			};
+
+			var options = {
+				scales : {
+					yAxes : [
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 140.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : false
+				}
+			};
+
+			var canvas, context;
+
+			canvas = document.getElementById("canvas3");
+			context = canvas.getContext("2d");
+			new Chart(context, {
+				type : "doughnut",
+				data : data,
+				options : options
+			});
+		});
+
+		</script>
+		
+		<h2>
+		<acme:message code="administrator.dashboard.form.graph.averageanddeviationWorkload" />
+	</h2>
+	<div>
+		<canvas id="canvas4"></canvas>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var data = {
+				labels : [
+						"Average Workload", "Deviation Workload"
+				],
+				datasets : [
+					{
+						data : [
+								"${averageWorkload}", "${deviationWorkload}"
+						],
+						backgroundColor : [
+								"#2ECC40", "#FF851B"
+						]
+					}
+				]
+			};
+
+			var options = {
+				scales : {
+					yAxes : [
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 100.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : false
+				}
+			};
+
+			var canvas, context;
+
+			canvas = document.getElementById("canvas4");
+			context = canvas.getContext("2d");
+			new Chart(context, {
+				type : "bar",
+				data : data,
+				options : options
+			});
+		})
+	
 </script>
