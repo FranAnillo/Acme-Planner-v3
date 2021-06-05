@@ -8,7 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-administrator.personalization.form.label.censored-words = Añadir
-administrator.personalization.form.title.censored-words = Nueva palabra censurada
+administrator.threshold.form.title.threshold = Word threshold
+administrator.threshold.form.label.threshold = Word length
+administrator.threshold.form.button.update = Add
 
-administrator.personalization.form.button.create= Crear
+
