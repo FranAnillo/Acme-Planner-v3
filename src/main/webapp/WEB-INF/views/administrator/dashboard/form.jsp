@@ -202,6 +202,58 @@
 
 
 <h2>
+	<acme:message code="administrator.dashboard.form.graph.publicTask" />
+</h2>
+<div>
+	<canvas id="canvas"></canvas>
+</div>
+<script type="text/javascript">
+	//Grafica de tareas publicas y privadas
+	$(document).ready(function() {
+		var data = {
+			labels : [
+					"Public Task", "Private Task"
+			],
+			datasets : [
+				{
+					data : [
+							"${numberOfPublicTask}", "${numberOfPrivateTask}"
+					],
+					backgroundColor : [
+							"#0074D9", "#FF4136", "#2ECC40", "#FF851B"
+					]
+				}
+			]
+		};
+		var options = {
+			scales : {
+				yAxes : [
+					{
+						ticks : {
+							suggestedMin : 0.0,
+							suggestedMax : 50.0
+						}
+					}
+				]
+			},
+			legend : {
+				display : false
+			}
+		};
+		var canvas, context;
+		canvas = document.getElementById("canvas");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type : "bar",
+			data : data,
+			options : options
+		});
+	});
+</script>
+
+
+
+<h2>
 	<acme:message code="administrator.dashboard.form.graph.finishTask" />
 </h2>
 <div>
@@ -224,7 +276,6 @@
 				}
 			]
 		};
-
 		var options = {
 			scales : {
 				yAxes : [
@@ -240,9 +291,7 @@
 				display : false
 			}
 		};
-
 		var canvas, context;
-
 		canvas = document.getElementById("canvas2");
 		context = canvas.getContext("2d");
 		new Chart(context, {
@@ -279,7 +328,6 @@
 					}
 				]
 			};
-
 			var options = {
 				scales : {
 					yAxes : [
@@ -295,9 +343,7 @@
 					display : false
 				}
 			};
-
 			var canvas, context;
-
 			canvas = document.getElementById("canvas3");
 			context = canvas.getContext("2d");
 			new Chart(context, {
@@ -306,7 +352,6 @@
 				options : options
 			});
 		});
-
 		</script>
 		
 		<h2>
@@ -332,7 +377,6 @@
 					}
 				]
 			};
-
 			var options = {
 				scales : {
 					yAxes : [
@@ -348,9 +392,7 @@
 					display : false
 				}
 			};
-
 			var canvas, context;
-
 			canvas = document.getElementById("canvas4");
 			context = canvas.getContext("2d");
 			new Chart(context, {
