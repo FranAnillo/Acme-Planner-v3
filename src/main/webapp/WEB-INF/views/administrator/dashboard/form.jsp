@@ -143,7 +143,7 @@
 		code="administrator.dashboard.form.label.average-execution-periods"
 		path="averageExecutionPeriods" />
 </acme:form>
->>>>>>> branch 'master' of https://github.com/FranAnillo/Acme-Planner-v3.git --%>
+--%>
 
 <h2>
 	<acme:message code="administrator.dashboard.form.graph.publicTask" />
