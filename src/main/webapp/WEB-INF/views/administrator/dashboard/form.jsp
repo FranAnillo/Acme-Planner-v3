@@ -8,7 +8,7 @@
 		code="administrator.dashboard.form.title.general-indicators" />
 </h2>
 
-<table class="table table-sm">
+<%-- <table class="table table-sm">
 	<caption>
 		<acme:message code="administrator.dashboard.form.title.general-indicators"/>
 	</caption>	
@@ -109,24 +109,24 @@
 		</td>
 	</tr>
 						
- </table>
+ </table> --%>
 
 <acme:form-submit code="administrator.personalization.form.button.create"
 		action="/administrator/personalization/create" />
-<%-- =======
+
 <acme:form readonly="true">
 	<acme:form-double
-		code="administrator.dashboard.form.label.number-of-public-task"
-		path="numberOfPublicTask" />
+		code="administrator.dashboard.form.label.number-of-public-workplan"
+		path="numberOfPublicWorkPlan" />
 	<acme:form-double
-		code="administrator.dashboard.form.label.number-of-private-task"
-		path="numberOfPrivateTask" />
+		code="administrator.dashboard.form.label.number-of-private-workplan"
+		path="numberOfPrivateWorkPlan" />
 	<acme:form-double
-		code="administrator.dashboard.form.label.number-of-finish-task"
-		path="numberOfFinishTask" />
+		code="administrator.dashboard.form.label.number-of-finish-workplan"
+		path="numberOfFinishWorkPlan" />
 	<acme:form-integer
-		code="administrator.dashboard.form.label.number-of-not-finish-task"
-		path="numberOfNotFinishTask" />
+		code="administrator.dashboard.form.label.number-of-not-finish-workplan"
+		path="numberOfNotFinishWorkPlan" />
 	<acme:form-integer
 		code="administrator.dashboard.form.label.minimum-workload"
 		path="minimumWorkload" />
@@ -143,10 +143,10 @@
 		code="administrator.dashboard.form.label.average-execution-periods"
 		path="averageExecutionPeriods" />
 </acme:form>
---%>
+
 
 <h2>
-	<acme:message code="administrator.dashboard.form.graph.publicTask" />
+	<acme:message code="administrator.dashboard.form.graph.publicWorkplan" />
 </h2>
 <div>
 	<canvas id="canvas"></canvas>
@@ -157,12 +157,12 @@
 
 		var data = {
 			labels : [
-					"Public Task", "Private Task"
+					"Public Workplan", "Private Workplan"
 			],
 			datasets : [
 				{
 					data : [
-							"${numberOfPublicTask}", "${numberOfPrivateTask}"
+							"${numberOfPublicWorkplan}", "${numberOfPrivateWorkplan}"
 					],
 					backgroundColor : [
 							"#0074D9", "#FF4136", "#2ECC40", "#FF851B"
@@ -201,60 +201,11 @@
 
 
 
-<h2>
-	<acme:message code="administrator.dashboard.form.graph.publicTask" />
-</h2>
-<div>
-	<canvas id="canvas"></canvas>
-</div>
-<script type="text/javascript">
-	//Grafica de tareas publicas y privadas
-	$(document).ready(function() {
-		var data = {
-			labels : [
-					"Public Task", "Private Task"
-			],
-			datasets : [
-				{
-					data : [
-							"${numberOfPublicTask}", "${numberOfPrivateTask}"
-					],
-					backgroundColor : [
-							"#0074D9", "#FF4136", "#2ECC40", "#FF851B"
-					]
-				}
-			]
-		};
-		var options = {
-			scales : {
-				yAxes : [
-					{
-						ticks : {
-							suggestedMin : 0.0,
-							suggestedMax : 50.0
-						}
-					}
-				]
-			},
-			legend : {
-				display : false
-			}
-		};
-		var canvas, context;
-		canvas = document.getElementById("canvas");
-		context = canvas.getContext("2d");
-		new Chart(context, {
-			type : "bar",
-			data : data,
-			options : options
-		});
-	});
-</script>
 
 
 
 <h2>
-	<acme:message code="administrator.dashboard.form.graph.finishTask" />
+	<acme:message code="administrator.dashboard.form.graph.finishWorkplan" />
 </h2>
 <div>
 	<canvas id="canvas2"></canvas>
@@ -263,12 +214,12 @@
 	$(document).ready(function() {
 		var data = {
 			labels : [
-					"Finish Task", "Not Finish Task"
+					"Finish Workplan", "Not Finish Workplan"
 			],
 			datasets : [
 				{
 					data : [
-							"${numberOfFinishTask}", "${numberOfNotFinishTask}"
+							"${numberOfFinishWorkplan}", "${numberOfNotFinishWorkplan}"
 					],
 					backgroundColor : [
 							"#2ECC40", "#FF851B"
