@@ -53,6 +53,7 @@
 		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
 			<acme:menu-suboption code="master.menu.manager.task" action="/manager/task/list"/>
 			<acme:menu-suboption code="master.menu.manager.task.create" action="/manager/task/create"/>
+			<acme:menu-suboption code="master.menu.manager.workplan" action="/manager/workplan/list"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
