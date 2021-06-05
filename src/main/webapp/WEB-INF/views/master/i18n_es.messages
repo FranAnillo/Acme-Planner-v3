@@ -46,6 +46,7 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shutdown = Parar el sistema
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.personalization = Palabras censuradas
+master.menu.administrator.threshold  = Umbral de palabra
 
 # master.menu.provider ########################################################
 
@@ -62,6 +63,9 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.manager = Manager
 master.menu.manager.task = Tareas
 master.menu.manager.task.create = Crear Tarea
+master.menu.workplan = Plan de trabajo
+master.menu.manager.workplan = Listar plan de trabajo
+master.menu.manager.workplan.create = Crear plan de trabajo
 
 # master.menu.user-account ####################################################
 
