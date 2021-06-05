@@ -1,9 +1,13 @@
 package acme.entities.workplans;
 
-import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
@@ -28,13 +32,16 @@ public class Workplan extends DomainEntity {
 	@NotNull
 	protected String title;
 	
-	@Future                       
-	@NotNull                      
-	protected LocalDateTime start;
-
-	@Future                     
-	@NotNull                    
-	protected LocalDateTime end;
+	@Future
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date start;
+	
+	@Future
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	protected Date end;
+	
 
 	@NotNull                   
 	protected Integer workload;
@@ -49,8 +56,7 @@ public class Workplan extends DomainEntity {
 	@ManyToOne(optional = false)
 	protected Manager manager;
 	
-	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
-	protected Task task;
+	@OneToMany
+	protected List<Task> task;
 }
