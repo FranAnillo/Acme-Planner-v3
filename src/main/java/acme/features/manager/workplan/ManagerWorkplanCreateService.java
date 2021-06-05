@@ -1,10 +1,15 @@
 package acme.features.manager.workplan;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
 import acme.entities.workplans.Workplan;
+import acme.features.administrator.personalization.AdministratorPersonalizationRepository;
+import acme.features.administrator.threshold.AdministratorThresholdRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -73,5 +78,5 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		
 	}
 	
-	
+
 }
