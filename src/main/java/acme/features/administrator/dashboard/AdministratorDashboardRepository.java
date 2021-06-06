@@ -38,13 +38,4 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select j from Task j")
 	Collection<Task> findTasks();
 
-
-	
-	
-	
-	
-		
-	
-	
-	
 }

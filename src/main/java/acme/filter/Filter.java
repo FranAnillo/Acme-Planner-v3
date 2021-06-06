@@ -4,9 +4,38 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Filter{
+import javax.validation.constraints.NotNull;
 
-	public static List<String> censoredWords(){
+import org.springframework.beans.factory.annotation.Autowired;
+
+import acme.features.administrator.personalization.AdministratorPersonalizationRepository;
+
+public class Filter {
+
+	// Serialisation identifier -----------------------------------------------
+
+
+		// Attributes -------------------------------------------------------------
+
+		@Autowired
+		protected  AdministratorPersonalizationRepository repository;
+		
+		@NotNull
+		protected String censoredWord;
+		
+		@NotNull
+		static int umbral = 10;
+		
+		
+		
+		
+		
+		public void addWord(final String censoredWord) {
+			final List<String> res = this.censoredWords();
+			res.add(censoredWord);
+		}
+		
+	public List<String> censoredWords(){
 	final List<String> res = new ArrayList<>();
 	res.add("sex");
 	res.add("sexo");
@@ -25,17 +54,18 @@ public class Filter{
 	res.add("millon de euros");
 	return res;
 	}
-	public static boolean filterString(final String s) {
+	
+	public boolean filterString(final String s) {
 		final String j=s.replace(" ", ";");
 		final int number = j.split(";").length;
 		int numberBannedWords= 0;
-		final List<String> censoredWords= Filter.censoredWords();
+		final List<String> censoredWords= this.repository.findCensoredWords();
 		for(int i = 0; censoredWords.size()>i; i++) {
 		if(s.toLowerCase().contains(censoredWords.get(i))) {
 			numberBannedWords= numberBannedWords+1;
 		}	
 		}
-		if(((float)numberBannedWords/number)*100>10) return false;
+		if(((float)numberBannedWords/number)*100> Filter.umbral) return false;
 		
 		return true;
 	}

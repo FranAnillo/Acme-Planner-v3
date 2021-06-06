@@ -35,6 +35,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
 			<acme:menu-suboption code="master.menu.administrator.personalization" action="/administrator/personalization/create"/>
+			<acme:menu-suboption code="master.menu.administrator.threshold" action="/administrator/threshold/update"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
@@ -45,7 +46,7 @@
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 
-		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
+		<acme:menu-option code="master.menu." access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
@@ -53,6 +54,13 @@
 			<acme:menu-suboption code="master.menu.manager.task" action="/manager/task/list"/>
 			<acme:menu-suboption code="master.menu.manager.task.create" action="/manager/task/create"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.workplan" access="hasRole('Manager')">
+			<acme:menu-suboption code="master.menu.manager.workplan" action="/manager/workplan/list"/>
+			<acme:menu-suboption code="master.menu.manager.workplan.create" action="/manager/workplan/create"/>
+		</acme:menu-option>
+		
+		
 	</acme:menu-left>
 
 	<acme:menu-right>

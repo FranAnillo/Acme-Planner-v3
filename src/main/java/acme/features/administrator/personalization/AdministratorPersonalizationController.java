@@ -21,5 +21,6 @@ public class AdministratorPersonalizationController extends AbstractController<A
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+
 	}
 }
