@@ -19,10 +19,10 @@ public class Dashboard implements Serializable{
 
 
 
-	Double numberOfPublicTask;
-	Double numberOfPrivateTask;
-	Double numberOfFinishTask;
-	Double numberOfNotFinishTask;
+	Double numberOfPublicWorkplan;
+	Double numberOfPrivateWorkplan;
+	Double numberOfFinishWorkplan;
+	Double numberOfNotFinishWorkplan;
 	
 	Integer minimumWorkload;
 	Integer maximumWorkload;
