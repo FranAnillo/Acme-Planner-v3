@@ -42,7 +42,7 @@
         <property name="publica" value="false"/>
         <property name="task">
         	<list>
-            	<ref bean="task03"/>
+            	<ref bean="task01"/>
             	<ref bean="task04"/>
         	</list>
         </property>
