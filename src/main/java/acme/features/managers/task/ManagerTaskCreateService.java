@@ -213,7 +213,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 				}
 			}
 		}
-		if ((numberBannedWords * 100 / number) > this.thresholdRepository.findThresholdById(6))
+		if ((numberBannedWords * 100 / number) > this.thresholdRepository.findThresholdById())
 			return false;
 
 		return true;

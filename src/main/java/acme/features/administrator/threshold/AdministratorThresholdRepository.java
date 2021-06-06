@@ -12,7 +12,7 @@ public interface AdministratorThresholdRepository extends AbstractRepository{
 	@Query("select t from Threshold t where t.id = ?1")
 	Threshold findThreshold(int i);
 	
-	@Query("select t.threshold from Threshold t where t.id = ?1")
-	int findThresholdById(int i);
+	@Query("select t.threshold from Threshold t")
+	int findThresholdById();
 
 }

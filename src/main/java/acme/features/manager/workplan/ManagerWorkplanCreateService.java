@@ -1,14 +1,9 @@
 package acme.features.manager.workplan;
 
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
-import acme.entities.tasks.Task;
 import acme.entities.workplans.Workplan;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -44,7 +39,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "start", "end","task");
+		request.unbind(entity, model, "title", "start", "end","publica");
 	}
 
 	@Override
@@ -55,7 +50,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		manager=this.repository.findOneManagerbyUserAccountById(request.getPrincipal().getActiveRoleId());
 		
 		result = new Workplan();
-		result.setPublica(false);
+//		result.setPublica(false);
 		result.setManager(manager);
 		return result;
 	}
@@ -66,17 +61,17 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert entity != null;
 		assert errors != null;
 		
-		if(!errors.hasErrors("task")) {
-			errors.state(request, entity.getTask().isEmpty(), "task", "manager.workplan.form.error.task");
-		}
-		
-		if(!errors.hasErrors("start")) {
-			errors.state(request, this.checkDateStart(entity.getStart(), entity.getTask()), "start", "manager.workplan.form.error.start");
-		}
-		
-		if(!errors.hasErrors("end")) {
-			errors.state(request, this.checkDateEnd(entity.getEnd(), entity.getTask()), "end", "manager.workplan.form.error.end");
-		}
+//		if(!errors.hasErrors("task")) {
+//			errors.state(request, entity.getTask().isEmpty(), "task", "manager.workplan.form.error.task");
+//		}
+//		
+//		if(!errors.hasErrors("start")) {
+//			errors.state(request, this.checkDateStart(entity.getStart(), entity.getTask()), "start", "manager.workplan.form.error.start");
+//		}
+//		
+//		if(!errors.hasErrors("end")) {
+//			errors.state(request, this.checkDateEnd(entity.getEnd(), entity.getTask()), "end", "manager.workplan.form.error.end");
+//		}
 		
 	}
 
@@ -85,33 +80,33 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert request != null;
 		assert entity != null;
 		
-		Double a=0.;
-		for (int i=0;i<entity.getTask().size();i++) {
-			a+=entity.getTask().get(i).getWorkload();
-		}
-		entity.setWorkload(a);
-		entity.setPublica(false);
+//		Double a=0.;
+//		for (int i=0;i<entity.getTask().size();i++) {
+//			a+=entity.getTask().get(i).getWorkload();
+//		}
+//		entity.setWorkload(a);
+//		entity.setPublica(false);
 		this.repository.save(entity);
 		
 	}
 	
-	public boolean checkDateStart(final Date date, final List<Task> tasks) {
-		final List<Date> lista=tasks.stream().map(Task::getStart).collect(Collectors.toList());
-		for (int i=0;i<lista.size();i++) {
-			if(lista.get(i).before(date)) {
-				return false;
-			}
-		}
-		return true;
-	}
-	
-	public boolean checkDateEnd(final Date date, final List<Task> tasks) {
-		final List<Date> lista=tasks.stream().map(Task::getEnd).collect(Collectors.toList());
-		for (int i=0;i<lista.size();i++) {
-			if(lista.get(i).after(date)) {
-				return false;
-			}
-		}
-		return true;
-	}
+//	public boolean checkDateStart(final Date date, final List<Task> tasks) {
+//		final List<Date> lista=tasks.stream().map(Task::getStart).collect(Collectors.toList());
+//		for (int i=0;i<lista.size();i++) {
+//			if(lista.get(i).before(date)) {
+//				return false;
+//			}
+//		}
+//		return true;
+//	}
+//	
+//	public boolean checkDateEnd(final Date date, final List<Task> tasks) {
+//		final List<Date> lista=tasks.stream().map(Task::getEnd).collect(Collectors.toList());
+//		for (int i=0;i<lista.size();i++) {
+//			if(lista.get(i).after(date)) {
+//				return false;
+//			}
+//		}
+//		return true;
+//	}
 }
