@@ -32,7 +32,7 @@ public class ManagerWorkplanListService implements AbstractListService<Manager, 
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "title", "start","description", "end", "workload");
+		request.unbind(entity, model, "title", "start", "end", "workload");
 	}
 
 	@Override

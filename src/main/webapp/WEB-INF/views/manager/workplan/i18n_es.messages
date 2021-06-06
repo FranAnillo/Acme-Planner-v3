@@ -8,21 +8,22 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-manager.workplan.list.label.title = Titulo
-manager.workplan.list.label.start = Comienzo
-manager.workplan.list.label.end = Finalizacion
-manager.workplan.list.label.workload = Carga de trabajo
-manager.workplan.error.workload =La carga de trabajo no es correcta
-manager.workplan.error.end=La fecha final es anterior a la de comienzo
+workplan.list.label.title = Titulo
+workplan.list.label.start = Comienzo
+workplan.list.label.end = Finalizacion
+workplan.list.label.workload = Carga de trabajo
+workplan.error.workload =La carga de trabajo no es correcta
+workplan.error.end=La fecha final es anterior a la de comienzo
 
-manager.workplan.label.title = Titulo
-manager.workplan.start = Comienzo
-manager.workplan.end = Finalizacion
-manager.workplan.label.workload = Carga de trabajo
+workplan.label.title = Titulo
+workplan.start = Comienzo
+workplan.end = Finalizacion
+workplan.label.workload = Carga de trabajo
 
 
-manager.workplan.label.publica=Publica
-manager.workplan.button.return= Volver
-manager.workplan.form.button.create = Crear
+workplan.list.label.publica= Publica
+workplan.form.button.return= Volver
+workplan.form.button.create = Crear
+workplan.form.button.delete= Borrar
 
-manager.workplan.form.error.title= El título contiene demasiadas palabras de spam
+workplan.form.error.title= El título contiene demasiadas palabras de spam
