@@ -43,7 +43,7 @@ public class ManagerWorkplanListService implements AbstractListService<Manager, 
 		final int workplanId=request.getPrincipal().getActiveRoleId();
 
 		for (final Workplan workplan:this.repository.findMany()) {
-			if (workplan.getManager().equals(this.repository.findOneWorkplanById(workplanId))) {
+			if (workplan.getManager().equals(this.repository.findOneManagerbyUserAccountById(workplanId))) {
 				result.add(workplan);
 			}
 		}

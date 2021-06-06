@@ -1,10 +1,14 @@
 package acme.features.manager.workplan;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Manager;
+import acme.entities.tasks.Task;
 import acme.entities.workplans.Workplan;
+import acme.features.managers.task.ManagerTaskRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -15,6 +19,9 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 
 	@Autowired
 	protected ManagerWorkplanRepository repository;
+	
+	@Autowired
+	protected ManagerTaskRepository	Taskrepository;
 	
 	@Override
 	public boolean authorise(final Request<Workplan> request) {
@@ -39,18 +46,20 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "start", "end","publica");
+		request.unbind(entity, model, "title", "start", "end","task","publica");
 	}
 
 	@Override
 	public Workplan instantiate(final Request<Workplan> request) {
 		assert request != null;
 		Workplan result;
+		
 		Manager manager;
 		manager=this.repository.findOneManagerbyUserAccountById(request.getPrincipal().getActiveRoleId());
-		
+		final List<Task>task=(List<Task>) this.Taskrepository.findMany();
 		result = new Workplan();
 //		result.setPublica(false);
+		result.setTask(task);
 		result.setManager(manager);
 		return result;
 	}

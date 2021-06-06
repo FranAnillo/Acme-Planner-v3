@@ -18,8 +18,7 @@ workplan.error.end=La fecha final es anterior a la de comienzo
 workplan.label.title = Titulo
 workplan.start = Comienzo
 workplan.end = Finalizacion
-workplan.label.workload = Carga de trabajo
-
+workplan.list.label.task= Tarea
 
 workplan.list.label.publica= Publica
 workplan.form.button.return= Volver

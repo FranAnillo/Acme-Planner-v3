@@ -18,7 +18,7 @@ workplan.error.end =End is before start
 workplan.label.title = Title
 workplan.start = Start
 workplan.end = End
-workplan.label.workload = Workload
+workplan.list.label.task= Task
 workplan.list.label.publica= Public
 
 workplan.form.button.return=Return

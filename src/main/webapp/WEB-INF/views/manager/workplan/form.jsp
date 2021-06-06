@@ -8,6 +8,7 @@
 	<acme:form-textbox code="workplan.list.label.title" path="title"/>
 	<acme:form-textbox code="workplan.list.label.start" path="start"/>
 	<acme:form-textbox code="workplan.list.label.end" path="end"/>
+	<acme:form-select code="workplan.list.label.task" path="task"/>
     <acme:form-checkbox code="workplan.list.label.publica" path="publica"/>
 	<acme:form-submit code="workplan.form.button.create" action="/manager/workplan/create"/>
   	<acme:form-return code="workplan.form.button.return"/>
