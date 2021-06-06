@@ -75,7 +75,7 @@ public class ManagerWorkplanCreateService implements AbstractCreateService<Manag
 		}
 		
 		if(!errors.hasErrors("end")) {
-			errors.state(request, this.checkDateStart(entity.getEnd(), entity.getTask()), "end", "manager.workplan.form.error.end");
+			errors.state(request, this.checkDateEnd(entity.getEnd(), entity.getTask()), "end", "manager.workplan.form.error.end");
 		}
 		
 	}
