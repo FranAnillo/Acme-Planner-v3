@@ -186,6 +186,10 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		if (!errors.hasErrors("description")) {
 			errors.state(request, this.filterString(entity.getDescription()), "description", "manager.task.form.error.description");
 		}
+		
+		if (!errors.hasErrors("title")) {
+			errors.state(request, this.filterString(entity.getTitle()), "title", "manager.task.form.error.title");
+		}
 	}
 
 	@Override
