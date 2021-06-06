@@ -62,8 +62,8 @@ master.menu.manager = Manager
 master.menu.manager.task = Tasks
 master.menu.manager.task.create = Create Task
 master.menu.workplan = Workplan
-master.menu.manager.workplan = List Workplan
-master.menu.manager.workplan.create = Create Workplan
+master.menu.workplan.list = List Workplan
+master.menu.workplan.create = Create Workplan
 
 # master.menu.user-account ####################################################
 

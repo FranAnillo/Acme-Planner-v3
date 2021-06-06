@@ -8,20 +8,21 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-manager.workplan.list.label.title = Title
-manager.workplan.list.label.start = Start
-manager.workplan.list.label.end = End
-manager.workplan.list.label.workload = Workload
-manager.workplan.error.workload =Workload is not correct
-manager.workplan.error.end =End is before start 
+workplan.list.label.title = Title
+workplan.list.label.start = Start
+workplan.list.label.end = End
+workplan.list.label.workload = Workload
+workplan.error.workload =Workload is not correct
+workplan.error.end =End is before start 
 
-manager.workplan.label.title = Title
-manager.workplan.start = Start
-manager.workplan.end = End
-manager.workplan.label.workload = Workload
+workplan.label.title = Title
+workplan.start = Start
+workplan.end = End
+workplan.label.workload = Workload
+workplan.list.label.publica= Public
 
-manager.workplan.label.publica=Public
-manager.workplan.button.return=Return
-manager.workplan.form.button.create = Create
+workplan.form.button.return=Return
+workplan.form.button.create = Create
+workplan.form.button.delete= Delete
  
-manager.workplan.form.error.title =You introduced too many banned words in the title
+workplan.form.error.title =You introduced too many banned words in the title
