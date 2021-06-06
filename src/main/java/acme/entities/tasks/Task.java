@@ -1,18 +1,21 @@
 package acme.entities.tasks;
 
-
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.roles.Manager;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -55,19 +58,16 @@ public class Task extends DomainEntity {
 	@NotNull
 	protected Boolean finish;
 	
+	@Positive
 	@NotNull
-	protected Integer workload;//(){
-//		Integer diferencia=0;
-//		if (this.start.isAfter(LocalDateTime.now())) {
-//			diferencia=this.end.compareTo(this.start);
-//		} else if (this.start.isBefore(LocalDateTime.now())) {
-//			diferencia=this.end.compareTo(LocalDateTime.now());
-//		} else if (this.end.isBefore(LocalDateTime.now())){
-//			diferencia=0;
-//		}
-//		return diferencia;
-//		
-//		
-//	}
+	protected Double workload;
+
+
+		// Relationships ----------------------------------------------------------
+	
+		@NotNull
+		@Valid
+		@ManyToOne(optional = false)
+		protected Manager manager;
 
 }

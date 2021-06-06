@@ -1,6 +1,8 @@
 package acme.features.anonymous.task;
 
 import java.util.Collection;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,8 +42,8 @@ public class AnonymousTaskListService implements AbstractListService<Anonymous, 
 		
 		Collection <Task>  result;
 		
-		result = this.repository.findTask();
-		
+		result = this.repository.findTask().stream().sorted(Comparator.comparingDouble(Task::getWorkload)).collect(Collectors.toList());
+
 		return result;
 	}
 
