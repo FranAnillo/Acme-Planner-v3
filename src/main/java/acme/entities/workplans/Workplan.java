@@ -1,8 +1,11 @@
 package acme.entities.workplans;
 
 import java.util.Date;
+import java.util.List;
+
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -40,8 +43,9 @@ public class Workplan extends DomainEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date end;
 
+
 	@NotNull                   
-	protected Integer workload;
+	protected Double workload;
 	
 	@NotNull
 	protected Boolean publica;
@@ -53,8 +57,7 @@ public class Workplan extends DomainEntity {
 	@ManyToOne(optional = false)
 	protected Manager manager;
 	
-	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
-	protected Task task;
+	@ManyToMany
+	protected List<Task> task;
 }
