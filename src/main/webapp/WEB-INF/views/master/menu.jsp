@@ -46,7 +46,7 @@
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 
-		<acme:menu-option code="master.menu." access="hasRole('Consumer')">
+		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 		
@@ -56,8 +56,8 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.workplan" access="hasRole('Manager')">
-			<acme:menu-suboption code="master.menu.manager.workplan" action="/manager/workplan/list"/>
-			<acme:menu-suboption code="master.menu.manager.workplan.create" action="/manager/workplan/create"/>
+			<acme:menu-suboption code="master.menu.workplan" action="/manager/workplan/list"/>
+			<acme:menu-suboption code="master.menu.workplan.create" action="/manager/workplan/create"/>
 		</acme:menu-option>
 		
 		
