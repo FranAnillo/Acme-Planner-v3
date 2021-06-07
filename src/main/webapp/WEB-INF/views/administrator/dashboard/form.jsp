@@ -110,22 +110,22 @@
 	</tr>
 						
  </table> --%>
-
+ 
 <acme:form-submit code="administrator.personalization.form.button.create"
 		action="/administrator/personalization/create" />
 
 <acme:form readonly="true">
 	<acme:form-double
-		code="administrator.dashboard.form.label.number-of-public-workplan"
+		code="administrator.dashboard.form.label.number-of-public-task"
 		path="numberOfPublicTask" />
 	<acme:form-double
-		code="administrator.dashboard.form.label.number-of-private-workplan"
+		code="administrator.dashboard.form.label.number-of-private-task"
 		path="numberOfPrivateTask" />
 	<acme:form-double
-		code="administrator.dashboard.form.label.number-of-finish-workplan"
+		code="administrator.dashboard.form.label.number-of-finish-task"
 		path="numberOfFinishTask" />
 	<acme:form-integer
-		code="administrator.dashboard.form.label.number-of-not-finish-workplan"
+		code="administrator.dashboard.form.label.number-of-not-finish-task"
 		path="numberOfNotFinishTask" />
 	<acme:form-integer
 		code="administrator.dashboard.form.label.minimum-workload"
@@ -143,215 +143,3 @@
 		code="administrator.dashboard.form.label.average-execution-periods"
 		path="averageExecutionPeriods" />
 </acme:form>
-
-
-<h2>
-	<acme:message code="administrator.dashboard.form.graph.publicWorkplan" />
-</h2>
-<div>
-	<canvas id="canvas"></canvas>
-</div>
-<script type="text/javascript">
-	//Grafica de tareas publicas y privadas
-	$(document).ready(function() {
-
-		var data = {
-			labels : [
-					"Public Workplan", "Private Workplan"
-			],
-			datasets : [
-				{
-					data : [
-							"${numberOfPublicWorkplan}", "${numberOfPrivateWorkplan}"
-					],
-					backgroundColor : [
-							"#0074D9", "#FF4136", "#2ECC40", "#FF851B"
-					]
-				}
-			]
-		};
-
-		var options = {
-			scales : {
-				yAxes : [
-					{
-						ticks : {
-							suggestedMin : 0.0,
-							suggestedMax : 50.0
-						}
-					}
-				]
-			},
-			legend : {
-				display : false
-			}
-		};
-
-		var canvas, context;
-
-		canvas = document.getElementById("canvas");
-		context = canvas.getContext("2d");
-		new Chart(context, {
-			type : "bar",
-			data : data,
-			options : options
-		});
-	});
-</script>
-
-
-
-
-
-
-<h2>
-	<acme:message code="administrator.dashboard.form.graph.finishWorkplan" />
-</h2>
-<div>
-	<canvas id="canvas2"></canvas>
-</div>
-<script type="text/javascript">
-	$(document).ready(function() {
-		var data = {
-			labels : [
-					"Finish Workplan", "Not Finish Workplan"
-			],
-			datasets : [
-				{
-					data : [
-							"${numberOfFinishWorkplan}", "${numberOfNotFinishWorkplan}"
-					],
-					backgroundColor : [
-							"#2ECC40", "#FF851B"
-					]
-				}
-			]
-		};
-		var options = {
-			scales : {
-				yAxes : [
-					{
-						ticks : {
-							suggestedMin : 0.0,
-							suggestedMax : 50.0
-						}
-					}
-				]
-			},
-			legend : {
-				display : false
-			}
-		};
-		var canvas, context;
-		canvas = document.getElementById("canvas2");
-		context = canvas.getContext("2d");
-		new Chart(context, {
-			type : "bar",
-			data : data,
-			options : options
-		});
-	});
-	
-	</script>
-
-
-
-	<h2>
-		<acme:message code="administrator.dashboard.form.graph.minimumandmaximumWorkload" />
-	</h2>
-	<div>
-		<canvas id="canvas3"></canvas>
-	</div>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			var data = {
-				labels : [
-						"Minimum Workload", "Maximum Workload"
-				],
-				datasets : [
-					{
-						data : [
-								"${minimumWorkload}", "${maximumWorkload}"
-						],
-						backgroundColor : [
-								"#2ECC40", "#FF851B"
-						]
-					}
-				]
-			};
-			var options = {
-				scales : {
-					yAxes : [
-						{
-							ticks : {
-								suggestedMin : 0.0,
-								suggestedMax : 140.0
-							}
-						}
-					]
-				},
-				legend : {
-					display : false
-				}
-			};
-			var canvas, context;
-			canvas = document.getElementById("canvas3");
-			context = canvas.getContext("2d");
-			new Chart(context, {
-				type : "doughnut",
-				data : data,
-				options : options
-			});
-		});
-		</script>
-		
-		<h2>
-		<acme:message code="administrator.dashboard.form.graph.averageanddeviationWorkload" />
-	</h2>
-	<div>
-		<canvas id="canvas4"></canvas>
-	</div>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			var data = {
-				labels : [
-						"Average Workload", "Deviation Workload"
-				],
-				datasets : [
-					{
-						data : [
-								"${averageWorkload}", "${deviationWorkload}"
-						],
-						backgroundColor : [
-								"#2ECC40", "#FF851B"
-						]
-					}
-				]
-			};
-			var options = {
-				scales : {
-					yAxes : [
-						{
-							ticks : {
-								suggestedMin : 0.0,
-								suggestedMax : 100.0
-							}
-						}
-					]
-				},
-				legend : {
-					display : false
-				}
-			};
-			var canvas, context;
-			canvas = document.getElementById("canvas4");
-			context = canvas.getContext("2d");
-			new Chart(context, {
-				type : "bar",
-				data : data,
-				options : options
-			});
-		})
-	
-</script>
-=
