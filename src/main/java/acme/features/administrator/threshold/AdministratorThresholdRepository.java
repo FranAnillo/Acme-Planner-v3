@@ -9,10 +9,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorThresholdRepository extends AbstractRepository{
 
-	@Query("select t from Threshold t where t.id = ?1")
+	@Query("select t from ThresholdBannedWords t where t.id = ?1")
 	ThresholdBannedWords findThreshold(int i);
 	
-	@Query("select t.threshold from Threshold t")
+	@Query("select t.threshold from ThresholdBannedWords t")
 	int findThresholdById();
 
 }
