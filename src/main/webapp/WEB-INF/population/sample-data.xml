@@ -19,7 +19,67 @@
 		<property name="threshold" value="10" />
 	</bean>
 	
-	<bean id="workplan01" class="acme.entities.workplans.Workplan">
+	<bean id="banword01" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="sex" />
+	</bean>
+	
+	<bean id="banword02" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="sexo" />
+	</bean>
+	
+	<bean id="banword03" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="hard core" />
+	</bean>
+	
+	<bean id="banword04" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="pornografía" />
+	</bean>
+	
+	<bean id="banword05" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="duro" />
+	</bean>
+	
+	<bean id="banword06" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="viagra" />
+	</bean>
+	
+	<bean id="banword07" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="cialis" />
+	</bean>
+	
+	<bean id="banword08" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="tadalafil" />
+	</bean>
+	
+	<bean id="banword09" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="nigeria" />
+	</bean>
+	
+	<bean id="banword10" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="you’ve won" />
+	</bean>
+	
+	<bean id="banword11" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="has ganado" />
+	</bean>
+	
+	<bean id="banword12" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="million dollar" />
+	</bean>
+	
+	<bean id="banword13" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="million euros" />
+	</bean>
+	
+	<bean id="banword14" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="millón de dolares" />
+	</bean>
+	
+	<bean id="banword15" class="acme.entities.personalization.Personalization">
+		<property name="censoredWords" value="millón de euros" />
+	</bean>
+	
+	<!-- <bean id="workplan01" class="acme.entities.workplans.Workplan">
         <property name="title" value= "Work"/>
         <property name="start" value="2021/08/29 09:00"/>
         <property name="end" value="2022/09/07 00:00"/>
@@ -47,7 +107,7 @@
         	</list>
         </property>
         <property name="manager" ref="manager3Employer"/>
-    </bean>
+    </bean> -->
 
 	<!-- Shouts -->
 	<bean id="shout01" class="acme.entities.shouts.Shout">

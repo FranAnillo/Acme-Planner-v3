@@ -179,7 +179,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			errors.state(request, entity.getEnd().after(entity.getStart()), "end", "manager.task.error.end");
 		}
 
-		if (!errors.hasErrors("workload")) {
+		if (!errors.hasErrors("workload")&&!errors.hasErrors("start")&&!errors.hasErrors("end")) {
 			errors.state(request, entity.getWorkload() < Filter.calculate(entity.getStart(), entity.getEnd()), "workload", "manager.task.error.workload");
 		}
 
@@ -213,7 +213,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 				}
 			}
 		}
-		if ((numberBannedWords * 100 / number) > this.thresholdRepository.findThresholdById())
+		if ((numberBannedWords * 100 / number) >= this.thresholdRepository.findThresholdById())
 			return false;
 
 		return true;

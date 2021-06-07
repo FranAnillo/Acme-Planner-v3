@@ -3,7 +3,6 @@ package acme.entities.workplans;
 import java.util.Date;
 import java.util.List;
 
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -49,6 +48,9 @@ public class Workplan extends DomainEntity {
 	
 	@NotNull
 	protected Boolean publica;
+	
+	@NotNull
+	protected Boolean finish;
 	
 	// Relationships ----------------------------------------------------------
 	

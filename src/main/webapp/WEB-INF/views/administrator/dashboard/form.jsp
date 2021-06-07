@@ -117,16 +117,16 @@
 <acme:form readonly="true">
 	<acme:form-double
 		code="administrator.dashboard.form.label.number-of-public-workplan"
-		path="numberOfPublicWorkPlan" />
+		path="numberOfPublicTask" />
 	<acme:form-double
 		code="administrator.dashboard.form.label.number-of-private-workplan"
-		path="numberOfPrivateWorkPlan" />
+		path="numberOfPrivateTask" />
 	<acme:form-double
 		code="administrator.dashboard.form.label.number-of-finish-workplan"
-		path="numberOfFinishWorkPlan" />
+		path="numberOfFinishTask" />
 	<acme:form-integer
 		code="administrator.dashboard.form.label.number-of-not-finish-workplan"
-		path="numberOfNotFinishWorkPlan" />
+		path="numberOfNotFinishTask" />
 	<acme:form-integer
 		code="administrator.dashboard.form.label.minimum-workload"
 		path="minimumWorkload" />
