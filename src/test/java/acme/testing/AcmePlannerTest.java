@@ -80,5 +80,12 @@ public abstract class AcmePlannerTest extends AcmeTest {
 		super.clickOnSubmitButton("Sign up");
 		super.checkSimplePath("/anonymous/user-account/create");
 	}
-
+//	@Override
+//	@AfterAll
+//	public void afterAll() {
+//		super.afterAll();
+//		this.signIn("administrator", "administrator");
+//		super.clickOnMenu("Administrator", "Shut down");		
+//		this.signOut();
+//	}
 }

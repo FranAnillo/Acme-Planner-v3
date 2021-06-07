@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.workplans.Workplan;
+import acme.entities.tasks.Task;
 import acme.forms.Dashboard;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -44,40 +44,40 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		Dashboard result;
 		
-		final Collection<Workplan> workplans = this.repository.findWorkplans();
+		final Collection<Task> tasks = this.repository.findTasks();
 		
-		final Double numberOfPublicWorkplan;
-		final Double numberOfPrivateWorkplan;
-		final Double numberOfFinishWorkplan;
-		final Double numberOfNotFinishWorkplan;
-		final Integer minimumWorkload;
-		final Integer maximumWorkload;
-		final Double averageWorkload;
-		final Double deviationWorkload;
+		final Double numberOfPublicTask;
+		final Double numberOfPrivateTask;
+		final Double numberOfFinishTask;
+		final Double numberOfNotFinishTask;
+		final Double minimumTask;
+		final Double maximumTask;
+		final Double averageTask;
+		final Double deviationTask;
 		Double averageExecutionPeriods;
 		Double maximumExecutionPeriods;
 		Double minimumExecutionPeriods;
 		Double deviationExcutionPeriods;
 		
-		numberOfPublicWorkplan = this.repository.numberOfPublicWorkplan();
-		numberOfPrivateWorkplan = this.repository.numberOfPrivateWorkplan();
-		numberOfFinishWorkplan = this.repository.numberOfFinishWorkplan();
-		numberOfNotFinishWorkplan = this.repository.numberOfNotFinishWorkplan();
-		minimumWorkload = this.repository.minWorkload();
-		maximumWorkload = this.repository.maxWorkload();
-		averageWorkload = this.repository.averegeWorkload();
-		deviationWorkload = this.repository.deviationWorkload();
+		numberOfPublicTask = this.repository.numberOfPublicTask();
+		numberOfPrivateTask = this.repository.numberOfPrivateTask();
+		numberOfFinishTask = this.repository.numberOfFinishTask();
+		numberOfNotFinishTask = this.repository.numberOfNotFinishTask();
+		minimumTask = this.repository.minTask();
+		maximumTask = this.repository.maxTask();
+		averageTask = this.repository.averegeTask();
+		deviationTask = this.repository.deviationTask();
 		averageExecutionPeriods = 0.0;
 		maximumExecutionPeriods = 0.0;
 		deviationExcutionPeriods = 0.0;
 		
-		for (final Workplan w: workplans) {
+		for (final Task w: tasks) {
 			final Double duracion = (double) ((w.getEnd().getTime() / 60000) - (w.getStart().getTime() / 60000));
 			averageExecutionPeriods = averageExecutionPeriods + duracion;
 		}
-		averageExecutionPeriods = averageExecutionPeriods / workplans.size();
+		averageExecutionPeriods = averageExecutionPeriods / tasks.size();
 		
-		for (final Workplan w: workplans) {
+		for (final Task w: tasks) {
 			final Double duracion = (double) ((w.getEnd().getTime() / 60000) - (w.getStart().getTime() / 60000));
 			//Calculamos el maximo en los Workloads
 			if (duracion>maximumExecutionPeriods) {
@@ -86,7 +86,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 		//Partimos del maximo y vamos decreciendo para encontrar el minimo
 		minimumExecutionPeriods = maximumExecutionPeriods;
-		for (final Workplan w: workplans) {
+		for (final Task w: tasks) {
 			final Double duracion = (double) ((w.getEnd().getTime() / 60000) - (w.getStart().getTime() / 60000));
 			//Calculamos el maximo en los Workloads
 			if (duracion<minimumExecutionPeriods) {
@@ -95,21 +95,21 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 		
 		final List<Double> workloadList = new ArrayList<Double>();
-		for (final Workplan w: workplans) {
+		for (final Task w: tasks) {
 			final Double duracion = (double) ((w.getEnd().getTime() / 60000) - (w.getStart().getTime() / 60000));
 			workloadList.add(duracion);
 		}
 		deviationExcutionPeriods = AdministratorDashboardShowService.calculateDeviation(workloadList);
 			
 		result = new Dashboard();
-		result.setNumberOfPublicWorkplan(numberOfPublicWorkplan);
-		result.setNumberOfPrivateWorkplan(numberOfPrivateWorkplan);
-		result.setNumberOfFinishWorkplan(numberOfFinishWorkplan);
-		result.setNumberOfNotFinishWorkplan(numberOfNotFinishWorkplan);
-		result.setMinimumWorkload(minimumWorkload);
-		result.setMaximumWorkload(maximumWorkload);
-		result.setAverageWorkload(averageWorkload);
-		result.setDeviationWorkload(deviationWorkload);
+		result.setNumberOfPublicTask(numberOfPublicTask);
+		result.setNumberOfPrivateTask(numberOfPrivateTask);
+		result.setNumberOfFinishTask(numberOfFinishTask);
+		result.setNumberOfNotFinishTask(numberOfNotFinishTask);
+		result.setMinimumTask(minimumTask);
+		result.setMaximumTask(maximumTask);
+		result.setAverageTask(averageTask);
+		result.setDeviationTask(deviationTask);
 		result.setAverageExecutionPeriods(averageExecutionPeriods);
 		result.setMaximumExecutionPeriods(maximumExecutionPeriods);
 		result.setMinimumExecutionPeriods(minimumExecutionPeriods);

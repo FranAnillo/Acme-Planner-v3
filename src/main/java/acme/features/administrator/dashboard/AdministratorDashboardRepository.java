@@ -5,37 +5,37 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.workplans.Workplan;
+import acme.entities.tasks.Task;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 	
-	@Query("select 1.0 * count(j) from Workplan j where j.finish = 1")
-	Double numberOfFinishWorkplan();
+	@Query("select 1.0 * count(j) from Task j where j.finish = 1")
+	Double numberOfFinishTask();
 	
-	@Query("select 1.0 * count(j) from Workplan j where j.finish = 0")
-	Double numberOfNotFinishWorkplan();
+	@Query("select 1.0 * count(j) from Task j where j.finish = 0")
+	Double numberOfNotFinishTask();
 	
-	@Query("select 1.0 * count(j) from Workplan j where j.publica = 1")
-	Double numberOfPublicWorkplan(); 
+	@Query("select 1.0 * count(j) from Task j where j.publica = 1")
+	Double numberOfPublicTask(); 
 	
-	@Query("select 1.0 * count(j) from Workplan j where j.publica = 0")
-	Double numberOfPrivateWorkplan();
+	@Query("select 1.0 * count(j) from Task j where j.publica = 0")
+	Double numberOfPrivateTask();
 	
-	@Query("select min (j.workload) from Workplan j")
-	Integer minWorkload();
+	@Query("select min (j.workload) from Task j")
+	Double minTask();
 
-	@Query("select max (j.workload) from Workplan j")
-	Integer maxWorkload();
+	@Query("select max (j.workload) from Task j")
+	Double maxTask();
 	
-	@Query("select avg (j.workload) from Workplan j")
-	Double averegeWorkload();
+	@Query("select avg (j.workload) from Task j")
+	Double averegeTask();
 	
-	@Query("select stddev(j.workload) from Workplan j")
-	Double deviationWorkload();
+	@Query("select stddev(j.workload) from Task j")
+	Double deviationTask();
 	
-	@Query("select j from Workplan j")
-	Collection<Workplan> findWorkplans();
+	@Query("select j from Task j")
+	Collection<Task> findTasks();
 
 }
