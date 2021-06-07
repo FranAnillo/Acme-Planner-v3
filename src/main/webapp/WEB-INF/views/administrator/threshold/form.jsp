@@ -8,7 +8,7 @@
 </h2> 
 
 <acme:form>
-    <acme:form-textarea code="administrator.threshold.form.label.threshold" path="threshold"/>
+    <acme:form-textarea code="administrator.threshold.form.label.threshold" path="thresholdword"/>
     <acme:form-submit code="administrator.threshold.form.button.update"
         action="/administrator/threshold/update" />
 </acme:form>
