@@ -33,9 +33,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "numberOfPublicTask", "numberOfPrivateTask", "numberOfFinishTask",
-			"numberOfNotFinishTask", "minimumTask", "maximumTask", "averageTask", "deviationTask",
+			"numberOfNotFinishTask", "minimumWorkload", "maximumWorkload", "averageWorkload", "deviationWorkload",
 			"averageExecutionPeriods", "maximumExecutionPeriods" ,"minimumExecutionPeriods" , "deviationExcutionPeriods");
-		
 	}
 
 	@Override
@@ -50,10 +49,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final Double numberOfPrivateTask;
 		final Double numberOfFinishTask;
 		final Double numberOfNotFinishTask;
-		final Double minimumTask;
-		final Double maximumTask;
-		final Double averageTask;
-		final Double deviationTask;
+		final Integer minimumWorkload;
+		final Integer maximumWorkload;
+		final Double averageWorkload;
+		final Double deviationWorkload;
 		Double averageExecutionPeriods;
 		Double maximumExecutionPeriods;
 		Double minimumExecutionPeriods;
@@ -63,22 +62,22 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		numberOfPrivateTask = this.repository.numberOfPrivateTask();
 		numberOfFinishTask = this.repository.numberOfFinishTask();
 		numberOfNotFinishTask = this.repository.numberOfNotFinishTask();
-		minimumTask = this.repository.minTask();
-		maximumTask = this.repository.maxTask();
-		averageTask = this.repository.averegeTask();
-		deviationTask = this.repository.deviationTask();
+		minimumWorkload = this.repository.minWorkload();
+		maximumWorkload = this.repository.maxWorkload();
+		averageWorkload = this.repository.averegeWorkload();
+		deviationWorkload = this.repository.deviationWorkload();
 		averageExecutionPeriods = 0.0;
 		maximumExecutionPeriods = 0.0;
 		deviationExcutionPeriods = 0.0;
 		
-		for (final Task w: tasks) {
-			final Double duracion = (double) ((w.getEnd().getTime() / 60000) - (w.getStart().getTime() / 60000));
+		for (final Task t: tasks) {
+			final Double duracion = (double) ((t.getEnd().getTime() / 60000) - (t.getStart().getTime() / 60000));
 			averageExecutionPeriods = averageExecutionPeriods + duracion;
 		}
 		averageExecutionPeriods = averageExecutionPeriods / tasks.size();
 		
-		for (final Task w: tasks) {
-			final Double duracion = (double) ((w.getEnd().getTime() / 60000) - (w.getStart().getTime() / 60000));
+		for (final Task t: tasks) {
+			final Double duracion = (double) ((t.getEnd().getTime() / 60000) - (t.getStart().getTime() / 60000));
 			//Calculamos el maximo en los Workloads
 			if (duracion>maximumExecutionPeriods) {
 				maximumExecutionPeriods=1.0*duracion;
@@ -86,8 +85,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 		//Partimos del maximo y vamos decreciendo para encontrar el minimo
 		minimumExecutionPeriods = maximumExecutionPeriods;
-		for (final Task w: tasks) {
-			final Double duracion = (double) ((w.getEnd().getTime() / 60000) - (w.getStart().getTime() / 60000));
+		for (final Task t: tasks) {
+			final Double duracion = (double) ((t.getEnd().getTime() / 60000) - (t.getStart().getTime() / 60000));
 			//Calculamos el maximo en los Workloads
 			if (duracion<minimumExecutionPeriods) {
 				minimumExecutionPeriods=1.0*duracion;
@@ -95,8 +94,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 		
 		final List<Double> workloadList = new ArrayList<Double>();
-		for (final Task w: tasks) {
-			final Double duracion = (double) ((w.getEnd().getTime() / 60000) - (w.getStart().getTime() / 60000));
+		for (final Task t: tasks) {
+			final Double duracion = (double) ((t.getEnd().getTime() / 60000) - (t.getStart().getTime() / 60000));
 			workloadList.add(duracion);
 		}
 		deviationExcutionPeriods = AdministratorDashboardShowService.calculateDeviation(workloadList);
@@ -106,10 +105,10 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setNumberOfPrivateTask(numberOfPrivateTask);
 		result.setNumberOfFinishTask(numberOfFinishTask);
 		result.setNumberOfNotFinishTask(numberOfNotFinishTask);
-		result.setMinimumTask(minimumTask);
-		result.setMaximumTask(maximumTask);
-		result.setAverageTask(averageTask);
-		result.setDeviationTask(deviationTask);
+		result.setMinimumWorkload(minimumWorkload);
+		result.setMaximumWorkload(maximumWorkload);
+		result.setAverageWorkload(averageWorkload);
+		result.setDeviationWorkload(deviationWorkload);
 		result.setAverageExecutionPeriods(averageExecutionPeriods);
 		result.setMaximumExecutionPeriods(maximumExecutionPeriods);
 		result.setMinimumExecutionPeriods(minimumExecutionPeriods);
