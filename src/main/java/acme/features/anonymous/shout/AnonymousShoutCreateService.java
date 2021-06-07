@@ -102,7 +102,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		final List<String> censoredWords = this.personalizationRepository.findCensoredWords();
 		for (int i = 0; censoredWords.size() > i; i++) {
 			for (int k = 0; palabras.length > k; k++) {
-				if (palabras[k].toLowerCase().equals(censoredWords.get(i))) {
+				if (palabras[k].equalsIgnoreCase(censoredWords.get(i))) {
 					numberBannedWords = numberBannedWords + 1;
 				}
 			}
