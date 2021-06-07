@@ -512,7 +512,7 @@ Workplan
       <h>60</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Threshold
+ThresholdBannedWords
 --
 + threshold: Integer {NotNull, positive}
 
