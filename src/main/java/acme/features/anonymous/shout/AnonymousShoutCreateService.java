@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.shouts.Shout;
 import acme.features.administrator.personalization.AdministratorPersonalizationRepository;
+import acme.features.administrator.threshold.AdministratorThresholdRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -26,9 +27,9 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	@Autowired
 	protected AdministratorPersonalizationRepository	personalizationRepository;
 
-	// AbstractCreateService<Administrator, Shout> interface 
-
-
+	@Autowired
+	protected AdministratorThresholdRepository			thresholdRepository;
+	
 	@Override
 	public boolean authorise(final Request<Shout> request) {
 		assert request != null;
@@ -60,7 +61,10 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 		Shout result;
 
+		Date moment;
+		moment = new Date(System.currentTimeMillis() - 1);
 		result = new Shout();
+		result.setMoment(moment);
 		return result;
 	}
 
@@ -93,14 +97,17 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public boolean filterString(final String s) {
 		final String j = s.replace(" ", ";");
 		final int number = j.split(";").length;
-		int numberBannedWords = 0;
+		final String[] palabras = j.split(";");
+		float numberBannedWords = 0;
 		final List<String> censoredWords = this.personalizationRepository.findCensoredWords();
 		for (int i = 0; censoredWords.size() > i; i++) {
-			if (s.toLowerCase().contains(censoredWords.get(i))) {
-				numberBannedWords = numberBannedWords + 1;
+			for (int k = 0; palabras.length > k; k++) {
+				if (palabras[k].equalsIgnoreCase(censoredWords.get(i))) {
+					numberBannedWords = numberBannedWords + 1;
+				}
 			}
 		}
-		if (((float) numberBannedWords / number) * 100 > 10)
+		if ((numberBannedWords * 100 / number) >= this.thresholdRepository.findThresholdById())
 			return false;
 
 		return true;

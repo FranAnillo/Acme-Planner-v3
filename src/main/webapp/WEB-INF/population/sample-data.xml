@@ -16,7 +16,7 @@
 		resource="classpath:/WEB-INF/population/conversion-service.xml" />
 
 	<bean id="threshold" class="acme.entities.threshold.Threshold">
-		<property name="threshold" value="10" />
+		<property name="thresholdword" value="10" />
 	</bean>
 	
 	<bean id="banword01" class="acme.entities.personalization.Personalization">
@@ -78,38 +78,9 @@
 	<bean id="banword15" class="acme.entities.personalization.Personalization">
 		<property name="censoredWords" value="millón de euros" />
 	</bean>
-	
-	<!-- <bean id="workplan01" class="acme.entities.workplans.Workplan">
-        <property name="title" value= "Work"/>
-        <property name="start" value="2021/08/29 09:00"/>
-        <property name="end" value="2022/09/07 00:00"/>
-        <property name="workload" value="40"/>
-        <property name="publica" value="false"/>
-        <property name="task">
-        	<list>
-            	<ref bean="task01"/>
-            	<ref bean="task02"/>
-        	</list>
-        </property>
-        <property name="manager" ref="manager3Employer"/>
-    </bean>
-    
-    <bean id="workplan02" class="acme.entities.workplans.Workplan">
-        <property name="title" value= "Work"/>
-        <property name="start" value="2021/08/29 09:00"/>
-        <property name="end" value="2022/09/07 00:00"/>
-        <property name="workload" value="50"/>
-        <property name="publica" value="false"/>
-        <property name="task">
-        	<list>
-            	<ref bean="task01"/>
-            	<ref bean="task04"/>
-        	</list>
-        </property>
-        <property name="manager" ref="manager3Employer"/>
-    </bean> -->
 
 	<!-- Shouts -->
+	
 	<bean id="shout01" class="acme.entities.shouts.Shout">
 		<property name="moment" value="2020/02/13 08:30" />
 		<property name="author" value="Jhon Doe" />
@@ -277,21 +248,21 @@
 	</bean>
 
 	<bean id="shout22" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/03/14 00:00" />
+		<property name="moment" value="2021/06/01 00:00" />
 		<property name="author" value="Harry Kent" />
 		<property name="text" value="Laugh as much as you breathe!" />
 		<property name="info" value="https://www.facebook.com.com" />
 	</bean>
 
 	<bean id="shout23" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/03/27 02:00" />
+		<property name="moment" value="2021/06/02 02:00" />
 		<property name="author" value="Ken Davies" />
 		<property name="text" value="Just turning!" />
 		<property name="info" value="https://zoom.us" />
 	</bean>
 
 	<bean id="shout24" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/05/13 04:00" />
+		<property name="moment" value="2021/05/19 04:00" />
 		<property name="author" value="Barry Foster" />
 		<property name="text" value="With pain comes strength!" />
 		<property name="info" value="https://www.reddit.com" />
@@ -306,7 +277,7 @@
 	</bean>
 
 	<bean id="shout26" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/05/16 07:00" />
+		<property name="moment" value="2021/05/19 07:00" />
 		<property name="author" value="Jacket Max" />
 		<property name="text"
 			value="Be the change you want to see in the world" />
@@ -347,6 +318,7 @@
 	</bean>
 
 	<!-- Manager -->
+	
 	<bean name="manager1UserAccount"
 		class="acme.framework.entities.UserAccount">
 		<property name="username" value="manager1" />
@@ -481,6 +453,9 @@
 		class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="manager5UserAccount" />
 	</bean>
+	
+	<!-- Tasks -->
+	
 	<bean id="task01" class="acme.entities.tasks.Task">
 		<property name="title" value= "Political"/>
 		<property name="description" value= "the implementation of these policies is not an easy task"/>

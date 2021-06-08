@@ -24,18 +24,17 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	Double numberOfPrivateTask();
 	
 	@Query("select min (j.workload) from Task j")
-	Double minTask();
+	Integer minWorkload();
 
 	@Query("select max (j.workload) from Task j")
-	Double maxTask();
+	Integer maxWorkload();
 	
 	@Query("select avg (j.workload) from Task j")
-	Double averegeTask();
+	Double averegeWorkload();
 	
 	@Query("select stddev(j.workload) from Task j")
-	Double deviationTask();
+	Double deviationWorkload();
 	
 	@Query("select j from Task j")
 	Collection<Task> findTasks();
-
 }

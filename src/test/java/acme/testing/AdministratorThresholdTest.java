@@ -16,16 +16,19 @@ public class AdministratorThresholdTest extends AcmePlannerTest {
 		super.clickOnMenu("Account", "Become a manager");
 		super.clickOnSubmitButton("Register");
 		super.clickOnMenu("Administrator", "Word threshold");
-		super.fillInputBoxIn("Word length", length);
+		super.fillInputBoxIn("thresholdword", length);
 		super.clickOnSubmitButton("Add");
 		super.clickOnMenu("Manager", "Create Task");
-		super.fillInputBoxIn("Title", title);
-		super.fillInputBoxIn("Description", description);
-		super.fillInputBoxIn("Workload", workload);
-		super.fillInputBoxIn("Start", start);
-		super.fillInputBoxIn("End", end);
-		super.fillInputBoxIn("Link", link);
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("description", description);
+		super.fillInputBoxIn("workload",workload);
+		super.fillInputBoxIn("start",start);
+		super.fillInputBoxIn("end",end);
+		super.fillInputBoxIn("workload",workload);
+		super.fillInputBoxIn("link",link);
 		super.clickOnSubmitButton("Create");
+		super.clickOnMenu("Administrator", "Populate DB (samples)");
+		
 		
 	}	
 	
@@ -37,17 +40,24 @@ public class AdministratorThresholdTest extends AcmePlannerTest {
 		
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Administrator", "Word threshold");
-		super.fillInputBoxIn("Word length", length);
+		super.fillInputBoxIn("thresholdword", length);
 		super.clickOnSubmitButton("Add");
+		super.clickOnMenu("Account", "Become a manager");
+		super.clickOnSubmitButton("Register");
 		super.clickOnMenu("Manager", "Create Task");
-		super.fillInputBoxIn("Title", title);
-		super.fillInputBoxIn("Description", description);
-		super.fillInputBoxIn("Workload", workload);
-		super.fillInputBoxIn("Start", start);
-		super.fillInputBoxIn("End", end);
-		super.fillInputBoxIn("Link", link);
+		super.fillInputBoxIn("title", title);
+		super.fillInputBoxIn("description", description);
+		super.fillInputBoxIn("workload",workload);
+		super.fillInputBoxIn("start",start);
+		super.fillInputBoxIn("end",end);
+		super.fillInputBoxIn("workload",workload);
+		super.fillInputBoxIn("link",link);
 		super.clickOnSubmitButton("Create");
 		super.checkErrorsExist();
+		super.clickOnMenu("Administrator", "Populate DB (samples)");
 			
 	}	
+	
+	
+	
 }

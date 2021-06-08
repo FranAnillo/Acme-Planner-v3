@@ -38,7 +38,7 @@ public class AdministratorThresholdUpdateService implements AbstractUpdateServic
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "threshold");
+		request.unbind(entity, model, "thresholdword");
 		
 	}
 

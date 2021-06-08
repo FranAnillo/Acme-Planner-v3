@@ -71,7 +71,7 @@ public class Filter {
 	}
 	
 	public static double calculate(final Date start, final Date end) {
-		return (end.getTime() / 3600000) - (start.getTime() / 3600000);
+		return (end.getTime() / 3600000.00) - (start.getTime() / 3600000.00);
 		
 	}
 
