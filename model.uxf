@@ -62,18 +62,6 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
-      <y>70</y>
-      <w>15</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=..
-</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>340</x>
       <y>165</y>
       <w>45</w>
@@ -554,5 +542,30 @@ has v</panel_attributes>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>190.0;10.0;10.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>285</y>
+      <w>130</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;form&gt;&gt;
+Dashboard
+--
++ averageExecutionPeriods: Double
++ deviationExecutionPeriods: Double
++ minimumExecutionPeriods: Double
++ maximumExecutionPeriods: Double
++ numberOfPublicTask: Double
++ numberOfPrivateTask: Double
++ numberOfFinishTask: Double
++ numberOfNotFinishTask: Double
++ minimumWorkload: Integer
++ maximumWorkload: Integer
++ averageWorkload: Double
++ deviationWorkload: Double</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
