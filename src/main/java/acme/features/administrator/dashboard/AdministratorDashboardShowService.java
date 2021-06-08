@@ -68,16 +68,15 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		deviationWorkload = this.repository.deviationWorkload();
 		averageExecutionPeriods = 0.0;
 		maximumExecutionPeriods = 0.0;
-		deviationExcutionPeriods = 0.0;
 		
 		for (final Task t: tasks) {
-			final Double duracion = (double) ((t.getEnd().getTime() / 60000) - (t.getStart().getTime() / 60000));
+			final Double duracion = ((t.getEnd().getTime() / 60000.00) - (t.getStart().getTime() / 60000.00));
 			averageExecutionPeriods = averageExecutionPeriods + duracion;
 		}
 		averageExecutionPeriods = averageExecutionPeriods / tasks.size();
 		
 		for (final Task t: tasks) {
-			final Double duracion = (double) ((t.getEnd().getTime() / 60000) - (t.getStart().getTime() / 60000));
+			final Double duracion = ((t.getEnd().getTime() / 60000.00) - (t.getStart().getTime() / 60000.00));
 			//Calculamos el maximo en los Workloads
 			if (duracion>maximumExecutionPeriods) {
 				maximumExecutionPeriods=1.0*duracion;
@@ -86,7 +85,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		//Partimos del maximo y vamos decreciendo para encontrar el minimo
 		minimumExecutionPeriods = maximumExecutionPeriods;
 		for (final Task t: tasks) {
-			final Double duracion = (double) ((t.getEnd().getTime() / 60000) - (t.getStart().getTime() / 60000));
+			final Double duracion = ((t.getEnd().getTime() / 60000.00) - (t.getStart().getTime() / 60000.00));
 			//Calculamos el maximo en los Workloads
 			if (duracion<minimumExecutionPeriods) {
 				minimumExecutionPeriods=1.0*duracion;
@@ -95,7 +94,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		final List<Double> workloadList = new ArrayList<Double>();
 		for (final Task t: tasks) {
-			final Double duracion = (double) ((t.getEnd().getTime() / 60000) - (t.getStart().getTime() / 60000));
+			final Double duracion = ((t.getEnd().getTime() / 60000.00) - (t.getStart().getTime() / 60000.00));
 			workloadList.add(duracion);
 		}
 		deviationExcutionPeriods = AdministratorDashboardShowService.calculateDeviation(workloadList);

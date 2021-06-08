@@ -16,7 +16,7 @@ public class AdministratorThresholdTest extends AcmePlannerTest {
 		super.clickOnMenu("Account", "Become a manager");
 		super.clickOnSubmitButton("Register");
 		super.clickOnMenu("Administrator", "Word threshold");
-		super.fillInputBoxIn("threshold", length);
+		super.fillInputBoxIn("thresholdword", length);
 		super.clickOnSubmitButton("Add");
 		super.clickOnMenu("Manager", "Create Task");
 		super.fillInputBoxIn("title", title);
@@ -40,7 +40,7 @@ public class AdministratorThresholdTest extends AcmePlannerTest {
 		
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Administrator", "Word threshold");
-		super.fillInputBoxIn("threshold", length);
+		super.fillInputBoxIn("thresholdword", length);
 		super.clickOnSubmitButton("Add");
 		super.clickOnMenu("Account", "Become a manager");
 		super.clickOnSubmitButton("Register");
