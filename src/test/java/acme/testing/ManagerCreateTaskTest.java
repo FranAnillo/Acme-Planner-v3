@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-public class ManagerCreateTask extends AcmePlannerTest {
+public class ManagerCreateTaskTest extends AcmePlannerTest {
 	//Este metodo prueba que se crea correctamente una task del manager con los datos pertinentes
 	@ParameterizedTest
 	@CsvFileSource(resources = "/manager/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)

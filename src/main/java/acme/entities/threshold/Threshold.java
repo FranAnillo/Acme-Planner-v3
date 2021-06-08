@@ -1,6 +1,7 @@
 package acme.entities.threshold;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
@@ -17,7 +18,8 @@ public class Threshold extends DomainEntity{
 	
 	@NotNull
 	@Positive
-	Integer threshold;
+	@Max (100)
+	Integer thresholdword;
 
 	
 
